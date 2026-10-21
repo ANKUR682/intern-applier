@@ -1,0 +1,32 @@
+name: "RevLens Analytics: SaaS Revenue & Cohort Mart"
+tagline: "Tiered customer lifecycle and revenue analytics platform built with DuckDB, Streamlit, and modular SQL transformations"
+
+bullet_points:
+  - "Architected a tiered analytical database (Staging - Intermediate - Marts) using DuckDB and Streamlit to orchestrate end-to-end customer and transaction pipelines"
+  - "Engineered month-over-month MRR movement calculations (New, Expansion, Churned) using SQL window functions (LAG) to compute Net Revenue Retention (NRR) and SaaS Quick Ratio metrics"
+  - "Implemented cohort retention matrices (12-month user retention curves) and RFM customer segmentation using NTILE(5) over recency, frequency, and monetary variables"
+  - "Built an automated SQL data quality test suite validating primary key uniqueness and positive revenue boundaries, ensuring mart reliability before rendering Streamlit dashboards"
+
+tech_stack:
+  - DuckDB
+  - Streamlit
+  - SQL
+  - Python
+  - pytest
+  - Data Modeling
+
+# Project Links:
+github_link: "https://github.com/Chirag-Janbandhu/RevLens-Analytics"
+live_link: "https://5xrtu4dm6hyuxb3qs5rpnt.streamlit.app/"
+
+duration: "Aug 2026"
+
+tags:
+  - data-analytics
+  - analytics-engineering
+  - data-modeling
+  - sql
+  - duckdb
+  - streamlit
+  - saas
+  - python

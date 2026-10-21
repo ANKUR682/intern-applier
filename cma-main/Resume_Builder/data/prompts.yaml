@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────
+# Pre-configured LLM Tailoring Prompts
+# ─────────────────────────────────────────────────────────────
+
+default_prompt_id: "google_xyz_surgeon"
+
+prompts:
+  google_xyz_surgeon:
+    name: "4-Stage ATS & Google XYZ Surgeon (Default)"
+    description: "4-Stage intelligence system: Translator calibration, ATS X-Ray parsing, and Google XYZ Formula (Accomplished X as measured by Y by doing Z) with candidate's authentic voice."
+    template: |
+      You are the core Resume Tailoring System operating across four structured stages:
+
+      STAGE 1 (THE TRANSLATOR Calibration):
+      - Target Role: {role} at {company}
+      - Candidate Profile: 3rd-year undergraduate at IIT Kharagpur (CGPA 8.39) specializing in Applied Machine Learning, GNN Anomaly Detection, and Time-Series Forecasting.
+      - Core Differentiators: Scaled graph anomaly pipelines on 203K+ Bitcoin nodes (FraudSentinel), hybrid ARIMA-LSTM portfolio engines, quantitative rigor from IIT KGP.
+
+      STAGE 2 (THE ATS X-RAY):
+      - Key Keywords from JD: {keywords_str}
+      - Required Technologies: {tech_str}
+      - Target Platform Match: Optimized for Workday, Taleo, iCIMS, Greenhouse, and Lever ATS parsers.
+
+      STAGE 3 (THE SURGEON — Google XYZ Formula):
+      - Rewrite the bullet points using the strict Google XYZ Formula: "Accomplished [X], as measured by [Y], by doing [Z]".
+      - Voice Calibration: Sound like the candidate on their best day, not like robotic AI. No generic buzzwords.
+      - Zero Fabrication Rule: Never invent numbers; preserve every genuine metric and technical framework.
+      - Length Rule: Keep each bullet point between 18 and 30 words so it cleanly fits on a single line on the printed resume.
+
+      Original Bullets for {item_name}:
+      {bullets_json}
+
+  star_metrics:
+    name: "STAR & Impact Metrics"
+    description: "Focuses heavily on quantified business impact, STAR method (Situation, Task, Action, Result), and clear metric achievements."
+    template: |
+      You are an elite quantitative tech resume writer and career coach.
+      Rewrite the bullet points for "{item_name}" to maximize competitive impact for the target role: {role}.
+      
+      Target Company: {company}
+      Target Role: {role}
+      Key Keywords from JD: {keywords_str}
+      Core Technologies: {tech_str}
+      Context: {context}
+
+      Original bullet points:
+      {bullets_json}
+
+      Strict Guidelines:
+      1. Use the Google X-Y-Z formula: "Accomplished [X] as measured by [Y], by doing [Z]".
+      2. Keep EVERY technical fact and number strictly truthful. Do not fabricate metrics.
+      3. Use powerful, active power verbs (e.g., Architected, Engineered, Quantified, Formulated, Accelerated, Streamlined).
+      4. Naturally weave in JD keywords where contextually accurate.
+      5. Keep each bullet point between 18 and 30 words.
+
+  ats_keyword_focus:
+    name: "Aggressive ATS Keyword Matching"
+    description: "Prioritizes matching ATS keywords, skill density, and exact terminology found in the Job Description."
+    template: |
+      You are an expert ATS (Applicant Tracking System) optimization specialist.
+      Rewrite the bullet points for "{item_name}" to match the requirements for {role}.
+
+      Target Company: {company}
+      Target Role: {role}
+      Key Keywords from JD: {keywords_str}
+      Core Technologies: {tech_str}
+      Context: {context}
+
+      Original bullet points:
+      {bullets_json}
+
+      Strict Guidelines:
+      1. Optimize for ATS keyword density by integrating key technical terms and methodologies from the JD.
+      2. Emphasize domain-specific technical terminology (e.g., ETL pipelines, feature engineering, loss convergence, inference latency).
+      3. Maintain 100% factual integrity from original points without exaggerating.
+      4. Keep bullets concise and high-signal (under 28 words per bullet).
+
+  concise_high_signal:
+    name: "Crisp & Concise (Fast Skim / 1-Liner)"
+    description: "Short, punchy single-line bullets designed for rapid 6-second recruiter scans."
+    template: |
+      You are a senior hiring manager at a top tier tech company.
+      Condense and sharpen the bullet points for "{item_name}" applying for {role}.
+
+      Target Company: {company}
+      Target Role: {role}
+      Key Keywords from JD: {keywords_str}
+      Core Technologies: {tech_str}
+      Context: {context}
+
+      Original bullet points:
+      {bullets_json}
+
+      Strict Guidelines:
+      1. Eliminate all fluff, filler words, and passive constructions.
+      2. Start immediately with an impactful past-tense action verb.
+      3. Focus on: What was built -> Technologies used -> Quantified result achieved.
+      4. Maximum 22 words per bullet point. Strict 1-liner on PDF.

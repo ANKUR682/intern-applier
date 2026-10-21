@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InternApplier — AI Resume Builder & Cold Outreach Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <!-- ── Header ────────────────────────────────────────── -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10,9 9,9 8,9"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">InternApplier</div>
+          <div class="brand-sub">1-Page ATS Resume & Smart Cold Outreach</div>
+        </div>
+      </div>
+
+      <!-- Top Navigation Tabs -->
+      <div class="nav-tabs">
+        <button class="nav-tab active" id="tabResumeBtn" onclick="switchTab('resume')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          1-Page Resume Builder
+        </button>
+        <button class="nav-tab" id="tabColdEmailBtn" onclick="switchTab('cold-email')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Cold Outreach & Company Intel
+        </button>
+      </div>
+      
+      <div class="header-actions">
+        <div class="badge-onepage">
+          <span class="badge-dot"></span> 1-Page Guaranteed
+        </div>
+        <div class="header-status" id="headerStatus">
+          <span class="status-dot idle"></span>
+          <span class="status-text">Ready</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- TAB 1: 1-PAGE RESUME BUILDER                          -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <main class="main tab-content active" id="tabResumeContent">
+
+      <!-- Left: Input & Prompt Strategy Panel -->
+      <section class="panel panel-left">
+        
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Job Target
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="jdInput">Job Description <span class="required">*</span></label>
+          <textarea
+            id="jdInput"
+            class="textarea"
+            placeholder="Paste the full job description here — requirements, responsibilities, and tech stack..."
+            rows="8"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="companyInput">Company Name <span class="optional">(optional)</span></label>
+          <input
+            id="companyInput"
+            class="input"
+            type="text"
+            placeholder="e.g. Google, Jane Street, Stripe"
+          />
+        </div>
+
+        <!-- LLM Thinking & Prompt Strategy Selector -->
+        <div class="prompt-strategy-card">
+          <div class="strategy-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>LLM Tailoring Strategy</span>
+          </div>
+          <p class="strategy-desc" id="promptDesc">Choose how Gemini crafts your tailored bullet points, or edit the template directly:</p>
+          
+          <div class="field">
+            <select id="promptSelector" class="select" onchange="onPromptChange()">
+              <option value="google_xyz_surgeon">🏥 4-Stage ATS &amp; Google XYZ Surgeon (Default)</option>
+              <option value="star_metrics">⭐ STAR &amp; Impact Metrics</option>
+              <option value="ats_keyword_focus">🎯 Aggressive ATS Keyword Matching</option>
+              <option value="concise_high_signal">⚡ Crisp &amp; Concise (Fast Skim / 1-Liner)</option>
+              <option value="custom">✏️ Write Custom Prompt Instruction</option>
+            </select>
+          </div>
+
+          <!-- Prompt Preview / Custom Edit Box -->
+          <div class="prompt-preview-wrap" id="promptPreviewWrap">
+            <label class="field-label" for="customPromptInput">
+              <span id="promptPreviewLabel">Active Prompt Template</span>
+              <span class="preview-badge" id="previewBadge">Active Strategy</span>
+            </label>
+            <textarea
+              id="customPromptInput"
+              class="textarea prompt-textarea"
+              rows="6"
+              placeholder="Prompt template content will appear here..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Master Data Status Pill -->
+        <div class="master-data-pill">
+          <div class="pill-dot"></div>
+          <div class="pill-text">
+            <span>Master Data Active:</span>
+            <strong>Profile · 3 Projects (FraudSentinel, Portfolio Optimizer) · IIT KGP Education</strong>
+          </div>
+        </div>
+
+        <button id="buildBtn" class="btn-primary" onclick="startBuild()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span id="buildBtnText">Build 1-Page Resume</span>
+        </button>
+
+      </section>
+
+      <!-- Right: Live Pipeline & Output Panel -->
+      <section class="panel panel-right">
+        
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Build Pipeline Progress
+        </div>
+
+        <!-- 6 Pipeline Steps -->
+        <div class="steps-container" id="stepsContainer">
+          <div class="step" id="step-1" data-step="1">
+            <div class="step-indicator"><span class="step-num">1</span></div>
+            <div class="step-content">
+              <div class="step-title">Parse Job Description</div>
+              <div class="step-msg" id="step-1-msg">Waiting...</div>
+            </div>
+          </div>
+          <div class="step" id="step-2" data-step="2">
+            <div class="step-indicator"><span class="step-num">2</span></div>
+            <div class="step-content">
+              <div class="step-title">Load Master Resume Data</div>
+              <div class="step-msg" id="step-2-msg">Waiting...</div>
+            </div>
+          </div>
+          <div class="step" id="step-3" data-step="3">
+            <div class="step-indicator"><span class="step-num">3</span></div>
+            <div class="step-content">
+              <div class="step-title">Select Best Matching Content</div>
+              <div class="step-msg" id="step-3-msg">Waiting...</div>
+            </div>
+          </div>
+          <div class="step" id="step-4" data-step="4">
+            <div class="step-indicator"><span class="step-num">4</span></div>
+            <div class="step-content">
+              <div class="step-title">Tailor Content (Gemini LLM)</div>
+              <div class="step-msg" id="step-4-msg">Waiting...</div>
+            </div>
+          </div>
+          <div class="step" id="step-5" data-step="5">
+            <div class="step-indicator"><span class="step-num">5</span></div>
+            <div class="step-content">
+              <div class="step-title">Compile 1-Page LaTeX → PDF</div>
+              <div class="step-msg" id="step-5-msg">Waiting...</div>
+            </div>
+          </div>
+          <div class="step" id="step-6" data-step="6">
+            <div class="step-indicator"><span class="step-num">6</span></div>
+            <div class="step-content">
+              <div class="step-title">Multi-Engine ATS Scoring</div>
+              <div class="step-msg" id="step-6-msg">Waiting...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Card with ATS Dashboard -->
+        <div class="output-card" id="outputCard" style="display:none;">
+          <div class="output-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            1-Page Resume & ATS Audit Complete
+          </div>
+          <div class="output-folder" id="outputFolderName"></div>
+
+          <!-- ATS Score Dashboard -->
+          <div class="ats-dashboard" id="atsDashboard">
+            <div class="ats-score-hero">
+              <div class="ats-circle-score" id="atsCompositeScore">--</div>
+              <div class="ats-score-meta">
+                <div class="ats-score-title">Composite ATS Score</div>
+                <div class="ats-grade-badge" id="atsGradeBadge">Calculating...</div>
+              </div>
+            </div>
+
+            <!-- 3 Scanner Engine Breakdown -->
+            <div class="ats-engines-grid" id="atsEnginesGrid">
+              <!-- Populated dynamically -->
+            </div>
+
+            <!-- Keyword Tags -->
+            <div class="ats-tags-section" id="atsTagsSection" style="display: none;">
+              <div class="ats-tags-label">Matched Keywords:</div>
+              <div class="ats-tags-container" id="atsMatchedKeywords"></div>
+              <div class="ats-tags-label" style="margin-top: 0.4rem;">Missing Recommendations:</div>
+              <div class="ats-tags-container" id="atsMissingKeywords"></div>
+            </div>
+          </div>
+
+          <div class="output-actions">
+            <a id="downloadBtn" class="btn-download" href="#" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Error Card -->
+        <div class="error-card" id="errorCard" style="display:none;">
+          <div class="error-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Build Failed
+          </div>
+          <div class="error-msg" id="errorMsg"></div>
+        </div>
+
+        <!-- Live Log -->
+        <div class="panel-title" style="margin-top: 1rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
+          Execution Log
+        </div>
+        <div class="log-box" id="logBox">
+          <span class="log-placeholder">Log output will stream live here during build...</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- TAB 2: COLD OUTREACH & COMPANY INTEL                  -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <main class="main tab-content" id="tabColdEmailContent" style="display:none;">
+      
+      <!-- Left Column: Recruiter Database & Target Input -->
+      <section class="panel panel-left">
+        <div class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Recruiter Database (GES Mastersheet)
+        </div>
+
+        <!-- Search / Filter -->
+        <div class="field">
+          <div class="search-input-wrap">
+            <input
+              id="recruiterSearchInput"
+              class="input"
+              type="text"
+              placeholder="Search company, recruiter name, or role..."
+              oninput="handleRecruiterSearch()"
+            />
+            <button class="btn-search-clear" onclick="clearRecruiterSearch()">✕</button>
+          </div>
+        </div>
+
+        <!-- Quick Recruiter List Table -->
+        <div class="recruiter-list-wrap" id="recruiterListWrap">
+          <div class="recruiter-list-loading">Loading recruiters from Excel database...</div>
+        </div>
+
+        <!-- Manual / Selected Target Inputs -->
+        <div class="target-card">
+          <div class="target-card-header">Selected Outreach Target</div>
+          
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="targetCompany">Company Name <span class="required">*</span></label>
+              <input id="targetCompany" class="input" type="text" placeholder="e.g. Razorpay, Zepto, Ather" />
+            </div>
+            <div class="field">
+              <label class="field-label" for="targetName">Recruiter Name</label>
+              <input id="targetName" class="input" type="text" placeholder="e.g. Siddharth" />
+            </div>
+          </div>
+
+          <div class="target-grid">
+            <div class="field">
+              <label class="field-label" for="targetEmail">Recruiter Email <span class="required">*</span></label>
+              <input id="targetEmail" class="input" type="email" placeholder="e.g. siddharth@razorpay.com" />
+            </div>
+            <div class="field">
+              <label class="field-label" for="targetDesignation">Designation / Title</label>
+              <input id="targetDesignation" class="input" type="text" placeholder="e.g. Head of Data / HR" />
+            </div>
+          </div>
+
+          <button id="researchDraftBtn" class="btn-primary" onclick="researchAndDraftEmail()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Research Company & Draft Human Email
+          </button>
+        </div>
+      </section>
+
+      <!-- Right Column: Researched Intel, Email Draft, Resume Attachment -->
+      <section class="panel panel-right">
+        
+        <!-- Company Intelligence Card -->
+        <div class="intel-card" id="intelCard" style="display:none;">
+          <div class="intel-header">
+            <span class="intel-badge">🧠 Company Intel & Problem Discovery</span>
+            <span class="intel-domain" id="intelDomain">Fintech & Payments</span>
+          </div>
+          <div class="intel-body">
+            <div class="intel-row">
+              <div class="intel-label">Core Platform:</div>
+              <div class="intel-val" id="intelProduct">Payment gateway and financial solutions.</div>
+            </div>
+            <div class="intel-row">
+              <div class="intel-label">Engineering Focus:</div>
+              <div class="intel-val" id="intelChallenge">Real-time fraud prevention, low-latency transaction routing.</div>
+            </div>
+            <div class="intel-row highlight">
+              <div class="intel-label">Candidate Synergy Hook:</div>
+              <div class="intel-val hook" id="intelHook">Direct synergy with your FraudSentinel GNN anomaly detection project.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email Draft Editor Card -->
+        <div class="email-draft-card" id="emailDraftCard" style="display:none;">
+          <div class="email-draft-header">
+            <div class="email-draft-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Personalized Cold Email Draft (Human Tone)
+            </div>
+            <div class="word-count-badge" id="emailWordCount">~85 words (Crisp)</div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="emailSubject">Subject Line</label>
+            <input id="emailSubject" class="input" type="text" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="emailBody">Email Body (Fully Editable)</label>
+            <textarea id="emailBody" class="textarea email-textarea" rows="10" oninput="updateWordCount()"></textarea>
+          </div>
+
+          <!-- Tailored 1-Page Resume Attachment Card -->
+          <div class="attachment-card">
+            <div class="attachment-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.48-8.48"/></svg>
+            </div>
+            <div class="attachment-info">
+              <div class="attachment-name" id="attachmentName">Chirag_Janbandhu_Resume.pdf</div>
+              <div class="attachment-meta">Tailored 1-Page PDF Resume · Auto-attached</div>
+            </div>
+            <span class="attachment-badge">✓ Ready</span>
+          </div>
+
+          <!-- Outreach Actions -->
+          <div class="outreach-actions">
+            <button id="sendEmailBtn" class="btn-primary btn-send" onclick="sendOutreachEmail(false)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Personalized Cold Email
+            </button>
+            <button id="sendTestBtn" class="btn-secondary" onclick="sendOutreachEmail(true)">
+              🧪 Send Test to My Email
+            </button>
+          </div>
+
+          <div class="email-status-msg" id="emailStatusMsg" style="display:none;"></div>
+        </div>
+
+        <!-- Initial Placeholder State -->
+        <div class="cold-placeholder-card" id="coldPlaceholderCard">
+          <div class="cold-placeholder-icon">✉️</div>
+          <div class="cold-placeholder-title">Select a Company or Recruiter</div>
+          <div class="cold-placeholder-sub">
+            Pick a recruiter from the GES Mastersheet on the left or type a company name to automatically research their tech stack and draft a human cold email paired with a tailored 1-page resume.
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

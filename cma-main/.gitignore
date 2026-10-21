@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Virtual environments
+OT/
+gh/
+venv/
+.venv/
+
+# Environment & secrets
+.env
+*.env
+!Resume_Builder/config.yaml
+
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs & State Persistence
+*.log
+!ColdMailingAgent/logs/
+!ColdMailingAgent/logs/email_log.csv
+!ColdMailingAgent/logs/company_research_cache.json
+
+# Generated output (keep .gitkeep)
+Resume_Output/*/
+!Resume_Output/.gitkeep
+

@@ -1,0 +1,44 @@
+﻿skills:
+  languages_and_databases:
+    - Python
+    - SQL
+    - PostgreSQL
+    - MySQL
+    - C
+    - C++
+
+  data_analytics_and_wrangling:
+    - Pandas
+    - NumPy
+    - Exploratory Data Analysis (EDA)
+    - Data Cleaning
+    - Feature Engineering
+    - Advanced Excel
+
+  data_visualization_and_bi:
+    - Plotly
+    - Matplotlib
+    - Seaborn
+    - Power BI
+    - Tableau
+
+  machine_learning_and_modeling:
+    - PyTorch
+    - PyTorch Geometric
+    - scikit-learn
+    - XGBoost
+    - LightGBM
+    - Graph Neural Networks (GNN)
+    - Time Series (ARIMA, LSTM)
+    - FAISS
+    - TensorFlow
+
+  tools_and_infrastructure:
+    - Git
+    - GitHub
+    - Jupyter Notebooks
+    - VS Code
+    - FastAPI
+    - REST APIs
+    - MLflow
+    - Anaconda

@@ -1,0 +1,21 @@
+﻿company: "Finance & Economics Club, IIT Kharagpur"
+role: "Analytics & Research Member"
+duration: "Aug 2024 – Present"
+location: "IIT Kharagpur, India"
+
+bullet_points:
+  - "Conducted quantitative research on equity market trends and corporate financials to synthesize weekly analytical reports"
+  - "Modeled real-time market indicators using NSE dataset feeds, analyzing valuation metrics and risk parameters"
+
+tech_stack:
+  - Python
+  - Pandas
+  - Excel
+  - SQL
+
+tags:
+  - data-analytics
+  - finance
+  - quantitative-research
+  - reporting
+  - equity-markets

@@ -1,0 +1,24 @@
+# ─────────────────────────────────────────────────────────────
+# Resume Builder — Configuration
+# ─────────────────────────────────────────────────────────────
+
+# Gemini API
+# Loaded automatically from GEMINI_API_KEY environment variable / GitHub Secret
+gemini_api_key: ""
+gemini_model: "gemini-2.5-flash"
+
+# Content selection limits
+max_projects: 2          # Max projects to include
+max_experiences: 1       # Max experiences to include
+
+# Output
+output_dir: "../Resume_Output"    # Relative to Resume_Builder/
+
+# LaTeX
+# Install MiKTeX (Windows): https://miktex.org/download
+latex_compiler: "pdflatex"
+
+# Web UI
+web_host: "127.0.0.1"
+web_port: 5000
+debug: true

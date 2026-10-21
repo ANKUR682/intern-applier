@@ -1,0 +1,14 @@
+# Resume Output Directory
+
+This directory is auto-populated by the Resume Builder pipeline.
+Each subdirectory contains a tailored resume for a specific company:
+
+```
+<Role>_<Company>_<Date>/
+├── resume.pdf       # The compiled 1-page PDF
+├── resume.tex       # Generated LaTeX source
+├── metadata.yaml    # Build metadata (role, company, keywords)
+└── ats_score.yaml   # 3-engine ATS score breakdown
+```
+
+To regenerate, run a build from the Web UI or CLI.

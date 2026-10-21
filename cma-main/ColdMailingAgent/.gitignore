@@ -1,0 +1,16 @@
+# Secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+gh/
+venv/
+.venv/
+
+# Temp logs
+*.log
+

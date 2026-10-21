@@ -1,0 +1,191 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=0.75in,headheight=14pt]{geometry}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+
+\definecolor{primary}{RGB}{30, 58, 138}
+\definecolor{secondary}{RGB}{15, 118, 110}
+\definecolor{darkgray}{RGB}{51, 65, 85}
+\definecolor{codebg}{RGB}{241, 245, 249}
+\definecolor{bordercolor}{RGB}{203, 213, 225}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=secondary
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{InternApplier CLI Manual \& Architecture Guide}}
+\lhead{\textcolor{primary}{\textbf{Chirag Janbandhu | IIT Kharagpur}}}
+\rfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondary}}{}{0em}{}
+
+\tcolorboxenvironment{verbatim}{
+  colback=codebg,
+  colframe=bordercolor,
+  arc=3mm,
+  boxrule=0.5pt,
+  left=6pt,
+  right=6pt,
+  top=4pt,
+  bottom=4pt
+}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{\color{primary}InternApplier — CLI Command Manual}} \\
+    \vspace{4pt}
+    {\large \textbf{Unified Ecosystem: Intelligent Cold Mailing Agent + 1-Page ATS Resume Builder}} \\
+    \vspace{4pt}
+    \textcolor{darkgray}{Candidate: Chirag Janbandhu (3rd-Year Undergraduate, IIT Kharagpur) | Target: Remote Data Intern}
+\end{center}
+
+\vspace{6pt}
+
+\section{System Architecture Overview}
+The \textbf{InternApplier} ecosystem connects two automated AI modules:
+\begin{enumerate}[leftmargin=18pt, itemsep=2pt]
+    \item \textbf{Cold Mailing Agent (\texttt{ColdMailingAgent/})}: Automatically parses 660+ founders/leads from the GES Mastersheet (Unicorns \& Soonicorns), conducts deep company intelligence to discover technical challenges, writes human cold emails without AI clichés, and schedules daily outreach strictly between \textbf{7:00 AM and 9:00 AM}.
+    \item \textbf{Resume Builder (\texttt{Resume\_Builder/})}: Compiles strictly 1-page, ATS-optimized PDF resumes tailored via Gemini using the \textbf{Google XYZ Formula} (\textit{Accomplished [X], as measured by [Y], by doing [Z]}), and attaches them directly to outgoing recruiter emails.
+\end{enumerate}
+
+\vspace{6pt}
+
+\section{Cold Mailing Agent — Command Line Reference}
+Navigate to the directory before running:
+\begin{verbatim}
+cd F:\Intern\InternApplier\ColdMailingAgent
+\end{verbatim}
+
+\subsection{1. Dry Run / Preview Mode (\texttt{--dry-run})}
+\textbf{Command:}
+\begin{verbatim}
+python mail_agent.py --dry-run
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Randomly selects 5 unsent contacts across Unicorns and Soonicorns.
+    \item Researches each company's domain, core platform, and specific data/ML challenges.
+    \item Generates a human-sounding cold email draft connecting your IIT Kharagpur projects (FraudSentinel / Time-Series) for a \textbf{remote data intern} role.
+    \item Compiles and links the tailored 1-page PDF resume.
+    \item \textbf{Safety:} \textit{No emails are sent in this mode. Perfect for previewing output.}
+\end{itemize}
+
+\subsection{2. Automated Daily Scheduler Daemon (\texttt{--schedule})}
+\textbf{Command:}
+\begin{verbatim}
+python mail_agent.py --schedule
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Runs continuously in the background as an automated daemon.
+    \item Automatically activates every morning during the \textbf{7:00 AM – 9:00 AM} sending window.
+    \item Randomly shuffles the unsent contact pool and sends \textbf{15 to 20 emails daily} with anti-spam jitter (3--7 minutes delay between emails).
+    \item Once the daily quota is reached (or at 9:00 AM), it sleeps automatically until the next morning at 7:00 AM.
+    \item Records all sent emails in \texttt{logs/email\_log.csv} so no contact is ever emailed twice.
+\end{itemize}
+
+\subsection{3. Send Immediate Batch (\texttt{--now})}
+\textbf{Command:}
+\begin{verbatim}
+python mail_agent.py --now
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Bypasses the 7:00 AM – 9:00 AM time check and immediately sends today's batch of 15--20 random emails with safety jitter.
+\end{itemize}
+
+\newpage
+
+\subsection{4. Live Test Email to Yourself (\texttt{--test <email>})}
+\textbf{Command:}
+\begin{verbatim}
+python mail_agent.py --test cjanbandhu6@gmail.com
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Performs live company research on a sample tech company.
+    \item Drafts the personalized human email and generates the tailored 1-page PDF resume.
+    \item Sends the complete package via Gmail SMTP to your test email inbox so you can review formatting and attachments.
+\end{itemize}
+
+\subsection{5. Targeted Outreach to a Specific Recruiter (\texttt{--company})}
+\textbf{Commands:}
+\begin{verbatim}
+# 1. Preview draft for a specific company:
+python mail_agent.py --company "Razorpay" --poc-name "Siddharth" --poc-email "siddharth@razorpay.com"
+
+# 2. Send immediately:
+python mail_agent.py --company "Razorpay" --poc-name "Siddharth" --poc-email "siddharth@razorpay.com" --send
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Performs instant company intelligence on the specified company.
+    \item Tailors the email and 1-page resume specifically for that company, and sends it directly.
+\end{itemize}
+
+\subsection{6. Campaign Metrics \& Statistics (\texttt{--stats})}
+\textbf{Command:}
+\begin{verbatim}
+python mail_agent.py --stats
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Displays total contacts parsed (661), unique companies (374), total sent, and pending contacts.
+\end{itemize}
+
+\vspace{8pt}
+
+\section{Resume Builder — Command Line Reference}
+Navigate to the directory before running:
+\begin{verbatim}
+cd F:\Intern\InternApplier\Resume_Builder
+\end{verbatim}
+
+\subsection{1. Build Tailored Resume from Job Description (\texttt{--jd})}
+\textbf{Command:}
+\begin{verbatim}
+python scripts/build_resume.py --jd "path/to/job_description.txt" --company "Google"
+\end{verbatim}
+\textbf{What it does:}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item Parses the job description, matches relevant master projects/experiences, applies the default \textbf{4-Stage Google XYZ Surgeon} prompt, compiles a strict 1-page PDF, and runs 3 ATS scanner engines.
+\end{itemize}
+
+\subsection{2. Select Tailoring Strategy (\texttt{--prompt})}
+\textbf{Command:}
+\begin{verbatim}
+python scripts/build_resume.py --jd "jd.txt" --prompt "google_xyz_surgeon"
+\end{verbatim}
+Available prompt IDs:
+\begin{itemize}[leftmargin=14pt, itemsep=1pt]
+    \item \texttt{google\_xyz\_surgeon}: 4-Stage ATS \& Google XYZ Formula (Default)
+    \item \texttt{star\_metrics}: STAR Method + High Quantified Business Metrics
+    \item \texttt{ats\_keyword\_focus}: Aggressive ATS Keyword Matching
+    \item \texttt{concise\_high\_signal}: Fast-Skim Crisp One-Liners
+\end{itemize}
+
+\vspace{8pt}
+
+\section{Interactive Web UI Reference}
+Start the local server:
+\begin{verbatim}
+python web_ui/app.py
+\end{verbatim}
+Open \textbf{\url{http://127.0.0.1:5000}} in your browser to access:
+\begin{enumerate}[leftmargin=18pt, itemsep=2pt]
+    \item \textbf{1-Page Resume Builder Tab}: Live JD tailoring, interactive prompt selector, and 3-engine ATS Score Card.
+    \item \textbf{Cold Outreach Tab}: Searchable GES Mastersheet recruiters, 1-click company intelligence, human email editor, and 1-click delivery.
+\end{enumerate}
+
+\end{document}
