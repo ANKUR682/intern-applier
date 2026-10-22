@@ -24,15 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flask google-genai pyyaml
 
-    - name: Verify Environment Variables & Imports
-      env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-        SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
-      run: |
-        python -c "import flask, yaml; print('Core libraries imported successfully!')"
-
-      - name: Install TeX Live Engine
+    - name: Install TeX Live Engine
       run: |
         sudo apt-get update
         sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
