@@ -1,6 +1,6 @@
 # InternApplier
 
-An end-to-end AI-powered internship application ecosystem built by **Chirag Janbandhu** (IIT Kharagpur).
+An end-to-end AI-powered internship application ecosystem built by **Ankur singh** (IIT Kharagpur).
 
 Automates the entire cold outreach pipeline: researches target companies, writes human-sounding cold emails, generates tailored 1-page ATS-optimized resumes, and delivers them on a daily schedule — all from a single command.
 

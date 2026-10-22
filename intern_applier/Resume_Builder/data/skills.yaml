@@ -6,6 +6,9 @@
     - MySQL
     - C
     - C++
+    - JavaScript
+    - HTML
+    - CSS
 
   data_analytics_and_wrangling:
     - Pandas
@@ -32,6 +35,11 @@
     - Time Series (ARIMA, LSTM)
     - FAISS
     - TensorFlow
+    - Keras
+    - NLTK
+    - Deep Learning
+    - Reinforcement Learning
+    - Optimization Models and Algorithms
 
   tools_and_infrastructure:
     - Git
@@ -42,3 +50,16 @@
     - REST APIs
     - MLflow
     - Anaconda
+    - Google Colaboratory
+    - Kaggle
+    - Docker
+    - Drizzle ORM
+    - Clerk Authentication
+    - Vercel
+    - Next.js
+    - React.js
+    - Tailwind CSS
+    - GSAP
+    - Locomotive Scroll
+    - Desmos
+    - Figma

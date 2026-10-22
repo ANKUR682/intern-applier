@@ -10,6 +10,18 @@ import os
 from pathlib import Path
 import config
 
+import io
+if sys.stdout and sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+if sys.stderr and sys.stderr.encoding != 'utf-8':
+    try:
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
 # Add Resume_Builder to sys.path
 RESUME_BUILDER_PATH = config.RESUME_BUILDER_DIR
 if str(RESUME_BUILDER_PATH) not in sys.path:

@@ -63,8 +63,14 @@ def load_all_from_dir(directory: Path) -> list[dict]:
     items = []
     for yaml_file in sorted(directory.glob("*.yaml")):
         data = load_yaml(yaml_file)
-        data["_source_file"] = yaml_file.name
-        items.append(data)
+        if isinstance(data, list):
+            for entry in data:
+                if isinstance(entry, dict):
+                    entry["_source_file"] = yaml_file.name
+                    items.append(entry)
+        elif isinstance(data, dict):
+            data["_source_file"] = yaml_file.name
+            items.append(data)
     return items
 
 
