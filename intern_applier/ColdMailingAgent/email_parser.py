@@ -135,19 +135,91 @@ def get_cell(row: tuple, index: Optional[int]) -> str:
     return str(val).strip()
 
 
+def parse_csv(csv_path: str) -> list[Recruiter]:
+    """Parse a CSV file and extract all recruiters using automatic header detection."""
+    rows = []
+    for enc in ["utf-8-sig", "utf-8", "latin-1", "cp1252"]:
+        try:
+            with open(csv_path, "r", encoding=enc, errors="replace") as f:
+                reader = csv.reader(f)
+                rows = [row for row in reader if row]
+            break
+        except Exception:
+            continue
+
+    if not rows or len(rows) < 2:
+        return []
+
+    header_idx, cols = find_header_row_and_cols(rows)
+    all_recruiters = []
+    seen_emails = set()
+    last_company = ""
+
+    for row_idx in range(header_idx + 1, len(rows)):
+        row = rows[row_idx]
+        if not row or not any(row):
+            continue
+
+        name = get_cell(row, cols.get('name'))
+        company = get_cell(row, cols.get('company'))
+        designation = get_cell(row, cols.get('designation'))
+        linkedin = get_cell(row, cols.get('linkedin'))
+
+        if company:
+            last_company = company
+        else:
+            company = last_company
+
+        emails = []
+        if 'email' in cols and cols['email'] is not None:
+            email_val = get_cell(row, cols['email'])
+            emails = extract_emails_from_text(email_val)
+
+        if not emails:
+            for cell in row:
+                emails.extend(extract_emails_from_text(cell))
+
+        if not emails:
+            continue
+
+        if not name:
+            name = company if company else "Hiring Lead"
+
+        for email in emails:
+            if email in seen_emails:
+                continue
+            seen_emails.add(email)
+
+            clean_linkedin = linkedin if linkedin and linkedin.startswith("http") else None
+            all_recruiters.append(Recruiter(
+                name=name.strip(),
+                designation=designation.strip() if designation else "Engineering / Data Lead",
+                company=company.strip() if company else "Tech Organization",
+                email=email,
+                linkedin=clean_linkedin,
+                sheet="CSV",
+            ))
+
+    return all_recruiters
+
+
 def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> list[Recruiter]:
     """
-    Universally parse an Excel file and extract all valid recruiters.
+    Universally parse an Excel (.xlsx, .xls) or CSV file and extract all valid recruiters.
 
     Args:
-        excel_path: Path to .xlsx or .xls file
+        excel_path: Path to .xlsx, .xls, or .csv file
         target_sheets: List of sheet name keywords (e.g. ["Unicorn", "Soonicorn"]) or ["ALL"]
 
     Returns:
         Deduplicated list of Recruiter objects
     """
     if not os.path.exists(excel_path):
-        raise FileNotFoundError(f"Excel file not found at: {excel_path}")
+        raise FileNotFoundError(f"Spreadsheet file not found at: {excel_path}")
+
+    # Handle CSV files directly
+    if excel_path.lower().endswith(".csv"):
+        return parse_csv(excel_path)
 
     wb = openpyxl.load_workbook(excel_path, data_only=True)
     all_sheet_names = wb.sheetnames

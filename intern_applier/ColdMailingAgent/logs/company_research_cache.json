@@ -2982,5 +2982,13 @@
     "engineering_focus": "Their core engineering challenges involve building robust systems for data-driven vehicle valuation, personalized recommendations, and ensuring secure, fraud-free transactions in a high-value marketplace.",
     "best_matched_project": "FraudSentinel (Graph ML & Fraud Detection)",
     "personal_hook": "My experience applying graph neural networks for anomaly detection in large transaction networks makes me genuinely excited about contributing to building a more secure and trustworthy marketplace at CarTrade."
+  },
+  "reliance industries ltd": {
+    "company": "Reliance Industries Ltd",
+    "domain": "Fintech & Payments",
+    "core_product": "Reliance Industries is India's largest conglomerate, operating market-leading platforms across digital services, telecommunications, retail, and energy.",
+    "engineering_focus": "Processing real-time transaction streams, forecasting consumer demand, and detecting anomalies across nationwide digital payment and retail networks.",
+    "best_matched_project": "FraudSentinel (Graph ML & Fraud Detection)",
+    "personal_hook": "I am fascinated by the sheer scale of transactions flowing through Reliance's digital ecosystem, where applying graph neural networks to transaction flows can directly strengthen system security and trust at nationwide scale."
   }
 }

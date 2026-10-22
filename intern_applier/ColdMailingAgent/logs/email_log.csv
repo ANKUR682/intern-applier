@@ -660,3 +660,4 @@ timestamp,name,email,company,status,matched_project,resume_path,error
 2026-10-09 07:50:33,Gagandeep M.,gaganatiitb@gmail.com,Pilgrim,sent,FraudSentinel (Graph ML & Fraud Detection),/home/runner/work/cma/cma/Resume_Output/Data_Science_Intern_Pilgrim_Oct2026/resume.pdf,
 2026-10-09 07:57:37,Neeraj Kakkar,neeraj@hectorbeverages.com,Paper Boat,sent,FraudSentinel (Graph ML & Fraud Detection),/home/runner/work/cma/cma/Resume_Output/Data_Science_Intern_Paper_Boat_Oct2026/resume.pdf,
 2026-10-09 08:04:43,Vinay Sanghi,varundiya@gmail.com,CarTrade,sent,FraudSentinel (Graph ML & Fraud Detection),/home/runner/work/cma/cma/Resume_Output/Data_Science_Intern_CarTrade_Oct2026/resume.pdf,
+2026-10-22 17:14:35,Mr. Nikhil R Meswani,nikhilmeswaniorm@gmail.com,Reliance Industries Ltd,failed,InternApplier,D:\dekstop\ai_websites\ankur_internapplier\intern_applier\Resume_Output\Data_Science_Intern_Reliance_Industries_Ltd_Oct2026\resume.pdf,SMTP error: Connection unexpectedly closed

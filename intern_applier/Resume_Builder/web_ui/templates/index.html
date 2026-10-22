@@ -257,9 +257,79 @@
       
       <!-- Left Column: Recruiter Database & Target Input -->
       <section class="panel panel-left">
+        
+        <!-- Sheet Manager Bar -->
+        <div class="sheet-manager-bar">
+          <div class="sheet-info-group">
+            <div class="sheet-icon">📊</div>
+            <div>
+              <div class="sheet-title" id="activeSheetName">Copy of GES 2026 Mastersheet.xlsx</div>
+              <div class="sheet-meta" id="activeSheetMeta">Loading contacts...</div>
+            </div>
+          </div>
+          <div class="sheet-actions">
+            <input type="file" id="sheetFileInput" accept=".xlsx,.xls,.csv" style="display:none;" onchange="handleSheetUpload(event)">
+            <button class="btn-secondary btn-sm" onclick="document.getElementById('sheetFileInput').click()" title="Upload any Excel or CSV sheet">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Upload Sheet
+            </button>
+            <button id="resetSheetBtn" class="btn-ghost btn-sm" style="display:none;" onclick="resetSheet()" title="Reset back to default GES Mastersheet">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Auto-Pilot Batch Card -->
+        <div class="autopilot-card">
+          <div class="autopilot-header">
+            <div class="autopilot-badge">⚡ Auto-Pilot 1-by-1 Outreach Engine</div>
+            <div class="autopilot-sub">Extracts contacts, tailors 1-page CVs via Gemini + LaTeX, and sends emails one-by-one.</div>
+          </div>
+
+          <div class="autopilot-controls-grid">
+            <div class="field">
+              <label class="field-label">Batch Size</label>
+              <select id="batchLimitSelect" class="select select-sm">
+                <option value="5">5 Contacts</option>
+                <option value="10" selected>10 Contacts</option>
+                <option value="20">20 Contacts (Daily Limit)</option>
+                <option value="50">50 Contacts</option>
+                <option value="0">All Pending Contacts</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label">Delay Between Sends</label>
+              <select id="batchDelaySelect" class="select select-sm">
+                <option value="5">5s (Demo / Fast)</option>
+                <option value="15" selected>15s (Testing)</option>
+                <option value="60">1 min (Moderate)</option>
+                <option value="180">3 min (Safe Anti-Spam)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="field-label">Mode</label>
+              <select id="batchModeSelect" class="select select-sm">
+                <option value="live" selected>🚀 Live Send (Gmail SMTP)</option>
+                <option value="dry_run">🧪 Dry Run (Preview Only)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="autopilot-actions">
+            <button id="startBatchBtn" class="btn-primary btn-batch-start" onclick="startBatchOutreach()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Start Auto-Pilot (Tailor CV + Mail 1-by-1)
+            </button>
+            <button id="stopBatchBtn" class="btn-danger btn-batch-stop" style="display:none;" onclick="stopBatchOutreach()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="6" width="12" height="12"/></svg>
+              Stop Auto-Pilot
+            </button>
+          </div>
+        </div>
+
         <div class="panel-title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Recruiter Database (GES Mastersheet)
+          Browse &amp; Search Contacts
         </div>
 
         <!-- Search / Filter -->
@@ -269,7 +339,7 @@
               id="recruiterSearchInput"
               class="input"
               type="text"
-              placeholder="Search company, recruiter name, or role..."
+              placeholder="Search company, recruiter name, or role (e.g. CTO)..."
               oninput="handleRecruiterSearch()"
             />
             <button class="btn-search-clear" onclick="clearRecruiterSearch()">✕</button>
@@ -283,7 +353,7 @@
 
         <!-- Manual / Selected Target Inputs -->
         <div class="target-card">
-          <div class="target-card-header">Selected Outreach Target</div>
+          <div class="target-card-header">Manual Target Outreach (Optional 1-Off Send)</div>
           
           <div class="target-grid">
             <div class="field">
@@ -309,19 +379,72 @@
 
           <button id="researchDraftBtn" class="btn-primary" onclick="researchAndDraftEmail()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-            Research Company & Draft Human Email
+            Research Company &amp; Draft Human Email
           </button>
         </div>
       </section>
 
-      <!-- Right Column: Researched Intel, Email Draft, Resume Attachment -->
+      <!-- Right Column: Auto-Pilot Live Monitor + Researched Intel + Email Draft -->
       <section class="panel panel-right">
         
+        <!-- Auto-Pilot Live Monitor Card (Shown when running or has results) -->
+        <div class="autopilot-monitor-card" id="autopilotMonitorCard" style="display:none;">
+          <div class="autopilot-monitor-header">
+            <div class="monitor-title">
+              <span class="pulse-dot" id="monitorPulse"></span>
+              <span id="monitorStatusText">Auto-Pilot Active</span>
+            </div>
+            <div class="target-counter" id="monitorCounter">0 / 0 Completed</div>
+          </div>
+
+          <div class="progress-track">
+            <div class="progress-fill" id="monitorProgressBar"></div>
+          </div>
+
+          <div class="monitor-target-box" id="monitorTargetBox">
+            <div class="target-info-row">
+              <span class="target-main-name" id="currentTargetName">Waiting for target...</span>
+              <span class="target-main-company" id="currentTargetCompany"></span>
+            </div>
+            <div class="step-flow">
+              <span class="flow-pill" id="pill-research">🧠 Research</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-pill" id="pill-cv">📄 Tailor CV</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-pill" id="pill-draft">✍️ Email Draft</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-pill" id="pill-send">📤 Delivery</span>
+            </div>
+          </div>
+
+          <!-- Live Log Terminal -->
+          <div class="autopilot-terminal" id="autopilotTerminal">
+            <div class="terminal-line">[Ready] Auto-Pilot engine initialized.</div>
+          </div>
+
+          <!-- Results Summary Table -->
+          <div class="results-table-wrap" id="resultsTableWrap" style="display:none;">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Contact</th>
+                  <th>Company</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Tailored Resume</th>
+                </tr>
+              </thead>
+              <tbody id="batchResultsBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <!-- Company Intelligence Card -->
         <div class="intel-card" id="intelCard" style="display:none;">
           <div class="intel-header">
-            <span class="intel-badge">🧠 Company Intel & Problem Discovery</span>
-            <span class="intel-domain" id="intelDomain">Fintech & Payments</span>
+            <span class="intel-badge">🧠 Company Intel &amp; Problem Discovery</span>
+            <span class="intel-domain" id="intelDomain">Fintech &amp; Payments</span>
           </div>
           <div class="intel-body">
             <div class="intel-row">

@@ -1012,3 +1012,338 @@ body {
   .target-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Sheet Manager Bar ─────────────────────────────────── */
+.sheet-manager-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.sheet-info-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sheet-icon {
+  font-size: 1.25rem;
+}
+
+.sheet-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.sheet-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.74rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-ghost:hover {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: hsl(0, 70%, 25%);
+  color: #ffb4b4;
+  border: 1px solid hsl(0, 70%, 35%);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-danger:hover {
+  background: hsl(0, 70%, 32%);
+  border-color: hsl(0, 70%, 45%);
+}
+
+/* ── Auto-Pilot Batch Card ─────────────────────────────── */
+.autopilot-card {
+  background: linear-gradient(145deg, hsl(220, 20%, 13%), hsl(220, 20%, 10%));
+  border: 1px solid hsl(220, 30%, 24%);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.autopilot-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.autopilot-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.autopilot-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.autopilot-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.select-sm {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.73rem;
+}
+
+.autopilot-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-batch-start {
+  flex: 1;
+  background: linear-gradient(135deg, hsl(215, 90%, 54%), hsl(225, 80%, 48%));
+  border: none;
+}
+.btn-batch-start:hover {
+  background: linear-gradient(135deg, hsl(215, 95%, 58%), hsl(225, 85%, 52%));
+}
+
+/* ── Auto-Pilot Live Monitor Card ──────────────────────── */
+.autopilot-monitor-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+  animation: fadeSlideIn 0.3s ease;
+}
+
+.autopilot-monitor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.monitor-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+  animation: pulse-glow 1.5s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: var(--surface-3);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transition: width 0.3s ease;
+}
+
+.monitor-target-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.target-info-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.target-main-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.target-main-company {
+  color: #60a5fa;
+}
+
+.target-counter {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+}
+
+.step-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+
+.flow-pill {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--surface-3);
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.flow-pill.active {
+  background: hsl(215, 80%, 25%);
+  color: #93c5fd;
+  font-weight: 600;
+  border: 1px solid hsl(215, 80%, 40%);
+}
+
+.flow-pill.done {
+  background: hsl(145, 40%, 15%);
+  color: #86efac;
+}
+
+.flow-arrow {
+  font-size: 0.65rem;
+  color: var(--text-faint);
+}
+
+/* ── Auto-Pilot Log Terminal ───────────────────────────── */
+.autopilot-terminal {
+  background: hsl(220, 25%, 7%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  max-height: 140px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.terminal-line {
+  line-height: 1.4;
+}
+
+/* ── Results Table ─────────────────────────────────────── */
+.results-table-wrap {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.results-table th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+.results-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid hsl(220, 16%, 16%);
+  color: var(--text);
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 99px;
+}
+.status-tag.sent { background: hsl(145, 45%, 15%); color: #86efac; }
+.status-tag.failed { background: hsl(0, 50%, 18%); color: #fca5a5; }
+
+.resume-download-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+}
+.resume-download-link:hover {
+  text-decoration: underline;
+}
+

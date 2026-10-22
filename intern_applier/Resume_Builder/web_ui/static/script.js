@@ -294,17 +294,247 @@ function switchTab(tab) {
     resumeBtn.classList.remove("active");
     coldTab.style.display = "";
     resumeTab.style.display = "none";
+    loadActiveSheetInfo();
     if (!recruiterCache.length) {
       loadRecruiters();
     }
   }
 }
 
-// ── Cold Outreach Logic ─────────────────────────────────────
+// ── Cold Outreach & Auto-Pilot Engine ───────────────────────
 
 let recruiterCache = [];
 let activeRecruiter = null;
 let currentDraftData = null;
+let batchPollTimer = null;
+let lastLogCount = 0;
+
+async function loadActiveSheetInfo() {
+  try {
+    const res = await fetch("/api/cold_email/active_sheet");
+    const data = await res.json();
+    if (res.ok) {
+      const nameEl = document.getElementById("activeSheetName");
+      const metaEl = document.getElementById("activeSheetMeta");
+      const resetBtn = document.getElementById("resetSheetBtn");
+
+      if (nameEl) nameEl.textContent = data.filename || "No sheet selected";
+      if (metaEl) {
+        metaEl.textContent = `${(data.total_contacts || 0).toLocaleString()} contacts · ${data.sent_count || 0} sent · ${data.pending_count || 0} pending`;
+      }
+      if (resetBtn) resetBtn.style.display = data.is_custom ? "" : "none";
+    }
+  } catch (e) {
+    console.error("Failed to load active sheet info:", e);
+  }
+}
+
+async function handleSheetUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const metaEl = document.getElementById("activeSheetMeta");
+  const origMeta = metaEl.textContent;
+  metaEl.textContent = `⏳ Uploading and extracting contacts from ${file.name}...`;
+
+  try {
+    const res = await fetch("/api/cold_email/upload", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Upload failed");
+
+    alert(`✓ Successfully loaded "${data.filename}"!\nDetected ${data.total_contacts} contacts (${data.pending_count} pending outreach).`);
+    await loadActiveSheetInfo();
+    await loadRecruiters("");
+  } catch (err) {
+    alert("Upload Error: " + err.message);
+    metaEl.textContent = origMeta;
+  } finally {
+    event.target.value = "";
+  }
+}
+
+async function resetSheet() {
+  try {
+    const res = await fetch("/api/cold_email/reset_sheet", { method: "POST" });
+    const data = await res.json();
+    if (res.ok) {
+      await loadActiveSheetInfo();
+      await loadRecruiters("");
+    }
+  } catch (err) {
+    console.error("Reset error:", err);
+  }
+}
+
+async function startBatchOutreach() {
+  const limit = parseInt(document.getElementById("batchLimitSelect").value, 10);
+  const delay = parseInt(document.getElementById("batchDelaySelect").value, 10);
+  const mode = document.getElementById("batchModeSelect").value;
+  const isDryRun = mode === "dry_run";
+  const query = document.getElementById("recruiterSearchInput").value.trim();
+
+  const promptSelector = document.getElementById("promptSelector");
+  const promptId = promptSelector ? promptSelector.value : "google_xyz_surgeon";
+
+  const confirmMsg = isDryRun
+    ? `Start DRY RUN for ${limit === 0 ? 'ALL' : limit} contacts?\n(Generates tailored 1-page CVs and email drafts without sending live emails)`
+    : `Start LIVE Auto-Pilot outreach for ${limit === 0 ? 'ALL' : limit} contacts?\nEach contact will receive a freshly compiled 1-page PDF CV and personalized cold email with a ${delay}s interval.`;
+
+  if (!confirm(confirmMsg)) return;
+
+  try {
+    const res = await fetch("/api/cold_email/batch_start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        limit: limit,
+        delay_seconds: delay,
+        dry_run: isDryRun,
+        filter_query: query,
+        prompt_id: promptId,
+      }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Failed to start batch");
+
+    document.getElementById("autopilotMonitorCard").style.display = "";
+    document.getElementById("startBatchBtn").style.display = "none";
+    document.getElementById("stopBatchBtn").style.display = "";
+    const placeholder = document.getElementById("coldPlaceholderCard");
+    if (placeholder) placeholder.style.display = "none";
+
+    clearInterval(batchPollTimer);
+    batchPollTimer = setInterval(pollBatchStatus, 1500);
+    pollBatchStatus();
+
+  } catch (err) {
+    alert("Failed to start Auto-Pilot: " + err.message);
+  }
+}
+
+async function stopBatchOutreach() {
+  const stopBtn = document.getElementById("stopBatchBtn");
+  stopBtn.disabled = true;
+  stopBtn.textContent = "Stopping...";
+
+  try {
+    await fetch("/api/cold_email/batch_stop", { method: "POST" });
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setTimeout(() => {
+      stopBtn.disabled = false;
+      stopBtn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="6" width="12" height="12"/></svg> Stop Auto-Pilot`;
+    }, 1500);
+  }
+}
+
+async function pollBatchStatus() {
+  try {
+    const res = await fetch("/api/cold_email/batch_status");
+    const data = await res.json();
+
+    const progressBar = document.getElementById("monitorProgressBar");
+    const counterEl   = document.getElementById("monitorCounter");
+    const statusText  = document.getElementById("monitorStatusText");
+    const pulse       = document.getElementById("monitorPulse");
+    const targetName  = document.getElementById("currentTargetName");
+    const targetComp  = document.getElementById("currentTargetCompany");
+    const terminal    = document.getElementById("autopilotTerminal");
+
+    const total = data.total || 0;
+    const processed = data.processed || 0;
+    const pct = total > 0 ? Math.round((processed / total) * 100) : (data.running ? 10 : 0);
+    if (progressBar) progressBar.style.width = `${pct}%`;
+
+    if (counterEl) {
+      counterEl.textContent = `${processed} / ${total} Processed · ${data.sent} Sent · ${data.failed} Failed`;
+    }
+
+    if (data.running) {
+      if (statusText) statusText.textContent = data.dry_run ? "Auto-Pilot Preview Active (Dry Run)" : "Auto-Pilot Active (Live Send)";
+      if (pulse) pulse.style.background = "#3b82f6";
+      document.getElementById("startBatchBtn").style.display = "none";
+      document.getElementById("stopBatchBtn").style.display = "";
+    } else {
+      if (statusText) statusText.textContent = data.current_step === "completed" ? "Auto-Pilot Complete 🎉" : "Auto-Pilot Stopped / Idle";
+      if (pulse) pulse.style.background = data.current_step === "completed" ? "#10b981" : "#94a3b8";
+      document.getElementById("startBatchBtn").style.display = "";
+      document.getElementById("stopBatchBtn").style.display = "none";
+      clearInterval(batchPollTimer);
+    }
+
+    // Active Target Display
+    if (data.current_target) {
+      if (targetName) targetName.textContent = `${data.current_target.name} (${data.current_target.designation || 'Lead'})`;
+      if (targetComp) targetComp.textContent = `@ ${data.current_target.company} [${data.current_target.index}/${data.current_target.total}]`;
+    }
+
+    // Step Flow Highlighting
+    const pills = {
+      "researching": "pill-research",
+      "tailoring_cv": "pill-cv",
+      "drafting_email": "pill-draft",
+      "sending": "pill-send",
+    };
+    ["pill-research", "pill-cv", "pill-draft", "pill-send"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove("active");
+    });
+    if (pills[data.current_step]) {
+      const activeEl = document.getElementById(pills[data.current_step]);
+      if (activeEl) activeEl.classList.add("active");
+    }
+
+    // Terminal Logs
+    if (data.logs && data.logs.length !== lastLogCount && terminal) {
+      lastLogCount = data.logs.length;
+      terminal.innerHTML = "";
+      data.logs.slice(-25).forEach(line => {
+        const div = document.createElement("div");
+        div.className = "terminal-line";
+        div.textContent = line;
+        terminal.appendChild(div);
+      });
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    // Results Table
+    if (data.results && data.results.length > 0) {
+      const tableWrap = document.getElementById("resultsTableWrap");
+      if (tableWrap) tableWrap.style.display = "";
+      const tbody = document.getElementById("batchResultsBody");
+      if (tbody) {
+        tbody.innerHTML = "";
+        data.results.slice().reverse().forEach(r => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td><strong>${r.name}</strong></td>
+            <td>${r.company}</td>
+            <td><code>${r.email}</code></td>
+            <td><span class="status-tag ${r.status}">${r.status.toUpperCase()}${r.dry_run ? ' (DRY)' : ''}</span></td>
+            <td>
+              ${r.resume_pdf
+                ? `<a href="/api/cold_email/download_resume?path=${encodeURIComponent(r.resume_pdf)}" target="_blank" class="resume-download-link">📄 ${r.resume_name || 'Download CV'}</a>`
+                : '<span style="color:var(--text-faint)">Base</span>'}
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+    }
+
+  } catch (err) {
+    console.error("Batch poll error:", err);
+  }
+}
 
 async function loadRecruiters(query = "") {
   const wrap = document.getElementById("recruiterListWrap");

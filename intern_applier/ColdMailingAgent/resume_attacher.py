@@ -32,6 +32,7 @@ def get_tailored_resume_for_company(
     company: str,
     domain: str = "Data Science & Machine Learning",
     role: str = "Data Science Intern",
+    prompt_id: str = "google_xyz_surgeon",
 ) -> tuple[str, list[str]]:
     """
     Generate or locate a tailored 1-page PDF resume for the given company.
@@ -67,7 +68,7 @@ Requirements:
         result = build_resume_pipeline(
             jd_text=synthetic_jd,
             company=company,
-            prompt_id="star_metrics",
+            prompt_id=prompt_id,
         )
         pdf_path = str(result["pdf_path"])
         selected = result.get("selected_projects", default_projects)
