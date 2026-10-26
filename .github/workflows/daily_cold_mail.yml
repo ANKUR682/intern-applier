@@ -67,8 +67,8 @@ jobs:
       - name: Execute Cold Mailing Agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS || secrets.SENDER_EMAIL }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD || secrets.SENDER_PASSWORD }}
           PYTHONUNBUFFERED: "1"
         run: |
           MODE="${{ github.event.inputs.mode || 'now' }}"
