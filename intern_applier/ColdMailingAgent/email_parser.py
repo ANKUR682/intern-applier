@@ -5,9 +5,10 @@ Supports:
   - Any Excel (.xlsx, .xls) or CSV file.
   - Automatic fuzzy sheet matching (Unicorns, Soonicorns, or ALL sheets).
   - Smart header detection (Company, Name, Designation, Email, LinkedIn).
-  - Multi-email extraction with splitters (\\n, ||, comma, semicolon).
+  - Multi-email extraction with splitters (\n, ||, comma, semicolon).
   - Company propagation across multi-contact rows.
-  - Global email deduplication and cleaning.
+  - Resetting existing status marks to force fresh emailing to all rows.
+  - Skipping recruiters already processed in the local email log.
 """
 
 import os
@@ -26,12 +27,32 @@ class Recruiter:
     email: str
     linkedin: Optional[str] = None
     sheet: str = ""
+    status: str = "unsent"  # Defaults all imported rows to unsent
+
+
+def load_sent_emails_from_log(log_path: str = "intern_applier/ColdMailingAgent/logs/email_log.csv") -> set:
+    """
+    Load all previously emailed addresses from local log so we never send twice.
+    """
+    sent_emails = set()
+    if os.path.exists(log_path):
+        try:
+            with open(log_path, "r", encoding="utf-8", errors="replace") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    status = str(row.get("status", "")).strip().lower()
+                    email = str(row.get("email", "")).strip().lower()
+                    if email and status == "sent":
+                        sent_emails.add(email)
+        except Exception as e:
+            print(f"[Warning] Could not read email log: {e}")
+    return sent_emails
 
 
 def extract_emails_from_text(cell_value: any) -> list[str]:
     """
     Extract and clean all valid email addresses from any cell value.
-    Handles separators: \\n, ||, comma, semicolon, pipe, tab.
+    Handles separators: \n, ||, comma, semicolon, pipe, tab.
     """
     if cell_value is None:
         return []
@@ -135,8 +156,10 @@ def get_cell(row: tuple, index: Optional[int]) -> str:
     return str(val).strip()
 
 
-def parse_csv(csv_path: str) -> list[Recruiter]:
-    """Parse a CSV file and extract all recruiters using automatic header detection."""
+def parse_csv(csv_path: str, log_path: Optional[str] = None) -> list[Recruiter]:
+    """Parse a CSV file and extract all recruiters, ignoring old status columns."""
+    already_sent_emails = load_sent_emails_from_log(log_path) if log_path else set()
+    
     rows = []
     for enc in ["utf-8-sig", "utf-8", "latin-1", "cp1252"]:
         try:
@@ -186,7 +209,8 @@ def parse_csv(csv_path: str) -> list[Recruiter]:
             name = company if company else "Hiring Lead"
 
         for email in emails:
-            if email in seen_emails:
+            # Skip if already sent in this current run OR logged in email_log.csv
+            if email in seen_emails or email in already_sent_emails:
                 continue
             seen_emails.add(email)
 
@@ -198,33 +222,28 @@ def parse_csv(csv_path: str) -> list[Recruiter]:
                 email=email,
                 linkedin=clean_linkedin,
                 sheet="CSV",
+                status="unsent"  # Overwrite old marks to unsent
             ))
 
     return all_recruiters
 
 
-def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> list[Recruiter]:
+def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None, log_path: Optional[str] = None) -> list[Recruiter]:
     """
-    Universally parse an Excel (.xlsx, .xls) or CSV file and extract all valid recruiters.
-
-    Args:
-        excel_path: Path to .xlsx, .xls, or .csv file
-        target_sheets: List of sheet name keywords (e.g. ["Unicorn", "Soonicorn"]) or ["ALL"]
-
-    Returns:
-        Deduplicated list of Recruiter objects
+    Universally parse Excel/CSV and reset all rows to 'unsent'.
+    Checks local log to prevent re-sending to previously emailed addresses.
     """
     if not os.path.exists(excel_path):
         raise FileNotFoundError(f"Spreadsheet file not found at: {excel_path}")
 
-    # Handle CSV files directly
     if excel_path.lower().endswith(".csv"):
-        return parse_csv(excel_path)
+        return parse_csv(excel_path, log_path=log_path)
+
+    already_sent_emails = load_sent_emails_from_log(log_path) if log_path else set()
 
     wb = openpyxl.load_workbook(excel_path, data_only=True)
     all_sheet_names = wb.sheetnames
 
-    # Determine sheets to process
     matched_sheets = []
     if not target_sheets or "all" in [s.lower() for s in target_sheets]:
         matched_sheets = all_sheet_names
@@ -236,7 +255,6 @@ def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> l
                     break
 
     if not matched_sheets:
-        # Fallback to all sheets if target sheets didn't match
         matched_sheets = all_sheet_names
 
     all_recruiters = []
@@ -249,7 +267,6 @@ def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> l
             continue
 
         header_idx, cols = find_header_row_and_cols(rows)
-        
         last_company = ""
 
         for row_idx in range(header_idx + 1, len(rows)):
@@ -262,22 +279,18 @@ def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> l
             designation = get_cell(row, cols.get('designation'))
             linkedin = get_cell(row, cols.get('linkedin'))
 
-            # Company propagation
             if company:
                 last_company = company
             else:
                 company = last_company
 
-            # Skip header category noise
             if name and name.lower() in ('unicorns', 'soonicorn', 'soonicorns', 'unicorn', 'company name', 'name'):
                 continue
 
-            # Extract emails: check designated email col + fallback scan all cells in row
             emails = []
             if 'email' in cols:
                 emails.extend(extract_emails_from_text(row[cols['email']]))
             
-            # If no email in primary col, scan entire row for any valid email pattern
             if not emails:
                 for cell in row:
                     emails.extend(extract_emails_from_text(cell))
@@ -285,12 +298,12 @@ def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> l
             if not emails:
                 continue
 
-            # Clean name fallback
             if not name:
                 name = company if company else "Hiring Lead"
 
             for email in emails:
-                if email in seen_emails:
+                # Skip if already processed in log or current batch
+                if email in seen_emails or email in already_sent_emails:
                     continue
                 seen_emails.add(email)
 
@@ -302,6 +315,7 @@ def parse_excel(excel_path: str, target_sheets: Optional[List[str]] = None) -> l
                     email=email,
                     linkedin=clean_linkedin,
                     sheet=sheet_name,
+                    status="unsent"  # Overwrite old friend status to 'unsent'
                 ))
 
     wb.close()

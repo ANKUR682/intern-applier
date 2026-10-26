@@ -32,7 +32,7 @@ def get_config() -> dict:
 
     defaults = {
         "gemini_api_key": os.getenv("GEMINI_API_KEY", ""),
-        "gemini_model": os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+        "gemini_model": os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
         "max_projects": 2,
         "max_experiences": 1,
         "output_dir": "../Resume_Output",

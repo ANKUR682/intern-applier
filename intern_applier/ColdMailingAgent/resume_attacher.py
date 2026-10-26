@@ -30,8 +30,8 @@ if str(RESUME_BUILDER_PATH) not in sys.path:
 
 def get_tailored_resume_for_company(
     company: str,
-    domain: str = "Data Science & Machine Learning",
-    role: str = "Data Science Intern",
+    domain: str = "Software Engineering & Web Systems",
+    role: str = "Software Engineering Intern",
     prompt_id: str = "google_xyz_surgeon",
 ) -> tuple[str, list[str]]:
     """
@@ -40,7 +40,7 @@ def get_tailored_resume_for_company(
     Returns:
         (pdf_path, selected_projects)
     """
-    default_projects = ["FraudSentinel: Anomaly Detection Pipeline", "Financial Time Series Engine"]
+    default_projects = ["AI Mock Interview Platform", "Online Code Execution Platform"]
 
     if not config.AUTO_GENERATE_TAILORED_RESUME:
         return config.STATIC_RESUME_PATH, default_projects
@@ -55,14 +55,14 @@ Role: {role}
 Domain: {domain}
 
 About the Role:
-We are looking for a Data Science / Machine Learning Intern to join our engineering and data teams.
-You will work on predictive modeling, data pipelines, statistical analysis, feature engineering, and high-scale datasets.
+We are looking for a Software Engineering / Full-Stack Intern to join our engineering and product teams.
+You will work on full-stack web platforms, backend APIs, distributed system components, database schemas, and modern scalable architecture.
 
 Requirements:
-- Strong proficiency in Python, SQL, Pandas, NumPy, and Scikit-learn.
-- Experience with Deep Learning / ML frameworks (PyTorch, TensorFlow, XGBoost, GNNs, Time Series).
-- Proven project work in anomaly detection, predictive forecasting, or quantitative modeling.
-- Solid understanding of algorithms, statistics, and data visualization (Plotly, Matplotlib).
+- Strong proficiency in Python, JavaScript/TypeScript, Next.js, React, Node.js, and SQL/PostgreSQL.
+- Experience with building scalable web apps, REST APIs, ORMs (Drizzle/Prisma), and Docker containerization.
+- Proven project work in full-stack platforms, real-time systems, or AI integrations (Gemini AI, LLMs).
+- Solid understanding of algorithms, data structures, and database optimization.
 """
         print(f"  📄 Auto-generating tailored 1-page resume for {company}...")
         result = build_resume_pipeline(

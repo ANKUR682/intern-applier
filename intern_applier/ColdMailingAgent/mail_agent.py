@@ -129,7 +129,7 @@ def create_email_message(
             part = MIMEBase('application', 'pdf')
             part.set_payload(f.read())
         encoders.encode_base64(part)
-        filename = f"{config.YOUR_FIRST_NAME}_Janbandhu_Resume.pdf"
+        filename = f"{config.YOUR_NAME.replace(' ', '_')}_Resume.pdf"
         part.add_header('Content-Disposition', f'attachment; filename="{filename}"')
         msg.attach(part)
     
@@ -137,27 +137,68 @@ def create_email_message(
 
 
 def send_email(to_email: str, subject: str, body: str, resume_path: str = "") -> tuple[bool, str]:
-    """Send cold email via Gmail SMTP with proper authentication."""
-    if not config.EMAIL_ADDRESS or not config.EMAIL_APP_PASSWORD:
+    """Send cold email via Gmail SMTP with robust SSL (Port 465) & STARTTLS (Port 587) fallback."""
+    email_addr = (config.EMAIL_ADDRESS or "").strip()
+    app_pwd = (config.EMAIL_APP_PASSWORD or "").strip()
+
+    if not email_addr or not app_pwd:
         return False, "Gmail credentials missing — set EMAIL_ADDRESS and EMAIL_APP_PASSWORD in .env"
 
-    try:
-        msg = create_email_message(to_email, subject, body, resume_path)
-        with smtplib.SMTP(config.SMTP_SERVER, config.SMTP_PORT) as server:
-            server.ehlo()
-            server.starttls(context=ssl.create_default_context())
-            server.ehlo()
-            server.login(config.EMAIL_ADDRESS, config.EMAIL_APP_PASSWORD)
-            server.sendmail(config.EMAIL_ADDRESS, to_email, msg.as_string())
-        return True, ""
-    except smtplib.SMTPAuthenticationError:
-        return False, "Authentication failed — verify EMAIL_ADDRESS and EMAIL_APP_PASSWORD in .env"
-    except smtplib.SMTPRecipientsRefused:
-        return False, f"Recipient refused: {to_email}"
-    except smtplib.SMTPException as e:
-        return False, f"SMTP error: {str(e)}"
-    except Exception as e:
-        return False, f"Error: {str(e)}"
+    msg = create_email_message(to_email, subject, body, resume_path)
+    last_err = ""
+
+    # Strategy: Try direct SSL (Port 465) first, then fallback to STARTTLS (Port 587).
+    # Port 465 is more resilient against ISP/firewall/middlebox connection drops.
+    endpoints = [
+        (465, True),
+        (587, False),
+    ]
+
+    for port, use_ssl in endpoints:
+        try:
+            if use_ssl:
+                context = ssl.create_default_context()
+                with smtplib.SMTP_SSL(config.SMTP_SERVER, port, context=context, timeout=30) as server:
+                    server.login(email_addr, app_pwd)
+                    server.sendmail(email_addr, to_email, msg.as_string())
+                return True, ""
+            else:
+                context = ssl.create_default_context()
+                with smtplib.SMTP(config.SMTP_SERVER, port, timeout=30) as server:
+                    server.ehlo()
+                    server.starttls(context=context)
+                    server.ehlo()
+                    server.login(email_addr, app_pwd)
+                    server.sendmail(email_addr, to_email, msg.as_string())
+                return True, ""
+        except smtplib.SMTPAuthenticationError:
+            # If app password contained spaces, retry with stripped password
+            if " " in app_pwd:
+                try:
+                    clean_pwd = app_pwd.replace(" ", "")
+                    if use_ssl:
+                        with smtplib.SMTP_SSL(config.SMTP_SERVER, port, context=ssl.create_default_context(), timeout=30) as server:
+                            server.login(email_addr, clean_pwd)
+                            server.sendmail(email_addr, to_email, msg.as_string())
+                        return True, ""
+                    else:
+                        with smtplib.SMTP(config.SMTP_SERVER, port, timeout=30) as server:
+                            server.ehlo()
+                            server.starttls(context=ssl.create_default_context())
+                            server.ehlo()
+                            server.login(email_addr, clean_pwd)
+                            server.sendmail(email_addr, to_email, msg.as_string())
+                        return True, ""
+                except Exception:
+                    pass
+            return False, "Authentication failed — verify EMAIL_ADDRESS and EMAIL_APP_PASSWORD in .env"
+        except smtplib.SMTPRecipientsRefused:
+            return False, f"Recipient refused: {to_email}"
+        except Exception as e:
+            last_err = str(e)
+            continue
+
+    return False, f"SMTP error: {last_err}"
 
 
 # ─── Commands ────────────────────────────────────────────────────────
@@ -276,7 +317,7 @@ def cmd_send_campaign(bypass_window: bool = False):
                 print(f"  ⏳ Waiting {delay//60}m {delay%60}s before next outreach...\n")
                 time.sleep(delay)
         else:
-            log_result(r.name, r.email, r.company, "failed", res.get("best_matched_project"), resume_path, err)
+            log_result(r.name, r.email, r.company, "failed", email_data.get("matched_project", ""), resume_path, err)
             print(f"  {Fore.RED}✗ Failed to send to {r.email}: {err}{Style.RESET_ALL}\n")
 
     print(f"\n{Fore.GREEN}Outreach batch complete. Total sent today: {sent_today}{Style.RESET_ALL}\n")

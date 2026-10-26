@@ -19,26 +19,32 @@ def generate_subject(company: str, best_project: str = "") -> str:
     company_clean = company if company else "your team"
     norm_project = best_project.lower()
     
-    if "revlens" in norm_project:
+    if "interview" in norm_project or "mock" in norm_project:
         templates = [
-            f"Query regarding {company_clean}'s analytics stack / SQL transforms",
-            "Orchestrating SaaS data marts (DuckDB + Streamlit)",
-            "Query about analytics engineering / SaaS data pipeline design",
-            f"Question regarding {company_clean}'s data pipeline / RevLens project",
+            f"Query regarding {company_clean}'s web platform / AI evaluation architecture",
+            f"Full-stack Next.js + Gemini AI platform query ({company_clean})",
+            f"Question regarding {company_clean}'s engineering stack & API design",
+            f"Scaling interactive web applications / AI systems query ({company_clean})",
         ]
-    elif "time" in norm_project or "forecasting" in norm_project or "series" in norm_project:
+    elif "code" in norm_project or "execution" in norm_project or "docker" in norm_project:
         templates = [
-            f"Hybrid ARIMA + LSTM forecasting query ({company_clean})",
-            "Risk estimation using Monte Carlo Dropout / Forecasting query",
-            f"Question regarding {company_clean}'s ML modeling / Time-Series prediction",
-            "Quantitative modeling & portfolio optimization query",
+            f"Dockerized multi-language code execution engine ({company_clean})",
+            f"Query regarding {company_clean}'s backend architecture & sandboxed execution",
+            f"Question regarding distributed systems & runner pipelines ({company_clean})",
+            f"Full-stack code execution & API performance query",
         ]
-    else: # FraudSentinel default
+    elif "internapplier" in norm_project or "applier" in norm_project or "automation" in norm_project:
         templates = [
-            "Graph ML anomaly detection / FraudSentinel project query",
-            f"Query regarding {company_clean}'s fraud detection engineering",
-            "Applying GNNs to transaction logs / FraudSentinel",
-            f"Question about GNNs & fraud prevention models at {company_clean}",
+            f"Automated pipeline design & ATS resume parsing ({company_clean})",
+            f"Query regarding {company_clean}'s backend automation workflows",
+            f"Full-stack automation & AI agent pipelines ({company_clean})",
+        ]
+    else:
+        templates = [
+            f"Full-stack software engineering & backend systems ({company_clean})",
+            f"Query regarding {company_clean}'s engineering & platform stack",
+            f"Building scalable Next.js & backend microservices ({company_clean})",
+            f"Question regarding {company_clean}'s developer platforms & infrastructure",
         ]
         
     return random.choice(templates)
@@ -50,29 +56,29 @@ def get_smart_fallback_body(first_name: str, company: str, best_project: str, re
     with the company's domain/challenge instead of self-introductions.
     """
     domain = research_data.get('domain', 'high-scale systems')
-    focus = research_data.get('engineering_focus', 'optimizing real-time data pipelines and predictive models')
+    focus = research_data.get('engineering_focus', 'building robust web architecture and backend services')
     
-    # Template variant 1: GNN/FraudSentinel focus (direct, hook-first)
+    # Template variant 1: AI Mock Interview focus (Next.js, React, PostgreSQL, Gemini AI)
     variant_1 = f"""Hi {first_name},
 
-I saw that {company} is scaling models to handle {focus} in the {domain} space. 
+I saw that {company} is scaling engineering to tackle {focus} in the {domain} space.
 
-I recently built FraudSentinel—a GNN and XGBoost anomaly detection pipeline that isolated illicit nodes across a 203K+ Bitcoin transaction graph. If you are opening remote data or ML intern roles, I'd love to help your engineering team build clean pipelines or scale network models.
+I recently built an AI Mock Interview Platform—a full-stack system using Next.js, React, PostgreSQL, Drizzle ORM, and Google Gemini AI that generates personalized technical/HR interview evaluations in real time. If you have {config.YOUR_TARGET_ROLE} openings, I'd love to help your engineering team ship clean features and scalable APIs.
 
-I have attached my resume with direct links to my code and demo. Would you be open to a quick 5-minute chat, or could you point me to the right lead on your data team?
+My resume is attached with direct links to my live demo and GitHub. Would you be open to a quick 5-minute chat, or could you point me to the right engineering manager?
 
 Best regards,
 {config.YOUR_NAME}
 {config.YOUR_COLLEGE}"""
 
-    # Template variant 2: Time Series & Forecasting focus
+    # Template variant 2: Online Code Execution Platform (Docker, Node.js, Next.js)
     variant_2 = f"""Hi {first_name},
 
 I was reading about {company}'s work in {domain}, particularly your engineering focus on {focus}.
 
-Lately, I've been working on hybrid ARIMA + LSTM modeling engines for financial time-series forecasting, utilizing Monte Carlo Dropout for risk estimation. If you're looking for a remote data or analytics intern to help build clean streams and quantitative models, I'd love to contribute.
+Lately, I built an Online Code Execution Platform—a full-stack sandboxed execution engine using Next.js, Node.js, PostgreSQL, and Docker that securely compiles and evaluates C++, Java, Python, and JavaScript in real-time. If you're looking for a {config.YOUR_TARGET_ROLE} to help build high-throughput backends and reliable services, I'd love to contribute.
 
-Attached is my resume with GitHub repositories and live Streamlit demo links. Would you be open to a quick chat next week, or is there a data lead you could connect me with?
+Attached is my resume with GitHub repositories and live links. Would you be open to a brief conversation, or is there an engineering lead you could connect me with?
 
 Best regards,
 {config.YOUR_NAME}
@@ -81,37 +87,24 @@ Best regards,
     # Template variant 3: Direct problem-solving angle
     variant_3 = f"""Hi {first_name},
 
-Since {company} deals with massive data streams in the {domain} space, I imagine scaling pipelines for {focus} is a key focus for your engineering team.
+Since {company} deals with modern engineering challenges in the {domain} space, I imagine scaling systems for {focus} is a key priority for your team.
 
-I'm a {config.YOUR_YEAR_AND_DEGREE} specializing in applied ML and data engineering. I built FraudSentinel (GNNs on 203K+ transactions) and a portfolio time-series forecasting pipeline. I'm actively looking for a {config.YOUR_TARGET_ROLE} role where I can jump in and write clean code immediately.
+I'm a {config.YOUR_YEAR_AND_DEGREE} specializing in full-stack web and backend engineering. I built an AI Mock Interview Platform (Next.js, Drizzle, Gemini) and a multi-language sandboxed code execution engine with Docker. I'm actively seeking a {config.YOUR_TARGET_ROLE} role where I can hit the ground running and write production-ready code.
 
-My resume is attached with direct links to my repositories. Who is the best engineering manager to contact regarding internships?
+My resume is attached with code links. Who is the best engineering manager on your team to contact regarding internships?
 
 Best regards,
 {config.YOUR_NAME}
 {config.YOUR_COLLEGE}"""
 
-    # Template variant 4: Value-first, concise
+    # Template variant 4: InternApplier / Automation focus
     variant_4 = f"""Hi {first_name},
 
-I've been tracking {company}'s technical growth, specifically how your team handles {focus}.
+I've been following {company}'s technical growth, specifically how your team handles {focus}.
 
-My background is in applied ML at {config.YOUR_COLLEGE}, where I recently built a graph-based anomaly detection pipeline (FraudSentinel) that processed 200K+ transaction logs. I'm looking for a {config.YOUR_TARGET_ROLE} opening and would love to help write pipelines or train models for your team.
+My background is in full-stack development at {config.YOUR_COLLEGE}, where I recently engineered InternApplier—an automated end-to-end outreach and ATS resume pipeline using Python, Flask, and Gemini AI. I'm looking for a {config.YOUR_TARGET_ROLE} opportunity and would love to help build performant backends and reliable web applications for your team.
 
-My resume with links to code and live Streamlit demos is attached. Would you be open to pointing me toward the right engineering team lead?
-
-Best regards,
-{config.YOUR_NAME}
-{config.YOUR_COLLEGE}"""
-
-    # Template variant 5: RevLens Analytics / SaaS metrics focus
-    variant_revlens = f"""Hi {first_name},
-
-I was looking at {company}'s operations in {domain}, especially how your team manages {focus}.
-
-Recently, I built RevLens Analytics—a SaaS revenue and cohort analytics engine using DuckDB and Streamlit to orchestrate staging, intermediate, and presentation marts. If you have {config.YOUR_TARGET_ROLE} roles, I'd love to help build reliable data marts or optimize SQL transformations.
-
-My resume is attached with direct links to my code and demo. Would you be open to a quick 5-minute chat, or could you point me to the right lead on your data team?
+My resume with links to GitHub repositories is attached. Would you be open to pointing me toward the right engineering team lead?
 
 Best regards,
 {config.YOUR_NAME}
@@ -119,12 +112,12 @@ Best regards,
 
     # Determine output based on best matched project name
     norm_project = best_project.lower()
-    if "revlens" in norm_project:
-        return variant_revlens
-    elif "time" in norm_project or "forecasting" in norm_project or "series" in norm_project:
+    if "code" in norm_project or "execution" in norm_project or "docker" in norm_project:
         return variant_2
+    elif "applier" in norm_project or "internapplier" in norm_project or "automation" in norm_project:
+        return variant_4
     else:
-        return random.choice([variant_1, variant_3, variant_4])
+        return random.choice([variant_1, variant_3])
 
 
 def generate_cold_email(
@@ -157,18 +150,18 @@ def generate_cold_email(
     core_product = research_data.get("core_product", "")
     
     # Synchronize best_project with selected_projects on the resume
-    best_project = research_data.get("best_matched_project", "FraudSentinel (Graph ML & Anomaly Detection)")
+    best_project = research_data.get("best_matched_project", "AI Mock Interview Platform (Next.js & AI)")
     if selected_projects:
-        has_fraud = any("fraud" in p.lower() or "sentinel" in p.lower() for p in selected_projects)
-        has_revlens = any("revlens" in p.lower() or "cohort" in p.lower() for p in selected_projects)
-        has_timeseries = any("time" in p.lower() or "series" in p.lower() or "forecasting" in p.lower() for p in selected_projects)
+        has_mock = any("interview" in p.lower() or "mock" in p.lower() for p in selected_projects)
+        has_code = any("code" in p.lower() or "execution" in p.lower() for p in selected_projects)
+        has_applier = any("internapplier" in p.lower() or "applier" in p.lower() for p in selected_projects)
         
-        if has_fraud:
-            best_project = "FraudSentinel (Graph ML & Fraud Detection)"
-        elif has_revlens:
-            best_project = "RevLens Analytics (SaaS Data Engine)"
-        elif has_timeseries:
-            best_project = "Financial Time Series Engine"
+        if has_mock:
+            best_project = "AI Mock Interview Platform (Next.js & Gemini AI)"
+        elif has_code:
+            best_project = "Online Code Execution Platform (Docker & Node.js)"
+        elif has_applier:
+            best_project = "InternApplier (Full-Stack AI Automation)"
         else:
             best_project = selected_projects[0]
 
@@ -189,9 +182,9 @@ You are a cold outreach specialist who helps top-tier engineering students get i
 
 Candidate Profile:
 - Name: {config.YOUR_NAME} ({config.YOUR_YEAR_AND_DEGREE})
-- Real Project 1: FraudSentinel (Graph Neural Networks & XGBoost on 203K+ Bitcoin network transaction logs, 2.4x cluster discovery)
-- Real Project 2: Financial Time Series Engine (Hybrid ARIMA + LSTM with Monte Carlo Dropout, Modern Portfolio Theory)
-- Real Project 3: RevLens Analytics (Customer cohort retention matrices & MRR movement accounting models using DuckDB and Streamlit)
+- Real Project 1: AI Mock Interview Platform (Full-stack platform using Next.js, React, PostgreSQL, Drizzle ORM, Google Gemini AI, Clerk Auth)
+- Real Project 2: Online Code Execution Platform (Multi-language sandboxed code execution engine supporting C++, Java, Python, JS with Docker and Node.js)
+- Real Project 3: InternApplier (Automated AI pipeline for ATS tailoring, LaTeX compiling, and recruiter outreach using Python, Flask, Gemini AI)
 - Target Role: {config.YOUR_TARGET_ROLE}
 
 Recipient:
@@ -208,7 +201,7 @@ STRICT OUTREACH FORMATTING RULES:
 2. BODY OPENING: Do NOT start the email body with a self-introduction (do not say "My name is {config.YOUR_FIRST_NAME}", "I am a student at...", or "I am writing to..."). Instead, the very first sentence of the message body (after the greeting) must start directly with a specific observation about {company_clean}'s engineering focus or challenges (e.g. "Since {company_clean} handles...", "I saw that {company_clean} is scaling...").
 3. BODY CONTENT: Connect your project ({best_project}) to that observation to show direct technical alignment. Explicitly state that you are seeking a "{config.YOUR_TARGET_ROLE}" role.
 4. LENGTH & TONE: Keep the total body between 60 and 85 words. No fluff. No corporate speak. No "hope you are well". Avoid all AI buzzwords (delighted, synergy, cutting-edge, dynamic, testament).
-5. SUBJECT LINE: Write a catchy, engineering-focused subject line. It must relate to the technical project or {company_clean}'s engineering domain. Do NOT mention 'intern', 'internship', 'remote', or 'application' in the subject line (e.g. use 'GNN Anomaly Detection / FraudSentinel' or 'Orchestrating SaaS data marts').
+5. SUBJECT LINE: Write a catchy, engineering-focused subject line. It must relate to the technical project or {company_clean}'s engineering domain. Do NOT mention 'intern', 'internship', 'remote', or 'application' in the subject line (e.g. use 'Full-Stack Next.js + Gemini AI Architecture' or 'Dockerized Code Execution Engine').
 6. SIGN-OFF: End the email exactly with:
    Best regards,
    {config.YOUR_NAME}

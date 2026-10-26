@@ -9,7 +9,7 @@ import yaml
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env", override=True)
 
 BASE_DIR = Path(__file__).parent.resolve()
 PROJECT_ROOT = BASE_DIR.parent.resolve()
@@ -30,7 +30,7 @@ if _rb_config_path.exists():
         _rb_config = yaml.safe_load(f) or {}
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or _rb_config.get("gemini_api_key", "")
-GEMINI_MODEL = _rb_config.get("gemini_model", "gemini-2.5-flash")
+GEMINI_MODEL = _rb_config.get("gemini_model", "gemini-2.0-flash")
 
 # ─── Gmail Credentials ───────────────────────────────────────────────
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS", "") or _profile.get("email", "")
@@ -39,19 +39,19 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
 # ─── Candidate Profile ───────────────────────────────────────────────
-YOUR_NAME = os.getenv("YOUR_NAME") or _profile.get("name", "Chirag Janbandhu")
-YOUR_FIRST_NAME = YOUR_NAME.split()[0] if YOUR_NAME else "Chirag"
-YOUR_EMAIL = os.getenv("YOUR_EMAIL") or _profile.get("email", "chiragjanbandhu81@gmail.com")
-YOUR_PHONE = os.getenv("YOUR_PHONE") or _profile.get("phone", "+91 9307401336")
-YOUR_LINKEDIN = os.getenv("YOUR_LINKEDIN") or _profile.get("linkedin", "https://www.linkedin.com/in/chirag-janbandhu/")
-YOUR_GITHUB = os.getenv("YOUR_GITHUB") or _profile.get("github", "https://github.com/Chirag-Janbandhu")
+YOUR_NAME = os.getenv("YOUR_NAME") or _profile.get("name", "Ankur Singh")
+YOUR_FIRST_NAME = YOUR_NAME.split()[0] if YOUR_NAME else "Ankur"
+YOUR_EMAIL = os.getenv("YOUR_EMAIL") or _profile.get("email", "ankursingh31052006@gmail.com")
+YOUR_PHONE = os.getenv("YOUR_PHONE") or _profile.get("phone", "+91 7355951342")
+YOUR_LINKEDIN = os.getenv("YOUR_LINKEDIN") or _profile.get("linkedin", "https://www.linkedin.com/in/ankur-singh-ba54692a9/")
+YOUR_GITHUB = os.getenv("YOUR_GITHUB") or _profile.get("github", "https://github.com/ANKUR682")
 YOUR_COLLEGE = os.getenv("YOUR_COLLEGE") or _profile.get("college", "IIT Kharagpur")
 YOUR_YEAR_AND_DEGREE = os.getenv("YOUR_YEAR_AND_DEGREE") or _profile.get("degree_status") or _profile.get("year_and_degree", "3rd-year undergraduate at IIT Kharagpur")
-YOUR_TARGET_ROLE = os.getenv("YOUR_TARGET_ROLE") or _profile.get("target_role", "remote data intern")
+YOUR_TARGET_ROLE = os.getenv("YOUR_TARGET_ROLE") or _profile.get("target_role", "remote/onsite software intern")
 
 # ─── Resume Attachment Strategy ──────────────────────────────────────
 AUTO_GENERATE_TAILORED_RESUME = True
-STATIC_RESUME_PATH = str(BASE_DIR / "Chirag_Resume.pdf")
+STATIC_RESUME_PATH = str(BASE_DIR / "Ankur_Resume.pdf")
 
 # ─── Generic Excel Configuration ─────────────────────────────────────
 EXCEL_PATH = str(BASE_DIR / "Copy of GES 2026 Mastersheet.xlsx")

@@ -59,11 +59,11 @@ def research_company(company_name: str, designation: str = "") -> dict:
         # Fallback if no API key
         fallback = {
             "company": company_name,
-            "domain": "Technology & Data",
-            "core_product": f"High-scale products and platforms at {company_name}",
-            "engineering_focus": "Data analytics, machine learning, and scalable systems",
-            "relevant_projects": ["FraudSentinel (Bitcoin GNN Anomaly Detection)", "Financial Time Series & Portfolio Optimizer"],
-            "personal_hook": f"I've been closely following what {company_name} is building in this space and love the technical challenge.",
+            "domain": "Technology & Software",
+            "core_product": f"High-scale web platforms and digital infrastructure at {company_name}",
+            "engineering_focus": "Building robust full-stack applications, scalable backend APIs, and developer platforms",
+            "relevant_projects": ["AI Mock Interview Platform (Next.js & Gemini AI)", "Online Code Execution Platform (Docker & Node.js)"],
+            "personal_hook": f"I've been closely following what {company_name} is building and love the technical architecture behind your systems.",
         }
         return fallback
 
@@ -73,21 +73,22 @@ def research_company(company_name: str, designation: str = "") -> dict:
 You are a career intelligence researcher assisting {config.YOUR_YEAR_AND_DEGREE} ({config.YOUR_NAME}) in finding meaningful technical connections for a cold outreach email seeking a {config.YOUR_TARGET_ROLE} role.
 
 Candidate Background:
-- 3rd-year B.Sc. student at IIT Kharagpur (CGPA 8.39)
-- Real Project 1: FraudSentinel (Graph Neural Networks & XGBoost for anomaly detection on 203K+ Bitcoin transaction networks)
-- Real Project 2: Financial Time-Series Forecasting & Portfolio Optimization (Hybrid ARIMA + LSTM with Monte Carlo Dropout, Modern Portfolio Theory)
-- Strong skills: Python, PyTorch, PyTorch Geometric, SQL, Pandas, Time Series, Exploratory Data Analysis
+- 3rd-year B.Tech. student at IIT Kharagpur (CGPA 9.18)
+- Real Project 1: AI Mock Interview Platform (Full-stack platform using Next.js, React, PostgreSQL, Drizzle ORM, Google Gemini AI, Clerk Auth)
+- Real Project 2: Online Code Execution Platform (Multi-language sandboxed code execution engine supporting C++, Java, Python, JS with Docker and Node.js)
+- Real Project 3: InternApplier (Automated AI pipeline for ATS tailoring, LaTeX compiling, and recruiter outreach using Python, Flask, Gemini AI)
+- Strong skills: Python, JavaScript, TypeScript, Next.js, React, Node.js, PostgreSQL, Docker, C++, SQL, REST APIs
 
 Target Company: {company_name}
 Target Recruiter/POC Designation: {designation}
 
 Task:
 Analyze this company and return ONLY a valid JSON object with:
-1. "domain": Primary industry/technical domain (e.g. "Fintech & Payments", "Quick Commerce & Supply Chain", "CleanTech / EV", "HealthTech", "AI & DevTools", "E-commerce")
+1. "domain": Primary industry/technical domain (e.g. "Fintech & Payments", "Quick Commerce & Supply Chain", "DevTools & Cloud", "AI & EdTech", "SaaS & Enterprise", "E-commerce")
 2. "core_product": Brief 1-sentence factual description of what {company_name} builds/does.
-3. "engineering_focus": 1-sentence describing their core data, engineering, or scale challenges (e.g., "real-time fraud prevention and payment routing", "dynamic logistics dispatching and inventory forecasting", "battery telemetry modeling").
-4. "best_matched_project": Either "FraudSentinel (Graph ML & Fraud Detection)" or "Financial Time Series Engine" or "Data Analytics & Engineering" based on what is most relevant to {company_name}.
-5. "personal_hook": A natural, conversational, 1-sentence reason why a student working on applied ML/data is excited about {company_name}'s specific product/challenge (NO robotic buzzwords like 'synergy', 'testament', 'cutting-edge').
+3. "engineering_focus": 1-sentence describing their core software engineering, architecture, or scaling challenges (e.g., "high-throughput real-time APIs and distributed services", "scaling user-facing web applications with microservices", "low-latency execution engines and cloud infrastructure").
+4. "best_matched_project": Either "AI Mock Interview Platform (Next.js & AI)" or "Online Code Execution Platform (Docker & Backend)" or "InternApplier (Full-Stack AI Automation)" based on what is most relevant to {company_name}.
+5. "personal_hook": A natural, conversational, 1-sentence reason why an engineering student building full-stack platforms and backend systems is excited about {company_name}'s specific product/challenge (NO robotic buzzwords like 'synergy', 'testament', 'cutting-edge').
 
 Return ONLY the JSON object.
 """
@@ -114,11 +115,11 @@ Return ONLY the JSON object.
         data = json.loads(raw.strip())
     except Exception:
         data = {
-            "domain": "Technology & Data",
-            "core_product": f"Core platforms and products at {company_name}",
-            "engineering_focus": "Data analytics, machine learning, and scalable systems",
-            "best_matched_project": "FraudSentinel (Graph ML & Fraud Detection)",
-            "personal_hook": f"I really admire how {company_name} is solving complex technical challenges in this space.",
+            "domain": "Technology & Software",
+            "core_product": f"Core platforms and digital products at {company_name}",
+            "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+            "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+            "personal_hook": f"I really admire how {company_name} is solving complex architectural challenges in this space.",
         }
 
     result = {
@@ -126,7 +127,7 @@ Return ONLY the JSON object.
         "domain": data.get("domain", "Technology"),
         "core_product": data.get("core_product", ""),
         "engineering_focus": data.get("engineering_focus", ""),
-        "best_matched_project": data.get("best_matched_project", "FraudSentinel (Graph ML)"),
+        "best_matched_project": data.get("best_matched_project", "AI Mock Interview Platform (Next.js & AI)"),
         "personal_hook": data.get("personal_hook", ""),
     }
 

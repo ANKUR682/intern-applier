@@ -22,9 +22,13 @@ def _call_gemini_with_retry(client, model_name: str, prompt: str, max_retries: i
             print(f"[RateLimit] Gemini API error ({e}). Waiting {wait_time:.1f}s before retry ({attempt + 1}/{max_retries})...")
             time.sleep(wait_time)
 
-    # Last try after backoff
-    response = client.models.generate_content(model=model_name, contents=prompt)
-    return response.text.strip()
+    # Last try after backoff — return empty string on failure so callers can fallback gracefully
+    try:
+        response = client.models.generate_content(model=model_name, contents=prompt)
+        return response.text.strip()
+    except Exception as e:
+        print(f"[LLMTailor] All {max_retries} retries exhausted ({e}). Using fallback content.")
+        return ""
 
 
 def tailor_resume(
