@@ -1,0 +1,108 @@
+name: Daily Cold Mailing Outreach
+
+on:
+  schedule:
+    # 1:30 AM UTC = 7:00 AM IST (Every day)
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Execution Mode'
+        required: true
+        default: 'now'
+        type: choice
+        options:
+          - 'now'
+          - 'stats'
+          - 'dry-run'
+          - 'test'
+      test_email:
+        description: 'Recipient Email (only used if Mode is test)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: intern_applier
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: intern_applier/ColdMailingAgent/requirements.txt
+
+      - name: Install LaTeX (pdflatex)
+        working-directory: .
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ColdMailingAgent/requirements.txt
+          if [ -f "Resume_Builder/requirements.txt" ]; then
+            pip install -r Resume_Builder/requirements.txt
+          fi
+
+      - name: Execute Cold Mailing Agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          MODE="${{ github.event.inputs.mode || 'now' }}"
+          TEST_EMAIL="${{ github.event.inputs.test_email || '' }}"
+
+          if [ "$MODE" = "stats" ]; then
+            echo "Displaying campaign stats..."
+            python ColdMailingAgent/mail_agent.py --stats
+          elif [ "$MODE" = "dry-run" ]; then
+            echo "Running in dry-run mode..."
+            python ColdMailingAgent/mail_agent.py --dry-run
+          elif [ "$MODE" = "test" ] && [ -n "$TEST_EMAIL" ]; then
+            echo "Sending test email to $TEST_EMAIL..."
+            python ColdMailingAgent/mail_agent.py --test "$TEST_EMAIL"
+          else
+            echo "Running scheduled daily outreach batch..."
+            python ColdMailingAgent/mail_agent.py --now
+          fi
+
+      - name: Show Campaign Statistics
+        if: always()
+        run: |
+          python ColdMailingAgent/mail_agent.py --stats
+
+      - name: Commit and push outreach logs
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add ColdMailingAgent/logs/email_log.csv ColdMailingAgent/logs/company_research_cache.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(logs): update cold email logs & cache [skip ci]"
+            git push origin HEAD || true
+          else
+            echo "No log changes to commit."
+          fi
