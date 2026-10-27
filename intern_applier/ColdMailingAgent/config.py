@@ -30,7 +30,7 @@ if _rb_config_path.exists():
         _rb_config = yaml.safe_load(f) or {}
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or _rb_config.get("gemini_api_key", "")
-GEMINI_MODEL = _rb_config.get("gemini_model", "gemini-2.0-flash")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL") or _rb_config.get("gemini_model", "gemini-3.1-flash-lite")
 
 # ─── Gmail Credentials ───────────────────────────────────────────────
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS", "") or _profile.get("email", "")
