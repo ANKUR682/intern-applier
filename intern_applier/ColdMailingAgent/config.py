@@ -47,7 +47,7 @@ YOUR_LINKEDIN = os.getenv("YOUR_LINKEDIN") or _profile.get("linkedin", "https://
 YOUR_GITHUB = os.getenv("YOUR_GITHUB") or _profile.get("github", "https://github.com/ANKUR682")
 YOUR_COLLEGE = os.getenv("YOUR_COLLEGE") or _profile.get("college", "IIT Kharagpur")
 YOUR_YEAR_AND_DEGREE = os.getenv("YOUR_YEAR_AND_DEGREE") or _profile.get("degree_status") or _profile.get("year_and_degree", "3rd-year undergraduate at IIT Kharagpur")
-YOUR_TARGET_ROLE = os.getenv("YOUR_TARGET_ROLE") or _profile.get("target_role", "remote/onsite software intern")
+YOUR_TARGET_ROLE = os.getenv("YOUR_TARGET_ROLE") or _profile.get("target_role", "Software Development Engineer (SDE / Backend / Full Stack)")
 
 # ─── Resume Attachment Strategy ──────────────────────────────────────
 AUTO_GENERATE_TAILORED_RESUME = True
@@ -81,4 +81,5 @@ RANDOMIZE_OUTREACH = True
 # ─── Logging & Persistence ───────────────────────────────────────────
 LOG_DIR = str(BASE_DIR / "logs")
 LOG_FILE = os.path.join(LOG_DIR, "email_log.csv")
+EMAILS_LOG_FILE = os.path.join(LOG_DIR, "emails.log")
 RESEARCH_CACHE_FILE = os.path.join(LOG_DIR, "company_research_cache.json")

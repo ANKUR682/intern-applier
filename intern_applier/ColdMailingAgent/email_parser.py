@@ -32,20 +32,27 @@ class Recruiter:
 
 def load_sent_emails_from_log(log_path: str = "intern_applier/ColdMailingAgent/logs/email_log.csv") -> set:
     """
-    Load all previously emailed addresses from local log so we never send twice.
+    Load all previously emailed addresses from local log and backup log so we never send twice.
     """
     sent_emails = set()
-    if os.path.exists(log_path):
-        try:
-            with open(log_path, "r", encoding="utf-8", errors="replace") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    status = str(row.get("status", "")).strip().lower()
-                    email = str(row.get("email", "")).strip().lower()
-                    if email and status == "sent":
-                        sent_emails.add(email)
-        except Exception as e:
-            print(f"[Warning] Could not read email log: {e}")
+    candidate_paths = [
+        log_path,
+        os.path.join(os.path.dirname(log_path), "email_log.csv"),
+        os.path.join(os.path.dirname(os.path.dirname(log_path)), "email_log_backup.csv"),
+    ]
+    for path in set(candidate_paths):
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8", errors="replace") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        status = str(row.get("status", "")).strip().lower()
+                        email = str(row.get("email", "")).strip().lower()
+                        if email and status == "sent":
+                            sent_emails.add(email)
+            except Exception as e:
+                print(f"[Warning] Could not read email log {path}: {e}")
+
     return sent_emails
 
 

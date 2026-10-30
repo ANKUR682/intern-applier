@@ -55,37 +55,76 @@ init(autoreset=True)
 # ─── Logging & Persistence ───────────────────────────────────────────
 
 def ensure_log_file():
-    """Ensure logs directory and email_log.csv exist."""
+    """Ensure logs directory, email_log.csv, and emails.log exist."""
     os.makedirs(config.LOG_DIR, exist_ok=True)
     if not os.path.exists(config.LOG_FILE):
         with open(config.LOG_FILE, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(['timestamp', 'name', 'email', 'company', 'status', 'matched_project', 'resume_path', 'error'])
+            f.flush()
+            os.fsync(f.fileno())
+
+    if not os.path.exists(config.EMAILS_LOG_FILE):
+        with open(config.EMAILS_LOG_FILE, 'w', encoding='utf-8') as f:
+            f.write("# Email Dispatch Audit Log\n")
+            f.flush()
+            os.fsync(f.fileno())
 
 
-def log_result(name: str, email: str, company: str, status: str, matched_project: str = "", resume_path: str = "", error: str = ""):
-    """Record an email outreach event to CSV."""
+def log_result(name: str, email: str, company: str, status: str, matched_project: str = "", resume_path: str = "", error: str = "", subject: str = ""):
+    """
+    Record an email outreach event to CSV and persistent emails.log in real-time.
+    Flushes and fsyncs immediately so headless runners (e.g. GitHub Actions)
+    and external log tails reflect the dispatch instantly.
+    """
     ensure_log_file()
+    now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    # 1. Update email_log.csv immediately
     with open(config.LOG_FILE, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow([
-            datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            now_str,
             name, email, company, status, matched_project, resume_path, error
         ])
+        f.flush()
+        os.fsync(f.fileno())
+
+    # 2. Append formatted line to emails.log:
+    # Format: [Timestamp] | [Recipient Email] | [Company Name] | [Target Role: SDE] | [Status: SENT/FAILED] | [Subject Line]
+    status_tag = status.upper()
+    role_tag = "Target Role: SDE"
+    subject_clean = subject.replace('\n', ' ').strip() if subject else "N/A"
+    log_line = f"[{now_str}] | [{email}] | [{company}] | [{role_tag}] | [Status: {status_tag}] | [{subject_clean}]"
+    if error:
+        log_line += f" | [Error: {error}]"
+    log_line += "\n"
+
+    with open(config.EMAILS_LOG_FILE, 'a', encoding='utf-8') as f:
+        f.write(log_line)
+        f.flush()
+        os.fsync(f.fileno())
 
 
 def get_sent_emails() -> set:
-    """Return set of already-emailed addresses to avoid any duplicates."""
+    """
+    Return set of already-emailed addresses from both email_log.csv and backup log
+    to avoid any duplicate outreach across runs.
+    """
     sent = set()
-    if not os.path.exists(config.LOG_FILE):
-        return sent
-    with open(config.LOG_FILE, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row.get('status') == 'sent':
-                email = row.get('email', '').strip().lower()
-                if email:
-                    sent.add(email)
+    log_files = [config.LOG_FILE, os.path.join(config.BASE_DIR, "email_log_backup.csv")]
+    for path in log_files:
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8', errors='replace') as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        if row.get('status') == 'sent':
+                            email = row.get('email', '').strip().lower()
+                            if email:
+                                sent.add(email)
+            except Exception as e:
+                print(f"Warning: could not read {path}: {e}")
     return sent
 
 
@@ -307,7 +346,7 @@ def cmd_send_campaign(bypass_window: bool = False):
         success, err = send_email(r.email, email_data["subject"], email_data["body"], resume_path)
 
         if success:
-            log_result(r.name, r.email, r.company, "sent", email_data["matched_project"], resume_path)
+            log_result(r.name, r.email, r.company, "sent", email_data["matched_project"], resume_path, subject=email_data["subject"])
             print(f"  {Fore.GREEN}✓ Sent successfully ({email_data['subject']}){Style.RESET_ALL}")
             sent_today += 1
 
@@ -317,7 +356,7 @@ def cmd_send_campaign(bypass_window: bool = False):
                 print(f"  ⏳ Waiting {delay//60}m {delay%60}s before next outreach...\n")
                 time.sleep(delay)
         else:
-            log_result(r.name, r.email, r.company, "failed", email_data.get("matched_project", ""), resume_path, err)
+            log_result(r.name, r.email, r.company, "failed", email_data.get("matched_project", ""), resume_path, error=err, subject=email_data.get("subject", ""))
             print(f"  {Fore.RED}✗ Failed to send to {r.email}: {err}{Style.RESET_ALL}\n")
 
     print(f"\n{Fore.GREEN}Outreach batch complete. Total sent today: {sent_today}{Style.RESET_ALL}\n")
@@ -395,10 +434,10 @@ def cmd_single_target(company: str, name: str, email: str, send_now: bool = Fals
         print(f"  Sending to {email}...")
         ok, err = send_email(email, email_data['subject'], email_data['body'], resume_path)
         if ok:
-            log_result(name, email, company, "sent", email_data["matched_project"], resume_path)
+            log_result(name, email, company, "sent", email_data["matched_project"], resume_path, subject=email_data["subject"])
             print(f"{Fore.GREEN}✅ Sent successfully!{Style.RESET_ALL}\n")
         else:
-            log_result(name, email, company, "failed", email_data["matched_project"], resume_path, err)
+            log_result(name, email, company, "failed", email_data["matched_project"], resume_path, error=err, subject=email_data["subject"])
             print(f"{Fore.RED}❌ Send failed: {err}{Style.RESET_ALL}\n")
 
 

@@ -13,4 +13,5 @@ venv/
 
 # Temp logs
 *.log
+!logs/emails.log
 
