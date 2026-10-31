@@ -32,13 +32,12 @@ class Recruiter:
 
 def load_sent_emails_from_log(log_path: str = "intern_applier/ColdMailingAgent/logs/email_log.csv") -> set:
     """
-    Load all previously emailed addresses from local log and backup log so we never send twice.
+    Load all previously emailed addresses from local active log so we never send twice.
     """
     sent_emails = set()
     candidate_paths = [
         log_path,
         os.path.join(os.path.dirname(log_path), "email_log.csv"),
-        os.path.join(os.path.dirname(os.path.dirname(log_path)), "email_log_backup.csv"),
     ]
     for path in set(candidate_paths):
         if os.path.exists(path):

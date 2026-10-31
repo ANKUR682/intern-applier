@@ -108,23 +108,22 @@ def log_result(name: str, email: str, company: str, status: str, matched_project
 
 def get_sent_emails() -> set:
     """
-    Return set of already-emailed addresses from both email_log.csv and backup log
-    to avoid any duplicate outreach across runs.
+    Return set of already-emailed addresses from active campaign log (email_log.csv)
+    to avoid duplicate outreach across runs.
     """
     sent = set()
-    log_files = [config.LOG_FILE, os.path.join(config.BASE_DIR, "email_log_backup.csv")]
-    for path in log_files:
-        if os.path.exists(path):
-            try:
-                with open(path, 'r', encoding='utf-8', errors='replace') as f:
-                    reader = csv.DictReader(f)
-                    for row in reader:
-                        if row.get('status') == 'sent':
-                            email = row.get('email', '').strip().lower()
-                            if email:
-                                sent.add(email)
-            except Exception as e:
-                print(f"Warning: could not read {path}: {e}")
+    if not os.path.exists(config.LOG_FILE):
+        return sent
+    try:
+        with open(config.LOG_FILE, 'r', encoding='utf-8', errors='replace') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row.get('status') == 'sent':
+                    email = row.get('email', '').strip().lower()
+                    if email:
+                        sent.add(email)
+    except Exception as e:
+        print(f"Warning: could not read {config.LOG_FILE}: {e}")
     return sent
 
 

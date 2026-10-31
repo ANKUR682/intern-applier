@@ -58,10 +58,8 @@ EXCEL_PATH = str(BASE_DIR / "Copy of GES 2026 Mastersheet.xlsx")
 
 # Target sheets to extract from. Matches case-insensitively.
 # Set to ["ALL"] to parse every sheet in the workbook, or list specific keywords.
-TARGET_SHEETS = [
-    "Unicorn",
-    "Soonicorn",
-]
+# Set to ["ALL"] to parse every sheet in the workbook, or list specific keywords.
+TARGET_SHEETS = ["ALL"]
 
 # ─── Daily Sending & Timing Rules ────────────────────────────────────
 # Daily limit: 15 to 20 emails daily
