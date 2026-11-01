@@ -2990,5 +2990,85 @@
     "engineering_focus": "Processing real-time transaction streams, forecasting consumer demand, and detecting anomalies across nationwide digital payment and retail networks.",
     "best_matched_project": "FraudSentinel (Graph ML & Fraud Detection)",
     "personal_hook": "I am fascinated by the sheer scale of transactions flowing through Reliance's digital ecosystem, where applying graph neural networks to transaction flows can directly strengthen system security and trust at nationwide scale."
+  },
+  "hero motocorp": {
+    "company": "Hero MotoCorp",
+    "domain": "Automotive Manufacturing & Smart Mobility",
+    "core_product": "Hero MotoCorp designs and manufactures high-volume motorcycles and scooters while increasingly integrating connected vehicle technologies and digital customer mobility services.",
+    "engineering_focus": "Development of scalable IoT backend services, real-time vehicle telemetry data pipelines, and robust cloud-based infrastructure to support connected mobility ecosystems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Hero MotoCorp is building the backend architecture for connected vehicles and how you manage the data processing requirements for large-scale mobility fleets."
+  },
+  "gail (india) ltd": {
+    "company": "GAIL (India) Ltd",
+    "domain": "Energy & Infrastructure Systems",
+    "core_product": "GAIL is India's leading natural gas company, managing an extensive network of cross-country natural gas pipelines and infrastructure for the processing and distribution of hydrocarbons.",
+    "engineering_focus": "Development of high-availability industrial control systems, large-scale supply chain data integration, and secure, reliable backend infrastructure for real-time pipeline monitoring and resource management.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how GAIL manages its extensive physical infrastructure, and I would love to contribute my experience with Dockerized backend systems and resource-efficient sandboxing to your organization's digital transformation initiatives."
+  },
+  "bridge i2i": {
+    "company": "Bridge i2i",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Bridge i2i (now part of Accenture) provides AI-powered business analytics and digital transformation solutions to help enterprises derive actionable insights from complex data sets.",
+    "engineering_focus": "Building scalable data-processing pipelines, robust microservices for analytics engines, and high-performance backend infrastructure to manage enterprise-grade data volumes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how your team approaches architecting complex data-driven systems, and I am eager to apply my experience in building sandboxed, containerized environments and scalable backends to help handle your large-scale analytics processing requirements."
+  },
+  "globalbees": {
+    "company": "GlobalBees",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "GlobalBees is a Thrasio-style e-commerce aggregator that acquires and scales digital-first brands across categories like home care, personal care, and lifestyle.",
+    "engineering_focus": "The engineering focus centers on building scalable microservices, managing high-concurrency inventory and supply chain data, and developing robust backend infrastructure to integrate and optimize operations across multiple disparate e-commerce brands.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "As someone who has built sandboxed execution engines and distributed backend services, I am particularly interested in how GlobalBees handles the complex data architecture and API scalability required to manage multi-brand operations at scale."
+  },
+  "oil & natural gas corporation ltd (ongc)": {
+    "company": "Oil & Natural Gas Corporation Ltd (ONGC)",
+    "domain": "Energy, Oil & Gas Infrastructure",
+    "core_product": "ONGC is India's largest integrated oil and gas exploration and production company, managing complex upstream and downstream operations across the energy value chain.",
+    "engineering_focus": "Development of robust industrial data management systems, scalable backend monitoring for IoT-integrated exploration workflows, and internal automation pipelines for resource optimization.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how ONGC handles the massive scale of operational data and resource management, as my experience building sandboxed, containerized backends aligns with the need for high-reliability systems in the energy sector."
+  },
+  "jp morgan": {
+    "company": "JP Morgan",
+    "domain": "Fintech & Banking Infrastructure",
+    "core_product": "JPMorgan Chase provides global financial services, investment banking, and retail banking solutions supported by massive-scale transactional platforms.",
+    "engineering_focus": "Building low-latency, high-availability transaction processing engines, secure distributed microservices, and robust data pipelines that handle massive volumes of financial data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team approaches the immense task of maintaining data integrity and system reliability while processing millions of secure financial transactions daily."
+  },
+  "bajaj electricals ltd": {
+    "company": "Bajaj Electricals Ltd",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Bajaj Electricals Ltd is a major consumer electricals company focused on manufacturing and distributing appliances, lighting solutions, and EPC projects.",
+    "engineering_focus": "The engineering team focuses on digital transformation through scalable supply chain management systems, enterprise resource planning, and data-driven backend solutions to optimize inventory and distribution.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage the backend architecture for your supply chain logistics and see a strong parallel between your scaling needs and the containerized, sandboxed execution environment I built to handle high-concurrency requests."
+  },
+  "redington india ltd": {
+    "company": "Redington India Ltd",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Redington is a global technology distributor and integrated supply chain solution provider that manages complex digital ecosystems and cloud services for enterprise customers.",
+    "engineering_focus": "Building high-scale enterprise supply chain management systems, distributed cloud integration platforms, and secure B2B e-commerce architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Redington manages complex digital supply chains at scale, and I am keen to apply my experience building sandboxed execution engines and backend microservices to help improve the reliability and efficiency of your distribution infrastructure."
+  },
+  "schneider electric": {
+    "company": "Schneider Electric",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Schneider Electric specializes in energy management and industrial automation, providing digital solutions for grid efficiency, smart infrastructure, and industrial IoT.",
+    "engineering_focus": "Development of scalable industrial IoT platforms, high-availability distributed systems for grid management, and robust microservices architectures handling massive streams of telemetry data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team handles the orchestration of complex distributed systems and containerized workloads to ensure reliability across large-scale industrial infrastructure."
+  },
+  "redcliffelabs scale": {
+    "company": "RedcliffeLabs Scale",
+    "domain": "HealthTech & Diagnostic Infrastructure",
+    "core_product": "Redcliffe Labs operates a high-volume diagnostics network that leverages digital platforms to manage patient bookings, lab logistics, and medical report generation at scale.",
+    "engineering_focus": "The engineering team focuses on building reliable, high-availability backend services to handle complex appointment scheduling, real-time diagnostic data synchronization, and secure, low-latency API integrations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to your platform because the complexity of managing real-time diagnostic data at scale mirrors the challenges I navigated while architecting the sandboxed execution environment for my code execution engine."
   }
 }
