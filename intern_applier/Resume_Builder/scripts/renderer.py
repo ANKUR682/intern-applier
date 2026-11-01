@@ -8,11 +8,12 @@ import yaml
 from pathlib import Path
 from datetime import datetime
 from scripts.utils import escape_latex, make_output_folder, get_config, load_yaml, BASE_DIR, DATA_DIR
+from scripts.resume_selector import is_position_of_responsibility
 
 
 # ─── Robust, Battle-Tested 1-Page LaTeX Preamble ──────────────────────────────
 
-PREAMBLE = r"""\documentclass[letterpaper,10.5pt]{article}
+PREAMBLE = r"""\documentclass[letterpaper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -24,7 +25,7 @@ PREAMBLE = r"""\documentclass[letterpaper,10.5pt]{article}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage[margin=0.45in, top=0.55in, bottom=0.55in]{geometry}
+\usepackage[margin=0.35in, top=0.35in, bottom=0.35in]{geometry}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -39,8 +40,8 @@ PREAMBLE = r"""\documentclass[letterpaper,10.5pt]{article}
 
 % Clean section dividers with dynamic stretch
 \titleformat{\section}{
-  \vspace{4pt plus 2pt minus 1pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{2pt plus 1pt}]
+  \vspace{1.5pt plus 0.5pt minus 0.5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{1pt}]
 
 \pdfgentounicode=1
 
@@ -50,7 +51,7 @@ PREAMBLE = r"""\documentclass[letterpaper,10.5pt]{article}
   \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
     \textbf{#1} & \textbf{\small #2} \\
     \textit{\small #3} & \textit{\small #4} \\
-  \end{tabular*}\vspace{-2pt}
+  \end{tabular*}\vspace{-2.5pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
@@ -61,16 +62,16 @@ PREAMBLE = r"""\documentclass[letterpaper,10.5pt]{article}
 }
 
 \newcommand{\resumeItem}[1]{
-  \item\small{{#1 \vspace{-1pt}}}
+  \item\small{{#1 \vspace{-1.5pt}}}
 }
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, itemsep=3.5pt plus 1pt minus 0.5pt, topsep=3.5pt plus 1pt minus 0.5pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}, itemsep=1pt, topsep=1pt, parsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-3pt}}
 
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=2pt plus 1pt, topsep=1.5pt plus 1pt, parsep=0pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, itemsep=0.8pt, topsep=0.8pt, parsep=0pt]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 """
 
@@ -104,7 +105,7 @@ def _header(profile: dict) -> str:
 
     return rf"""
 \begin{{center}}
-    {{\LARGE \scshape \textbf{{{name}}}}} \\ \vspace{{3pt}}
+    {{\LARGE \scshape \textbf{{{name}}}}} \\ \vspace{{2pt}}
     \small {links_str}
     \vspace{{-6pt}}
 \end{{center}}
@@ -115,32 +116,49 @@ def _education(education_list: list) -> str:
     if not education_list:
         return ""
     lines = [r"\section{Education}", r"\resumeSubHeadingListStart"]
-    for edu in education_list:
-        institution = escape_latex(edu.get("institution", ""))
-        degree      = escape_latex(edu.get("degree", ""))
-        duration    = escape_latex(edu.get("duration", ""))
-        location    = escape_latex(edu.get("location", ""))
-        gpa         = edu.get("gpa", "")
-        score       = edu.get("score", "")
 
-        # If it's a school entry with just a score (Class X/XII), format compactly
-        if score and not gpa:
-            degree_with_score = rf"{degree} \ $|$ \ \textbf{{Score:}} {escape_latex(score)}"
-            lines.append(rf"\resumeSubheading{{{institution}}}{{{location}}}{{{degree_with_score}}}{{{duration}}}")
-        else:
-            lines.append(rf"\resumeSubheading{{{institution}}}{{{location}}}{{{degree}}}{{{duration}}}")
-            extras = []
-            if gpa:
-                extras.append(rf"\textbf{{Cumulative CGPA:}} {escape_latex(gpa)}")
-            courses = edu.get("relevant_courses", [])
-            if courses:
-                courses_str = ", ".join(escape_latex(c) for c in courses)
-                extras.append(rf"\textbf{{Relevant Coursework:}} {courses_str}")
-            if extras:
-                lines.append(r"\resumeItemListStart")
-                for ex in extras:
-                    lines.append(rf"\resumeItem{{{ex}}}")
-                lines.append(r"\resumeItemListEnd")
+    college = next((e for e in education_list if "kharagpur" in e.get("institution", "").lower() or "b.tech" in e.get("degree", "").lower()), None)
+    schools = [e for e in education_list if e != college]
+
+    if college:
+        inst = escape_latex(college.get("institution", ""))
+        deg  = escape_latex(college.get("degree", ""))
+        dur  = escape_latex(college.get("duration", ""))
+        loc  = escape_latex(college.get("location", ""))
+        gpa  = college.get("gpa", "")
+        courses = college.get("relevant_courses", [])
+
+        lines.append(rf"\resumeSubheading{{{inst}}}{{{loc}}}{{{deg}}}{{{dur}}}")
+        extras = []
+        if gpa:
+            extras.append(rf"\textbf{{Cumulative CGPA:}} {escape_latex(gpa)}")
+        if courses:
+            courses_str = ", ".join(escape_latex(c) for c in courses[:6])
+            extras.append(rf"\textbf{{Key Coursework:}} {courses_str}")
+        if extras:
+            extras_line = r" \ $|$ \ ".join(extras)
+            lines.append(r"\resumeItemListStart")
+            lines.append(rf"\resumeItem{{{extras_line}}}")
+            lines.append(r"\resumeItemListEnd")
+
+    if schools:
+        school_parts = []
+        durations = []
+        inst_name = escape_latex(schools[0].get("institution", "School"))
+        loc = escape_latex(schools[0].get("location", "India"))
+        for s in schools:
+            deg = escape_latex(s.get("degree", ""))
+            sc = s.get("score", "")
+            if sc:
+                school_parts.append(rf"{deg} ({escape_latex(sc)})")
+            else:
+                school_parts.append(deg)
+            if s.get("duration"):
+                durations.append(escape_latex(s.get("duration")))
+
+        school_str = r" \ $|$ \ ".join(school_parts)
+        dur_str = r" \ $|$ \ ".join(durations) if durations else ""
+        lines.append(rf"\resumeSubheading{{{inst_name}}}{{{loc}}}{{{school_str}}}{{{dur_str}}}")
 
     lines.append(r"\resumeSubHeadingListEnd")
     return "\n".join(lines)
@@ -151,12 +169,12 @@ def _skills(skills_dict: dict) -> str:
         return ""
     lines = [
         r"\section{Technical Skills}",
-        r"\begin{itemize}[leftmargin=0.0in, label={}, itemsep=1.5pt, topsep=1pt, parsep=0pt]",
+        r"\begin{itemize}[leftmargin=0.0in, label={}, itemsep=1pt, topsep=1pt, parsep=0pt]",
         r"\small{\item{",
     ]
-    for category, items in skills_dict.items():
-        category_label = category.replace("_", " ").title()
-        items_str = ", ".join(escape_latex(str(i)) for i in items)
+    for category, items in list(skills_dict.items())[:4]:
+        category_label = category.replace("_", " ").title().replace(" And ", " & ")
+        items_str = ", ".join(escape_latex(str(i)) for i in items[:10])
         lines.append(rf"\textbf{{{escape_latex(category_label)}}}{{: {items_str}}} \\")
     lines += ["}}", r"\end{itemize}\vspace{-3pt}"]
     return "\n".join(lines)
@@ -173,18 +191,10 @@ def _projects(projects: list) -> str:
         github     = proj.get("github_link", "").strip()
         live       = proj.get("live_link", "").strip()
         duration   = escape_latex(proj.get("duration", ""))
-        bullets    = proj.get("bullet_points", [])
+        bullets    = proj.get("bullet_points", [])[:3]
 
-        # Rule: If Code link or Live Demo link exists, the project name MUST NOT have a link.
-        # Only link project name if no separate code/live links are provided.
-        has_explicit_links = bool(github or live)
+        project_title = rf"\textbf{{{name_esc}}}"
 
-        if has_explicit_links:
-            project_title = rf"\textbf{{{name_esc}}}"
-        else:
-            project_title = rf"\textbf{{{name_esc}}}"
-
-        # Clean, un-cluttered link list
         link_parts = []
         if github:
             link_parts.append(rf"\href{{{github}}}{{\underline{{GitHub}}}}")
@@ -197,9 +207,8 @@ def _projects(projects: list) -> str:
         else:
             title_and_links = project_title
 
-        # Clean tech stack subtitle
         if tech_stack:
-            tech_str = escape_latex(", ".join(tech_stack))
+            tech_str = escape_latex(", ".join(tech_stack[:8]))
             subtitle = rf"Technologies: {tech_str}"
         else:
             subtitle = ""
@@ -215,16 +224,38 @@ def _projects(projects: list) -> str:
     return "\n".join(lines)
 
 
-def _experience(experiences: list) -> str:
-    if not experiences:
+def _work_experience(work_experiences: list) -> str:
+    if not work_experiences:
         return ""
-    lines = [r"\section{Experience \& Leadership}", r"\resumeSubHeadingListStart"]
-    for exp in experiences:
+    lines = [r"\section{Work Experience}", r"\resumeSubHeadingListStart"]
+    for exp in work_experiences:
         company  = escape_latex(exp.get("company", ""))
         role     = escape_latex(exp.get("role", ""))
         duration = escape_latex(exp.get("duration", ""))
         location = escape_latex(exp.get("location", ""))
-        bullets  = exp.get("bullet_points", [])
+        bullets  = exp.get("bullet_points", [])[:2]
+
+        lines.append(rf"\resumeSubheading{{{company}}}{{{location}}}{{{role}}}{{{duration}}}")
+        if bullets:
+            lines.append(r"\resumeItemListStart")
+            for b in bullets:
+                lines.append(rf"\resumeItem{{{escape_latex(b)}}}")
+            lines.append(r"\resumeItemListEnd")
+
+    lines.append(r"\resumeSubHeadingListEnd")
+    return "\n".join(lines)
+
+
+def _positions_of_responsibility(por_list: list) -> str:
+    if not por_list:
+        return ""
+    lines = [r"\section{Positions of Responsibility}", r"\resumeSubHeadingListStart"]
+    for exp in por_list:
+        company  = escape_latex(exp.get("company", ""))
+        role     = escape_latex(exp.get("role", ""))
+        duration = escape_latex(exp.get("duration", ""))
+        location = escape_latex(exp.get("location", ""))
+        bullets  = exp.get("bullet_points", [])[:2]
 
         lines.append(rf"\resumeSubheading{{{company}}}{{{location}}}{{{role}}}{{{duration}}}")
         if bullets:
@@ -240,55 +271,20 @@ def _experience(experiences: list) -> str:
 def _achievements(achievements: list) -> str:
     if not achievements:
         return ""
-    lines = [r"\section{Extracurricular \& Achievements}", r"\resumeItemListStart"]
+    seen = set()
+    deduped = []
     for ach in achievements:
+        clean = str(ach).strip()
+        if clean and clean not in seen:
+            seen.add(clean)
+            deduped.append(clean)
+
+    lines = [r"\section{Extracurricular \& Achievements}", r"\resumeItemListStart"]
+    for ach in deduped[:4]:
         lines.append(rf"\resumeItem{{{escape_latex(ach)}}}")
     lines.append(r"\resumeItemListEnd")
     return "\n".join(lines)
 
-
-# ─── Main render function ─────────────────────────────────────────────────────
-
-def render_resume(tailored: dict, jd_data: dict, company_override: str = "", prompt_id: str = "") -> dict:
-    """
-    Generate LaTeX, compile to PDF, save to Resume_Output (strictly 1-page design).
-
-    Returns:
-        {
-            "folder_name": str,
-            "output_dir":  Path,
-            "pdf_path":    Path,
-            "tex_path":    Path,
-        }
-    """
-    # Load master data
-    profile    = load_yaml(DATA_DIR / "profile.yaml")
-    education  = load_yaml(DATA_DIR / "education.yaml").get("education", [])
-    skills     = load_yaml(DATA_DIR / "skills.yaml").get("skills", {})
-    achievements_raw = load_yaml(DATA_DIR / "achievements.yaml").get("achievements", [])
-
-    role    = jd_data.get("role", "Role")
-    company = company_override.strip() or jd_data.get("company", "")
-
-    # Build LaTeX document
-    body = "\n\n".join(filter(None, [
-        _header(profile),
-        _education(education),
-        _skills(skills),
-        _projects(tailored.get("projects", [])),
-        _experience(tailored.get("experiences", [])),
-        _achievements(achievements_raw),
-    ]))
-
-    full_latex = PREAMBLE + "\n\\begin{document}\n" + body + "\n\\end{document}\n"
-
-    # Determine output folder
-    output_dir = make_output_folder(role, company)
-    folder_name = output_dir.name
-
-    # Write .tex file
-    tex_path = output_dir / "resume.tex"
-    tex_path.write_text(full_latex, encoding="utf-8")
 
 def _get_latex_executable(configured_name: str = "pdflatex") -> str:
     """Find the full path to pdflatex/xelatex or fall back to configured name."""
@@ -296,7 +292,6 @@ def _get_latex_executable(configured_name: str = "pdflatex") -> str:
     if found:
         return found
 
-    # Known common installation paths on Windows
     candidates = [
         Path(r"C:\Program Files\MiKTeX\miktex\bin\x64\pdflatex.exe"),
         Path(r"C:\Program Files (x86)\MiKTeX\miktex\bin\pdflatex.exe"),
@@ -317,6 +312,7 @@ def _get_latex_executable(configured_name: str = "pdflatex") -> str:
 def render_resume(tailored: dict, jd_data: dict, company_override: str = "", prompt_id: str = "") -> dict:
     """
     Generate LaTeX, compile to PDF, save to Resume_Output (strictly 1-page design).
+    Guarantees that Positions of Responsibility (PoR) is ALWAYS present in the resume.
 
     Returns:
         {
@@ -335,13 +331,26 @@ def render_resume(tailored: dict, jd_data: dict, company_override: str = "", pro
     role    = jd_data.get("role", "Role")
     company = company_override.strip() or jd_data.get("company", "")
 
+    # Partition experiences into Work Experience and Positions of Responsibility
+    all_experiences = tailored.get("experiences", [])
+    work_exps = [e for e in all_experiences if not e.get("is_por", False) and not is_position_of_responsibility(e)]
+    por_exps  = [e for e in all_experiences if e.get("is_por", False) or is_position_of_responsibility(e)]
+
+    # GUARANTEED: If no PoR was passed, fall back to loading secy.yaml (Secretary, Sports & Games)
+    if not por_exps:
+        secy_path = DATA_DIR / "experiences" / "secy.yaml"
+        if secy_path.exists():
+            data = load_yaml(secy_path)
+            por_exps = data if isinstance(data, list) else [data]
+
     # Build LaTeX document
     body = "\n\n".join(filter(None, [
         _header(profile),
         _education(education),
         _skills(skills),
         _projects(tailored.get("projects", [])),
-        _experience(tailored.get("experiences", [])),
+        _work_experience(work_exps),
+        _positions_of_responsibility(por_exps),
         _achievements(achievements_raw),
     ]))
 
@@ -398,7 +407,8 @@ def render_resume(tailored: dict, jd_data: dict, company_override: str = "", pro
         "jd_keywords": jd_data.get("keywords", []),
         "jd_tech_stack": jd_data.get("tech_stack", []),
         "projects_included": [p.get("name") for p in tailored.get("projects", [])],
-        "experiences_included": [e.get("company") for e in tailored.get("experiences", [])],
+        "work_experience_included": [e.get("company") for e in work_exps],
+        "positions_of_responsibility_included": [f"{e.get('role')} at {e.get('company')}" for e in por_exps],
     }
     (output_dir / "metadata.yaml").write_text(
         yaml.dump(metadata, default_flow_style=False), encoding="utf-8"
