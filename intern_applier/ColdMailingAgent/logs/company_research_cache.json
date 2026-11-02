@@ -3070,5 +3070,109 @@
     "engineering_focus": "The engineering team focuses on building reliable, high-availability backend services to handle complex appointment scheduling, real-time diagnostic data synchronization, and secure, low-latency API integrations.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am drawn to your platform because the complexity of managing real-time diagnostic data at scale mirrors the challenges I navigated while architecting the sandboxed execution environment for my code execution engine."
+  },
+  "jp morgan chase": {
+    "company": "JP Morgan Chase",
+    "domain": "Fintech & Payments",
+    "core_product": "JP Morgan Chase provides global financial services, investment banking, and retail banking infrastructure that handles massive transaction volumes and complex financial data worldwide.",
+    "engineering_focus": "The engineering team focuses on building high-throughput, low-latency transaction processing engines, secure microservices, and resilient distributed systems to ensure 24/7 reliability in financial operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my time at IIT Kharagpur building isolated, high-concurrency execution engines, and I am genuinely fascinated by how JP Morgan manages similar levels of architectural rigour to process global financial transactions at scale."
+  },
+  "apollo hospitals": {
+    "company": "Apollo Hospitals",
+    "domain": "HealthTech & Enterprise Systems",
+    "core_product": "Apollo Hospitals operates a massive integrated healthcare ecosystem, providing digital patient management, telehealth consultations, and hospital information systems at scale.",
+    "engineering_focus": "Building highly available, secure, and HIPAA-compliant distributed systems capable of processing real-time electronic health records (EHR) and high-concurrency appointment scheduling APIs.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Apollo optimizes its backend architecture to handle massive concurrent traffic for patient data, and I would love to contribute my experience in building scalable sandboxed systems to your digital health infrastructure."
+  },
+  "stripe": {
+    "company": "Stripe",
+    "domain": "Fintech & Payments",
+    "core_product": "Stripe builds economic infrastructure for the internet, providing programmable APIs that allow businesses to accept payments, manage subscriptions, and handle complex financial operations globally.",
+    "engineering_focus": "The core engineering challenges revolve around maintaining extreme consistency and high-availability for distributed financial systems, requiring low-latency backend architectures, robust API design, and highly reliable data synchronization.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandboxed execution engine gave me a first-hand look at the challenges of isolation and reliability, which makes me particularly drawn to how Stripe manages consistent, fault-tolerant operations at a massive financial scale."
+  },
+  "uniphore": {
+    "company": "Uniphore",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Uniphore provides an enterprise AI platform that uses conversational analytics, computer vision, and generative AI to automate customer service and sales workflows.",
+    "engineering_focus": "Building low-latency, high-scale distributed systems that handle real-time audio and video processing, complex data orchestration, and large-scale LLM-driven inference pipelines.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Uniphore’s work in real-time conversation analysis and am particularly interested in how your backend architecture manages the high-concurrency data streaming required for such complex enterprise AI workflows."
+  },
+  "apple": {
+    "company": "Apple",
+    "domain": "Consumer Electronics & Integrated Software Ecosystems",
+    "core_product": "Apple designs and manufactures premium consumer electronics, personal computing devices, and services integrated through a proprietary hardware and software ecosystem.",
+    "engineering_focus": "Building highly secure, low-latency backend systems and distributed platforms that support real-time data synchronization across billions of global devices.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply impressed by the technical rigor behind Apple's ability to maintain seamless, low-latency performance across such a vast global infrastructure and would love to contribute to these complex scaling challenges."
+  },
+  "clix": {
+    "company": "CLIX",
+    "domain": "Fintech & Financial Services",
+    "core_product": "CLIX is a digital-first financial services company providing customized credit and lending solutions to SMEs and individual consumers through a data-driven platform.",
+    "engineering_focus": "The core engineering focus involves building high-throughput, secure credit underwriting engines, low-latency financial transaction APIs, and scalable microservices architecture that handles sensitive distributed financial data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a containerized, sandboxed execution engine gave me a deep appreciation for the kind of strict backend performance and security requirements you likely face when scaling reliable, high-volume lending APIs."
+  },
+  "hasura": {
+    "company": "Hasura",
+    "domain": "DevTools & Cloud Infrastructure",
+    "core_product": "Hasura provides a high-performance GraphQL engine that instantly generates real-time APIs from existing databases to accelerate application development.",
+    "engineering_focus": "Development of high-performance query execution engines, distributed systems for real-time data streaming, and complex abstract layer generation over heterogeneous databases.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own code execution engine with Docker and Redis gave me a deep appreciation for the complexities of handling concurrent, sandboxed requests, which makes the scale and architectural elegance of Hasura’s query engine incredibly interesting to me."
+  },
+  "hero group": {
+    "company": "Hero Group",
+    "domain": "Automotive Manufacturing & Mobility Services",
+    "core_product": "Hero Group is a global leader in two-wheeler manufacturing, increasingly focused on digital transformation and connected mobility solutions.",
+    "engineering_focus": "Development of scalable IoT-integrated backends, robust supply chain management systems, and high-concurrency platforms to support their growing digital ecosystem.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Hero Group because transitioning from legacy manufacturing to modern, data-driven mobility requires exactly the kind of robust backend architecture and containerized services I explored while building my sandboxed code execution engine."
+  },
+  "bajaj finserv": {
+    "company": "Bajaj Finserv",
+    "domain": "Fintech & Payments",
+    "core_product": "Bajaj Finserv is a diversified financial services conglomerate providing consumer finance, insurance, wealth management, and digital lending solutions.",
+    "engineering_focus": "They focus on high-concurrency transaction processing, secure microservices architecture, and real-time data pipelines to manage large-scale credit and insurance operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to how your team manages high-concurrency transaction flows and secure, isolated execution environments, which mirrors the architectural challenges I tackled while building my sandboxed code execution engine."
+  },
+  "reverse.in": {
+    "company": "Reverse.in",
+    "domain": "E-commerce & Reverse Logistics",
+    "core_product": "Reverse.in provides an automated end-to-end returns management platform that streamlines logistics, refund processing, and customer communication for e-commerce brands.",
+    "engineering_focus": "The platform requires building high-concurrency event-driven systems to synchronize complex logistics data, manage real-time order tracking, and maintain robust API integrations with various e-commerce storefronts.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to the challenge of building the scalable, fault-tolerant backend infrastructure required to manage high-volume logistics and inventory synchronization in real-time."
+  },
+  "perplexity ai": {
+    "company": "Perplexity AI",
+    "domain": "AI & Search Infrastructure",
+    "core_product": "Perplexity AI develops an AI-powered conversational search engine that provides real-time, accurate answers by synthesizing information from across the web.",
+    "engineering_focus": "The core engineering challenges involve optimizing high-throughput search retrieval, managing low-latency streaming inference, and maintaining scalable distributed systems to process complex real-time user queries.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my recent months building a containerized code execution engine to handle real-time resource isolation and state management, and I am fascinated by how Perplexity manages similar orchestration challenges to deliver instantaneous, accurate responses at scale."
+  },
+  "dream11": {
+    "company": "Dream11",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Dream11 is a fantasy sports platform that allows users to create virtual teams and compete based on the real-world performance of players.",
+    "engineering_focus": "The engineering team focuses on managing massive concurrency, high-throughput low-latency APIs, and distributed event-driven systems to handle millions of simultaneous users during live match spikes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am fascinated by how Dream11 maintains sub-second responsiveness for millions of concurrent users during live sports events, and I am eager to apply my experience in building sandboxed, high-performance backends to your infrastructure."
+  },
+  "payu": {
+    "company": "PayU",
+    "domain": "Fintech & Payments",
+    "core_product": "PayU provides a comprehensive digital payment infrastructure that enables businesses to accept online payments through various methods including credit cards, net banking, and UPI.",
+    "engineering_focus": "Building highly resilient, low-latency transaction processing engines that handle massive concurrent payment volumes while ensuring strict data consistency and ACID compliance across distributed systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent the last year building isolated code execution environments and scaling backend services, and I am fascinated by how PayU maintains sub-second transaction reliability while managing complex financial state transitions at scale."
   }
 }
