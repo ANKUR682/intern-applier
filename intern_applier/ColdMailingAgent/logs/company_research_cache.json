@@ -3174,5 +3174,69 @@
     "engineering_focus": "Building highly resilient, low-latency transaction processing engines that handle massive concurrent payment volumes while ensuring strict data consistency and ACID compliance across distributed systems.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I have spent the last year building isolated code execution environments and scaling backend services, and I am fascinated by how PayU maintains sub-second transaction reliability while managing complex financial state transitions at scale."
+  },
+  "amazon india": {
+    "company": "Amazon India",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Amazon India operates a massive-scale e-commerce platform that manages complex supply chain logistics, payment processing, and personalized customer shopping experiences.",
+    "engineering_focus": "The team focuses on building low-latency distributed microservices, highly resilient transaction systems, and scalable database architectures capable of handling massive seasonal traffic spikes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Amazon manages state consistency and low-latency performance at the scale of millions of concurrent requests, as I recently tackled similar backend challenges while building a sandboxed multi-language code execution engine."
+  },
+  "lyfboat": {
+    "company": "Lyfboat",
+    "domain": "HealthTech & Medical Services",
+    "core_product": "Lyfboat is a global medical tourism marketplace that connects patients with international hospitals, specialists, and treatment packages.",
+    "engineering_focus": "Building scalable platforms that handle sensitive health data, facilitate complex cross-border bookings, and optimize high-traffic search/matching algorithms for global patient inquiries.",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I am drawn to how Lyfboat simplifies the complex journey of medical tourism through a structured digital experience, and I'm eager to contribute my background in building efficient full-stack platforms and AI-driven workflows to help scale your patient-provider matching systems."
+  },
+  "sun tv network ltd": {
+    "company": "Sun TV Network Ltd",
+    "domain": "Media & Entertainment Streaming",
+    "core_product": "Sun TV Network Ltd operates a large-scale satellite television network and an over-the-top (OTT) media streaming platform, Sun NXT.",
+    "engineering_focus": "Managing high-concurrency video streaming delivery, low-latency content distribution, and scalable backend infrastructure to serve a massive user base across multiple regions.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "As someone who builds sandboxed execution engines and scalable backends, I am fascinated by the challenge of optimizing infrastructure to handle the massive traffic surges inherent in a major streaming platform like Sun NXT."
+  },
+  "dezerv": {
+    "company": "Dezerv",
+    "domain": "Fintech & Wealth Management",
+    "core_product": "Dezerv is an investment platform that provides personalized wealth management and portfolio construction strategies for retail investors through data-driven advisory.",
+    "engineering_focus": "Building secure, high-consistency backend services, scalable microservices architectures, and robust data pipelines to handle complex financial transactions and personalized portfolio analytics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Dezerv’s focus on building performant, reliable financial infrastructure, as it aligns with my experience in designing scalable backend systems and containerized architectures."
+  },
+  "stanza living": {
+    "company": "stanza living",
+    "domain": "Proptech & Consumer Services",
+    "core_product": "Stanza Living provides technology-enabled managed accommodation services for students and young professionals across India, integrating property management with hospitality operations.",
+    "engineering_focus": "The engineering team focuses on building scalable microservices for booking platforms, real-time inventory management, and data-driven supply chain optimization using cloud-native architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Stanza Living manages its complex inventory and booking workflows, and I am eager to apply my experience in building sandboxed, containerized systems and performant backend APIs to help scale your operational infrastructure."
+  },
+  "bank of baroda": {
+    "company": "Bank of Baroda",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Bank of Baroda",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Bank of Baroda is solving complex architectural challenges in this space."
+  },
+  "meta": {
+    "company": "Meta",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Meta",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Meta is solving complex architectural challenges in this space."
+  },
+  "wework": {
+    "company": "wework",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "WeWork provides flexible workspace solutions and office management software that integrates physical real estate with digital member experiences.",
+    "engineering_focus": "They focus on high-scale distributed systems, managing complex booking and scheduling engines, and optimizing real-time member data across global cloud infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m particularly interested in how WeWork manages the backend complexity behind global facility reservations and resource allocation, especially as I’ve enjoyed building sandboxed execution environments that require high reliability and efficient resource management."
   }
 }
