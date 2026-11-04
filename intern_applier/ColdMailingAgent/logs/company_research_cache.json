@@ -3238,5 +3238,93 @@
     "engineering_focus": "They focus on high-scale distributed systems, managing complex booking and scheduling engines, and optimizing real-time member data across global cloud infrastructure.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I’m particularly interested in how WeWork manages the backend complexity behind global facility reservations and resource allocation, especially as I’ve enjoyed building sandboxed execution environments that require high reliability and efficient resource management."
+  },
+  "166. ultratech cement": {
+    "company": "166. UltraTech Cement",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "UltraTech Cement is India's largest cement manufacturer, focusing on digital transformation in supply chain, logistics, and large-scale industrial operations.",
+    "engineering_focus": "Development of scalable enterprise ERP systems, real-time supply chain tracking, and distributed data pipelines to manage complex logistics and manufacturing workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you handle large-scale supply chain logistics data, as my experience building isolated sandboxed environments with Docker and Redis directly mirrors the need for robust, reliable backend architecture in industrial operations."
+  },
+  "m2p": {
+    "company": "M2P",
+    "domain": "Fintech & Payments",
+    "core_product": "M2P Fintech provides a comprehensive API-first infrastructure that enables businesses to embed banking, lending, and payment capabilities into their products.",
+    "engineering_focus": "The engineering team focuses on building high-concurrency, low-latency transaction processing systems, scalable microservices, and secure distributed financial architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent the last year building and containerizing sandboxed execution engines to handle concurrent tasks, and I am fascinated by how M2P manages similar high-throughput challenges in the highly sensitive world of payment APIs."
+  },
+  "bajaj auto": {
+    "company": "Bajaj Auto",
+    "domain": "Automotive Engineering & Connected Mobility",
+    "core_product": "Bajaj Auto manufactures two-wheelers and three-wheelers with an increasing focus on integrated digital ecosystems and connected vehicle technology.",
+    "engineering_focus": "Development of scalable IoT backend services, real-time telemetry data processing, and robust API integrations to support digital infrastructure for millions of active vehicle users.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how Bajaj Auto handles the backend complexity of real-time telemetry data and IoT infrastructure, as my work with Docker-based sandboxed environments and distributed systems aligns with the need for high-uptime, scalable systems in the connected mobility space."
+  },
+  "oberoi group (eih limited)": {
+    "company": "Oberoi Group (EIH Limited)",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Oberoi Group (EIH Limited)",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Oberoi Group (EIH Limited) is solving complex architectural challenges in this space."
+  },
+  "adyen": {
+    "company": "Adyen",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Adyen",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Adyen is solving complex architectural challenges in this space."
+  },
+  "oneplus": {
+    "company": "OnePlus",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at OnePlus",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how OnePlus is solving complex architectural challenges in this space."
+  },
+  "rebel foods": {
+    "company": "Rebel Foods",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Rebel Foods operates the world's largest internet restaurant company, managing a complex cloud-kitchen network and multi-brand food delivery ecosystem.",
+    "engineering_focus": "The engineering team focuses on high-concurrency order management systems, inventory tracking, and supply chain optimization using distributed microservices and data-driven backend architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Rebel Foods because building performant systems to handle thousands of concurrent orders across a global kitchen network presents the exact kind of high-stakes distributed systems challenge I enjoy solving with Docker and scalable backend architectures."
+  },
+  "hindalco industries ltd": {
+    "company": "Hindalco Industries Ltd",
+    "domain": "Manufacturing & Industrial Automation",
+    "core_product": "Hindalco Industries Ltd is a global leader in aluminum and copper manufacturing, providing high-quality metal products for construction, transportation, and industrial infrastructure.",
+    "engineering_focus": "Development of scalable industrial IoT platforms, high-availability supply chain management systems, and data-driven process optimization tools using robust backend architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how your team leverages containerized environments and distributed systems to optimize complex manufacturing workflows and supply chain data at a massive industrial scale."
+  },
+  "indmoney": {
+    "company": "INDmoney",
+    "domain": "Fintech & Wealth Management",
+    "core_product": "INDmoney is a personal finance super-app that aggregates investments, tracks net worth, and provides AI-driven financial planning and stock market insights.",
+    "engineering_focus": "The engineering team focuses on building high-concurrency microservices, managing secure real-time financial data synchronization, and optimizing complex database queries for a large-scale investment ecosystem.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m particularly impressed by how INDmoney handles complex financial data aggregation at scale, and I’m eager to contribute to the robust backend systems that keep those multi-asset portfolios fast and reliable."
+  },
+  "gymshark": {
+    "company": "Gymshark",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Gymshark",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Gymshark is solving complex architectural challenges in this space."
+  },
+  "netflix/chegg": {
+    "company": "Netflix/Chegg",
+    "domain": "AI & EdTech",
+    "core_product": "Chegg operates a digital learning platform providing students with on-demand academic assistance, AI-driven homework help, and automated educational resources.",
+    "engineering_focus": "The engineering focus centers on building highly scalable, low-latency distributed systems that handle concurrent student requests, AI-based content delivery, and robust backend data processing.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Chegg manages massive scale for concurrent requests and am particularly interested in how your team handles backend complexity to keep educational tools fast and reliable for millions of students."
   }
 }
