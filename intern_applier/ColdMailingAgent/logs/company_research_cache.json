@@ -3326,5 +3326,93 @@
     "engineering_focus": "The engineering focus centers on building highly scalable, low-latency distributed systems that handle concurrent student requests, AI-based content delivery, and robust backend data processing.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I have been following how Chegg manages massive scale for concurrent requests and am particularly interested in how your team handles backend complexity to keep educational tools fast and reliable for millions of students."
+  },
+  "93. south indian bank": {
+    "company": "93. South Indian Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "South Indian Bank provides comprehensive retail and corporate banking services, including digital payments, core banking solutions, and secure financial transaction processing.",
+    "engineering_focus": "Building secure, high-availability transaction processing systems and robust backend APIs that handle sensitive financial data with strict regulatory compliance and low-latency reliability.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage the security and high-concurrency demands of your backend infrastructure, particularly in building systems that require both extreme data integrity and responsive performance."
+  },
+  "applied materials": {
+    "company": "Applied Materials",
+    "domain": "Semiconductor Manufacturing & Industrial Automation",
+    "core_product": "Applied Materials provides manufacturing equipment, services, and software for the semiconductor, display, and related industries to enable advanced chip fabrication.",
+    "engineering_focus": "The engineering focus centers on high-reliability distributed systems, real-time data processing for factory automation, and robust backend infrastructure to manage complex manufacturing execution systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how you build reliable, isolated systems for factory automation, and I would love to learn more about the backend challenges involved in scaling your industrial manufacturing software."
+  },
+  "jk tyre & industries": {
+    "company": "JK Tyre & Industries",
+    "domain": "Manufacturing & Industrial IoT",
+    "core_product": "JK Tyre & Industries is a leading manufacturer of automotive tires, integrated into the global supply chain with a heavy focus on industrial automation and smart fleet management systems.",
+    "engineering_focus": "Building scalable backend systems to manage complex supply chain data, real-time fleet analytics, and high-availability ERP integrations using distributed architecture.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how your team handles high-throughput data processing and infrastructure stability, particularly given the scale at which your backend systems manage global distribution and manufacturing logistics."
+  },
+  "multiples alternate asset management": {
+    "company": "Multiples Alternate Asset Management",
+    "domain": "Private Equity & Investment Management",
+    "core_product": "Multiples Alternate Asset Management is a private equity firm that manages large-scale capital to drive long-term value creation in high-growth companies across diverse sectors.",
+    "engineering_focus": "Building secure, data-intensive internal platforms and reliable back-end systems to manage complex portfolio data, track investment performance, and automate financial reporting.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how your team handles complex, high-stakes data architecture and am eager to apply my experience with building isolated, scalable backend environments to your internal asset management systems."
+  },
+  "api holdings": {
+    "company": "API Holdings",
+    "domain": "Health-Tech & E-commerce",
+    "core_product": "API Holdings (parent of PharmEasy) operates a massive digital healthcare ecosystem connecting pharmacies, diagnostic labs, and hospitals to millions of consumers across India.",
+    "engineering_focus": "They focus on building high-scale distributed systems, complex supply chain management APIs, and reliable inventory tracking engines that handle high-concurrency transaction volumes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how you manage backend reliability and inventory consistency at such a massive scale, as I’ve spent time building sandboxed execution environments and distributed API architectures to solve similar challenges in concurrency."
+  },
+  "freight tiger": {
+    "company": "Freight Tiger",
+    "domain": "SaaS & Enterprise Systems (Logistics Tech)",
+    "core_product": "Freight Tiger operates a digital freight network that provides an end-to-end logistics platform for supply chain visibility, load matching, and fleet management.",
+    "engineering_focus": "The company focuses on building high-scale distributed systems, real-time tracking pipelines, and complex optimization algorithms to solve supply chain inefficiencies within a cloud-native architecture.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Freight Tiger because building robust, containerized backends and managing asynchronous data flows is exactly the kind of technical challenge I enjoy, and I’m eager to contribute to the complex scaling demands of your logistics engine."
+  },
+  "vedanta ltd": {
+    "company": "Vedanta Ltd",
+    "domain": "Natural Resources & Industrial Manufacturing",
+    "core_product": "Vedanta Limited is a global diversified natural resources company focused on the extraction and production of oil, gas, zinc, lead, silver, copper, iron ore, and aluminium.",
+    "engineering_focus": "Development of robust industrial IoT systems, real-time data monitoring pipelines, and enterprise-grade backend infrastructure to optimize complex supply chain and production analytics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am eager to apply my experience with Docker-based sandboxing and scalable backend architecture to help streamline the complex data and operational systems that drive your industrial production processes."
+  },
+  "moneyview": {
+    "company": "Moneyview",
+    "domain": "Fintech & Payments",
+    "core_product": "Moneyview provides a credit-led financial platform offering instant personal loans, credit cards, and financial management tools through a digital-first interface.",
+    "engineering_focus": "They focus on high-throughput microservices architecture, real-time credit underwriting engines, and secure, low-latency financial transaction processing at scale.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my online code execution engine taught me the complexities of managing secure, containerized environments, and I am eager to apply that experience in building the robust, highly available backend systems that power Moneyview's credit infrastructure."
+  },
+  "ibm": {
+    "company": "IBM",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "IBM builds hybrid cloud and enterprise AI platforms, notably the watsonx suite, designed to help organizations integrate generative AI and automated data governance into their operational workflows.",
+    "engineering_focus": "The engineering focus centers on building high-performance hybrid cloud architectures, scalable distributed systems, and robust container orchestration using Kubernetes, Go, and Java to manage complex enterprise data pipelines.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following IBM’s advancements in containerized infrastructure and hybrid cloud orchestration, and I am keen to apply my experience in building sandboxed, distributed execution engines to support your mission of scaling enterprise-grade AI backends."
+  },
+  "loginext": {
+    "company": "LogiNext",
+    "domain": "Quick Commerce & Logistics",
+    "core_product": "LogiNext provides an AI-powered transportation automation platform that optimizes logistics, route planning, and last-mile delivery for global enterprises.",
+    "engineering_focus": "The engineering team focuses on building high-concurrency distributed systems, real-time geospatial data processing, and scalable microservices architectures to manage complex supply chain workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve spent a lot of time engineering sandboxed environments and backend pipelines to handle concurrent requests, so I'm really drawn to how LogiNext tackles the architectural complexity of real-time route optimization at such a massive, global scale."
+  },
+  "amplus solar": {
+    "company": "Amplus Solar",
+    "domain": "Renewable Energy & IoT Infrastructure",
+    "core_product": "Amplus Solar provides distributed clean energy solutions, including rooftop and ground-mounted solar power plants and energy management platforms for commercial and industrial clients.",
+    "engineering_focus": "Building scalable IoT platforms for real-time energy monitoring, data-intensive telemetry pipelines, and robust backend systems to optimize grid distribution and energy storage.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to your work because managing real-time data from a vast network of solar assets requires the exact kind of high-throughput backend architecture and containerized deployment skills I developed while building my sandboxed code execution engine."
   }
 }
