@@ -3414,5 +3414,77 @@
     "engineering_focus": "Building scalable IoT platforms for real-time energy monitoring, data-intensive telemetry pipelines, and robust backend systems to optimize grid distribution and energy storage.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am drawn to your work because managing real-time data from a vast network of solar assets requires the exact kind of high-throughput backend architecture and containerized deployment skills I developed while building my sandboxed code execution engine."
+  },
+  "dream11 (dream sports)": {
+    "company": "Dream11 (Dream Sports)",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Dream11 is a fantasy sports platform that allows users to create virtual teams and compete based on the real-world performance of players in various sports leagues.",
+    "engineering_focus": "Managing massive concurrent traffic spikes during live sporting events using highly scalable microservices, low-latency distributed systems, and robust data synchronization architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Dream11 handles extreme, synchronized traffic spikes during match start times and would love to contribute to the backend systems that keep those low-latency experiences seamless for millions of concurrent users."
+  },
+  "kalaari capital": {
+    "company": "Kalaari Capital",
+    "domain": "Venture Capital & Tech Investment",
+    "core_product": "Kalaari Capital is a technology-focused venture capital firm that invests in early-stage startups and supports founders in building scalable digital businesses across various sectors.",
+    "engineering_focus": "The firm evaluates high-growth startups leveraging scalable microservices, distributed cloud architecture, and data-driven systems to solve complex problems in the Indian digital ecosystem.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "As someone building distributed sandboxed execution engines and scalable backend architectures, I am deeply interested in how Kalaari evaluates the technical foundations and infrastructure scalability of the early-stage platforms in your portfolio."
+  },
+  "blue yonder": {
+    "company": "Blue Yonder",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Blue Yonder provides AI-driven supply chain management and retail planning software that helps global enterprises optimize inventory, logistics, and demand forecasting.",
+    "engineering_focus": "They focus on processing massive, real-time datasets through distributed microservices, complex optimization algorithms, and scalable cloud-native architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Blue Yonder because of the complexity involved in architecting distributed systems that handle high-volume supply chain data, as it directly aligns with my experience building sandboxed execution engines and scalable backend infrastructure."
+  },
+  "hinduja group": {
+    "company": "Hinduja Group",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Hinduja Group is a global conglomerate managing a diverse portfolio across automotive, financial services, IT/BPO, and infrastructure sectors.",
+    "engineering_focus": "They focus on building scalable enterprise resource planning systems, secure financial transaction backends, and high-availability microservices to integrate complex multinational business operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own sandboxed code execution engine gave me a first-hand look at the challenges of container orchestration and reliable backend design, and I am eager to apply those lessons to help scale the complex enterprise infrastructure at Hinduja Group."
+  },
+  "indian angel network": {
+    "company": "Indian Angel Network",
+    "domain": "Venture Capital & Investment Tech",
+    "core_product": "Indian Angel Network operates as a massive platform connecting angel investors with early-stage startups to facilitate deal flow, portfolio management, and venture funding.",
+    "engineering_focus": "Building secure, scalable platforms to handle complex multi-stakeholder workflows, document processing pipelines, and high-integrity data management systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your platform manages secure data processing and high-availability workflows, as I have been focusing on building sandboxed environments and robust backend systems to handle complex logic reliably."
+  },
+  "databricks": {
+    "company": "Databricks",
+    "domain": "Data Intelligence & Cloud Infrastructure",
+    "core_product": "Databricks provides a unified Data Intelligence Platform based on Apache Spark that integrates data engineering, data science, and AI analytics in the cloud.",
+    "engineering_focus": "Building highly scalable distributed systems, low-latency data processing engines, and robust orchestration layers capable of handling petabyte-scale data workloads across multi-cloud environments.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built an isolated multi-language execution engine using Docker and Redis, I am deeply interested in how your team handles the security and resource isolation challenges inherent in Databricks's large-scale compute workloads."
+  },
+  "capital one india": {
+    "company": "Capital One India",
+    "domain": "Fintech & Payments",
+    "core_product": "Capital One India serves as a critical engineering hub for the parent company's US-based banking, credit card, and financial services platform.",
+    "engineering_focus": "They focus on building highly scalable, fault-tolerant microservices and distributed systems that process massive volumes of financial transactions with strict data consistency and security requirements.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Capital One because building robust, containerized backends that handle concurrent processes and state management in my code execution engine gave me a direct look at the reliability challenges involved in scaling large financial systems."
+  },
+  "infosys ltd": {
+    "company": "Infosys Ltd",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Infosys provides global digital transformation services, consulting, and enterprise-scale software solutions powered by their proprietary AI platform, Infosys Topaz.",
+    "engineering_focus": "Building large-scale, resilient enterprise microservices, complex cloud-native architectures, and high-performance backend systems to integrate AI across multi-cloud environments.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Infosys scales massive enterprise applications and am eager to apply my experience with Docker-based sandboxing and backend optimization to your internal platform infrastructure."
+  },
+  "zypp": {
+    "company": "ZYPP",
+    "domain": "Quick Commerce & Logistics",
+    "core_product": "Zypp Electric operates an AI-enabled EV-as-a-service platform that provides logistics and last-mile delivery solutions for e-commerce and grocery companies.",
+    "engineering_focus": "Developing high-concurrency dispatch systems, real-time fleet tracking, and optimized route-planning algorithms using microservices and distributed event-driven architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am eager to apply my experience with Dockerized environments and backend optimization to help solve the real-time logistics and dispatch scaling challenges you face at Zypp."
   }
 }
