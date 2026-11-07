@@ -3486,5 +3486,77 @@
     "engineering_focus": "Developing high-concurrency dispatch systems, real-time fleet tracking, and optimized route-planning algorithms using microservices and distributed event-driven architectures.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am eager to apply my experience with Dockerized environments and backend optimization to help solve the real-time logistics and dispatch scaling challenges you face at Zypp."
+  },
+  "aspire": {
+    "company": "Aspire",
+    "domain": "Fintech & Payments",
+    "core_product": "Aspire is an all-in-one financial operating system for businesses that integrates corporate cards, expense management, and payable/receivable automation into a single platform.",
+    "engineering_focus": "The engineering team focuses on building high-reliability distributed financial systems, secure transaction processing, and scalable microservices that handle high-volume ledger data and real-time bank integrations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Aspire manages high-throughput financial data flows and ensures strict consistency in your distributed systems, and I would love to contribute my experience building isolated backend execution environments to your team."
+  },
+  "graviton research capital": {
+    "company": "Graviton Research Capital",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Graviton Research Capital",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Graviton Research Capital is solving complex architectural challenges in this space."
+  },
+  "dabur india": {
+    "company": "Dabur India",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Dabur India",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Dabur India is solving complex architectural challenges in this space."
+  },
+  "microsoft": {
+    "company": "Microsoft",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Microsoft",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Microsoft is solving complex architectural challenges in this space."
+  },
+  "tvs group": {
+    "company": "TVS Group",
+    "domain": "Fintech & Payments",
+    "core_product": "TVS Credit provides financial services including two-wheeler, used-car, and tractor loans, alongside digital consumer financing solutions.",
+    "engineering_focus": "Building highly available microservices and secure, scalable transaction processing systems that integrate with complex banking and credit-scoring APIs.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to TVS Credit because solving for secure, real-time financial transaction processing at scale presents the kind of backend architectural challenges I've been tackling while building my sandboxed code execution engine."
+  },
+  "bajaj holdings & investment ltd": {
+    "company": "Bajaj Holdings & Investment Ltd",
+    "domain": "Fintech & Investment Management",
+    "core_product": "Bajaj Holdings & Investment Ltd acts as the core investment arm of the Bajaj Group, managing a massive portfolio of strategic financial stakes and long-term investments.",
+    "engineering_focus": "Building secure, high-availability financial data platforms, robust transaction processing systems, and scalable backend services to handle complex investment workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve been following how your team approaches building reliable, secure backend infrastructure for financial data, and I’m eager to contribute my experience in designing scalable systems and sandboxed environments to your current engineering challenges."
+  },
+  "l&t technology services": {
+    "company": "L&T Technology Services",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "L&T Technology Services provides engineering and R&D services, focusing on digital transformation, embedded systems, and industrial software solutions for global enterprise clients.",
+    "engineering_focus": "They focus on building robust industrial IoT platforms, secure cloud-based enterprise systems, and high-performance backend infrastructure that bridges physical hardware with scalable digital services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team handles the complexity of building secure, scalable backend architectures that can reliably manage high-demand industrial data and distributed systems."
+  },
+  "arghyam foundation": {
+    "company": "Arghyam Foundation",
+    "domain": "Social Impact & Data Infrastructure",
+    "core_product": "Arghyam is a public charitable foundation that leverages data, technology, and grassroots research to address systemic water and sanitation security in India.",
+    "engineering_focus": "Building scalable data management systems, geospatial data visualization platforms, and reliable backend infrastructure to process complex hydro-geological datasets for public impact.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how your team handles the backend architecture for large-scale environmental datasets and would love to contribute my experience in building containerized, high-performance systems to support your data-driven mission."
+  },
+  "fable": {
+    "company": "Fable",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Fable builds an AI-powered project management and collaboration platform designed to streamline documentation, task tracking, and developer workflows.",
+    "engineering_focus": "The engineering team focuses on building low-latency collaborative interfaces, highly structured data synchronization across complex workflows, and integrating LLMs into existing developer toolchains.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandbox execution engine taught me the intricacies of managing isolated environments and efficient resource orchestration, which aligns perfectly with how you're handling complex task workflows at Fable."
   }
 }
