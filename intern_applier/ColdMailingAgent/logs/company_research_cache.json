@@ -3558,5 +3558,101 @@
     "engineering_focus": "The engineering team focuses on building low-latency collaborative interfaces, highly structured data synchronization across complex workflows, and integrating LLMs into existing developer toolchains.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "Building a sandbox execution engine taught me the intricacies of managing isolated environments and efficient resource orchestration, which aligns perfectly with how you're handling complex task workflows at Fable."
+  },
+  "iksa.ai": {
+    "company": "IKSA.ai",
+    "domain": "AI & Enterprise SaaS",
+    "core_product": "IKSA.ai builds an AI-powered conversational platform designed to automate lead qualification and customer interactions for businesses through intelligent voice and text agents.",
+    "engineering_focus": "Building low-latency conversational AI pipelines, handling real-time asynchronous data streams, and scaling robust backend architectures for high-concurrency enterprise integration.",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I have spent the last year refining how LLMs interact with structured backend workflows, and I am genuinely intrigued by how your team manages the state and latency requirements of high-volume conversational AI agents."
+  },
+  "infoedge": {
+    "company": "InfoEdge",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "InfoEdge operates a portfolio of leading online classified platforms including Naukri.com, 99acres, and Jeevansathi, connecting millions of users across recruitment, real estate, and matrimony.",
+    "engineering_focus": "Managing massive-scale traffic and high-concurrency transactions through distributed microservices, optimized database indexing for search, and robust backend infrastructure to ensure low-latency user experiences.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my time at IIT Kharagpur building sandboxed execution engines and scalable APIs, and I’m genuinely drawn to how InfoEdge maintains reliability while handling the immense search and matching traffic across platforms like Naukri."
+  },
+  "scalar academy": {
+    "company": "Scalar Academy",
+    "domain": "AI & EdTech",
+    "core_product": "Scalar Academy is an online tech-upskilling platform that provides structured career-focused curriculum and interview preparation for software engineers.",
+    "engineering_focus": "They focus on building highly scalable learning management systems, automated code evaluation engines, and personalized recommendation systems using a robust backend architecture.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Scalar's approach to technical pedagogy, and I am particularly interested in how your team handles the backend complexity of real-time code sandboxing and high-concurrency evaluation pipelines."
+  },
+  "piramal enterprises limited": {
+    "company": "Piramal Enterprises Limited",
+    "domain": "Financial Services & Digital Lending",
+    "core_product": "Piramal Enterprises Limited is a diversified conglomerate primarily focused on non-banking financial services, including retail lending, housing finance, and wholesale business credit.",
+    "engineering_focus": "Building secure, high-availability loan management systems, scalable credit assessment engines, and robust data pipelines to integrate complex financial datasets.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how your team handles the backend architecture required to maintain data consistency and system reliability while processing high-volume retail loan applications."
+  },
+  "77. bank of baroda": {
+    "company": "77. Bank of Baroda",
+    "domain": "Fintech & Payments",
+    "core_product": "Bank of Baroda is a public sector bank providing comprehensive retail and corporate banking services, digital financial solutions, and large-scale payment processing systems.",
+    "engineering_focus": "Building highly secure, reliable, and scalable transaction processing systems, high-availability microservices for core banking, and robust database management for massive financial datasets.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage large-scale data integrity and low-latency API performance, as my experience building sandboxed execution environments relies on similar principles of system isolation and reliable state management."
+  },
+  "google india": {
+    "company": "Google India",
+    "domain": "AI & Cloud Infrastructure",
+    "core_product": "Google India drives critical global product development across Search, YouTube, Payments (Google Pay), and cloud-based AI infrastructure.",
+    "engineering_focus": "Development of high-throughput distributed systems, large-scale data processing pipelines, and low-latency API services using C++, Go, and custom-built cloud infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Google's architectural approach to sandboxed code execution and container orchestration, and I am eager to apply my experience building scalable backend engines to your high-traffic distributed systems."
+  },
+  "leucine": {
+    "company": "Leucine",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Leucine provides a compliance-focused digital platform that digitizes and automates manufacturing processes for the pharmaceutical and life sciences industry.",
+    "engineering_focus": "They focus on building complex, reliable enterprise workflows, secure multi-tenant data architecture, and high-integrity systems that ensure regulatory compliance in mission-critical environments.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Leucine's focus on building robust, high-integrity systems for the pharmaceutical sector, as it mirrors the backend architectural challenges I tackled while developing a sandboxed, multi-language code execution engine using Docker and Redis."
+  },
+  "indigo (interglobe aviation ltd)": {
+    "company": "IndiGo (InterGlobe Aviation Ltd)",
+    "domain": "Travel & Logistics Tech",
+    "core_product": "IndiGo operates a massive, high-frequency airline network requiring complex scheduling, real-time inventory management, and digital booking platforms.",
+    "engineering_focus": "The engineering team manages high-concurrency reservation systems, real-time demand-based pricing engines, and distributed microservices architecture to ensure low-latency booking experiences.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how you handle the massive traffic spikes and concurrency challenges inherent in flight booking systems, as my work on sandboxed code execution platforms gave me a practical understanding of building high-throughput backend services."
+  },
+  "cyient": {
+    "company": "Cyient",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Cyient is a global engineering and technology solutions provider that delivers digital, autonomous, and sustainable solutions for industries like aerospace, communications, and transport.",
+    "engineering_focus": "The engineering team focuses on building robust industrial-grade software, managing complex data integration pipelines, and developing scalable enterprise-level cloud platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Cyient's work in industrial systems because my experience building a multi-language sandboxed execution engine gave me a deep appreciation for the architectural rigors of running secure, reliable, and containerized backend services at scale."
+  },
+  "wipro limited": {
+    "company": "Wipro Limited",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Wipro is a global information technology, consulting, and business process services company that provides digital transformation solutions and managed engineering services for enterprise clients.",
+    "engineering_focus": "Developing scalable enterprise software architecture, robust microservices ecosystems, secure cloud-native applications, and complex distributed system integrations for global business operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Wipro's work in building large-scale enterprise infrastructure and am eager to apply my experience with Docker-based sandboxing and backend optimization to your team's mission of solving complex, high-stakes system challenges."
+  },
+  "sprinklr": {
+    "company": "Sprinklr",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Sprinklr provides a unified customer experience management (Unified-CXM) platform that helps large enterprises manage customer interactions across social media, messaging, and digital channels via AI-powered insights.",
+    "engineering_focus": "They manage massive-scale distributed data pipelines, high-throughput message processing, and complex microservices architectures that integrate diverse data streams in real-time.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my recent semesters building sandboxed execution environments and scalable backend services, and I am genuinely drawn to how Sprinklr maintains performance while aggregating and processing such vast volumes of unstructured enterprise data."
+  },
+  "squarepoint capital": {
+    "company": "Squarepoint Capital",
+    "domain": "Fintech & Quantitative Trading",
+    "core_product": "Squarepoint Capital is a global investment management firm that employs a data-driven, systematic approach to trading and portfolio management across liquid markets.",
+    "engineering_focus": "The firm focuses on ultra-low latency execution systems, high-frequency data processing pipelines, and massive-scale quantitative research infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Squarepoint manages low-latency execution and resource-efficient sandboxing, as my work on a containerized code execution engine gave me first-hand experience in building performant systems that handle heavy computational loads under strict constraints."
   }
 }
