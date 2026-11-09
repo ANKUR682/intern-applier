@@ -3654,5 +3654,77 @@
     "engineering_focus": "The firm focuses on ultra-low latency execution systems, high-frequency data processing pipelines, and massive-scale quantitative research infrastructure.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am deeply interested in how Squarepoint manages low-latency execution and resource-efficient sandboxing, as my work on a containerized code execution engine gave me first-hand experience in building performant systems that handle heavy computational loads under strict constraints."
+  },
+  "rekise marine": {
+    "company": "Rekise Marine",
+    "domain": "Maritime Robotics & Automation",
+    "core_product": "Rekise Marine develops autonomous underwater vehicles (AUVs) and robotic systems optimized for marine data acquisition, subsea surveying, and environmental monitoring.",
+    "engineering_focus": "Building low-latency embedded communication systems, robust backend data processing pipelines for sensor telemetry, and reliable infrastructure for autonomous fleet coordination.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage the backend architecture for processing high-frequency telemetry data, as my experience building sandboxed, containerized environments for code execution has given me a strong foundation in designing scalable systems that require high reliability."
+  },
+  "punjab national bank": {
+    "company": "Punjab National Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Punjab National Bank is a major public sector financial institution providing comprehensive banking, digital payments, and credit services to millions of retail and corporate customers.",
+    "engineering_focus": "Developing highly secure, high-concurrency transactional backend systems, robust API gateways for legacy integration, and scalable distributed architectures to handle massive banking data and digital banking services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to PNB's transition toward large-scale digital banking, and I am eager to apply my experience in building secure, containerized backend systems and optimizing complex database workflows to help improve your core transaction platforms."
+  },
+  "mrf ltd": {
+    "company": "MRF Ltd",
+    "domain": "Manufacturing & Supply Chain Systems",
+    "core_product": "MRF Ltd is a multinational leader in the manufacturing and distribution of tires, conveyor belts, and specialized rubber products.",
+    "engineering_focus": "Building robust enterprise resource planning (ERP) systems, real-time supply chain telemetry, and high-availability inventory management backends.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you handle the backend complexity of real-time supply chain data and distributed systems, and I believe my work on sandboxed execution engines is directly relevant to building similarly reliable and scalable internal platforms."
+  },
+  "ola": {
+    "company": "Ola",
+    "domain": "Mobility & New Energy Ecosystem",
+    "core_product": "Ola operates a massive mobility platform connecting millions of riders with drivers, alongside expanding into the electric vehicle and energy infrastructure space.",
+    "engineering_focus": "They focus on high-concurrency geo-spatial data processing, real-time demand-supply matching engines, and building resilient microservices to handle millions of transactions at scale.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own sandboxed code execution engine gave me a first-hand look at the complexities of container isolation and resource management, which makes me eager to contribute to the high-throughput systems that keep Ola's platform running reliably."
+  },
+  "nvidia": {
+    "company": "NVIDIA",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at NVIDIA",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how NVIDIA is solving complex architectural challenges in this space."
+  },
+  "nestlé india ltd": {
+    "company": "Nestlé India Ltd",
+    "domain": "FMCG & Supply Chain Systems",
+    "core_product": "Nestlé India Ltd is a multinational food and beverage giant that manages complex, large-scale supply chain, manufacturing, and distribution networks across the country.",
+    "engineering_focus": "The engineering team focuses on enterprise resource planning (ERP) integration, high-volume inventory management systems, real-time data pipelines, and scalable backend services for logistics optimization.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Nestlé manages the backend complexity required to track inventory and distribution at scale, and I would love to contribute to building similarly robust, reliable systems."
+  },
+  "phonepe": {
+    "company": "PhonePe",
+    "domain": "Fintech & Payments",
+    "core_product": "PhonePe is a leading digital payments and financial services platform providing UPI, bill payments, investments, and insurance to millions of users.",
+    "engineering_focus": "The engineering team focuses on building highly resilient, low-latency microservices and distributed transaction systems capable of handling massive concurrency during peak payment traffic.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built an isolated, multi-language execution engine using Docker and Redis, I am fascinated by how PhonePe maintains sub-second transaction integrity across such a massive, distributed financial infrastructure."
+  },
+  "red hat": {
+    "company": "Red Hat",
+    "domain": "DevTools & Cloud Infrastructure",
+    "core_product": "Red Hat provides enterprise-grade open-source software solutions, primarily centered around RHEL, OpenShift, and cloud-native automation tools.",
+    "engineering_focus": "They focus on distributed systems, kernel-level optimization, container orchestration via Kubernetes, and maintaining stable, scalable infrastructure for global enterprise workloads.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built a containerized code execution engine, I am eager to contribute to the complex orchestration and backend stability challenges that define Red Hat's enterprise infrastructure."
+  },
+  "batterysmart": {
+    "company": "BatterySmart",
+    "domain": "Energy & Mobility Infrastructure",
+    "core_product": "BatterySmart operates an extensive network of battery-swapping stations for electric two- and three-wheelers, integrated with an IoT-enabled asset management platform.",
+    "engineering_focus": "Developing highly available microservices for real-time battery tracking, managing high-concurrency swapping transactions, and processing large-scale IoT telemetry data through distributed systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building the backend for your battery-swapping network shares the same core challenges as my code execution platform, specifically around managing stateful, high-concurrency requests and ensuring reliable system uptime under heavy load."
   }
 }
