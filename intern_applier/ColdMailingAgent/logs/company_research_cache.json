@@ -3726,5 +3726,93 @@
     "engineering_focus": "Developing highly available microservices for real-time battery tracking, managing high-concurrency swapping transactions, and processing large-scale IoT telemetry data through distributed systems.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "Building the backend for your battery-swapping network shares the same core challenges as my code execution platform, specifically around managing stateful, high-concurrency requests and ensuring reliable system uptime under heavy load."
+  },
+  "phool.co": {
+    "company": "Phool.Co",
+    "domain": "E-commerce & Sustainable Direct-to-Consumer (D2C)",
+    "core_product": "Phool.co creates sustainable lifestyle products from upcycled floral waste, operating a D2C supply chain and e-commerce platform.",
+    "engineering_focus": "Building high-concurrency e-commerce order management systems, inventory tracking, and scalable backend services to handle fluctuating D2C traffic volumes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Phool.co because the challenge of building robust, scalable backend systems to manage complex D2C supply chains and inventory cycles aligns perfectly with my interest in distributed systems."
+  },
+  "snowflake": {
+    "company": "Snowflake",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Snowflake provides a cloud-native data platform that enables organizations to store, process, and analyze massive datasets across multiple clouds with a focus on data warehousing and AI-driven insights.",
+    "engineering_focus": "Engineering efforts center on building highly scalable distributed systems, query optimization engines, multi-tenant cloud infrastructure, and robust backend services capable of processing petabytes of data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been fascinated by the complexity of your distributed query engine and would love to contribute to the backend systems that make such large-scale data processing efficient and reliable."
+  },
+  "yulu": {
+    "company": "Yulu",
+    "domain": "Micro-mobility & IoT Logistics",
+    "core_product": "Yulu is an AI-powered shared micro-mobility platform that manages a large-scale fleet of electric vehicles using IoT-enabled hardware and a dense distributed network.",
+    "engineering_focus": "They focus on high-frequency IoT telemetry processing, real-time geolocation tracking, scalable microservices for fleet management, and managing concurrent user demand across distributed backend systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building an online code execution engine taught me how to manage isolated containerized processes at scale, and I am eager to apply that same rigor to Yulu’s challenge of maintaining reliable, real-time communication between thousands of IoT devices and their backend."
+  },
+  "naukri": {
+    "company": "Naukri",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Naukri is India's largest online job portal, connecting millions of job seekers with recruiters through a massive, high-traffic marketplace platform.",
+    "engineering_focus": "The engineering team focuses on building low-latency search infrastructure, massive-scale distributed data pipelines, and highly available microservices to handle millions of concurrent resume and job profile interactions.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built a sandboxed code execution engine using Docker and Redis, I am deeply interested in how Naukri optimizes its backend infrastructure to handle the massive concurrency demands of its job search and assessment tools."
+  },
+  "hp inc.": {
+    "company": "HP Inc.",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "HP Inc. develops personal computing, printing, and digital services solutions, increasingly integrating AI-driven workflows and cloud-based management platforms.",
+    "engineering_focus": "Development of scalable distributed systems, secure firmware-to-cloud integrations, high-concurrency backend services, and robust data pipelines for global enterprise hardware management.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my recent semesters building sandboxed execution environments and distributed backend systems, and I am genuinely interested in how HP handles the scale and security challenges inherent in your cloud-based enterprise service infrastructure."
+  },
+  "tata consumer products ltd": {
+    "company": "Tata Consumer Products Ltd",
+    "domain": "Consumer Goods & Supply Chain Tech",
+    "core_product": "Tata Consumer Products is a global FMCG company managing a massive portfolio of food and beverage brands, with a focus on digitizing its extensive supply chain and direct-to-consumer distribution networks.",
+    "engineering_focus": "The engineering focus centers on building robust, scalable microservices for inventory management, demand forecasting, and real-time data pipelines that power their expansive e-commerce and logistics infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you are scaling your backend infrastructure to handle the complex, high-concurrency data demands of a global supply chain, and I would love to contribute my experience in building containerized execution environments and optimized APIs to your team."
+  },
+  "bidgely": {
+    "company": "Bidgely",
+    "domain": "Energy Analytics & AI SaaS",
+    "core_product": "Bidgely provides an AI-powered energy intelligence platform that disaggregates household electricity data to provide personalized energy-saving insights to utility companies and their customers.",
+    "engineering_focus": "Developing highly scalable data pipelines for processing massive streams of smart meter data using distributed systems, cloud-native backend services, and machine learning models in production.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Bidgely builds robust backend infrastructure to process and translate terabytes of raw energy data into actionable insights, and I would love to contribute to your engineering challenges regarding data efficiency and distributed service reliability."
+  },
+  "pristyn care": {
+    "company": "Pristyn Care",
+    "domain": "HealthTech & Provider Marketplaces",
+    "core_product": "Pristyn Care operates a patient-centric healthcare platform that connects patients with specialized surgical care, diagnostic services, and end-to-end medical support.",
+    "engineering_focus": "The engineering team focuses on building robust microservices, scalable appointment scheduling engines, and data-driven operational workflows to manage high-volume patient traffic and provider coordination.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to your platform's ability to orchestrate complex operational workflows, and I would love to apply my experience with Docker-based sandboxing and scalable backend systems to help optimize the reliability of your provider coordination engines."
+  },
+  "uber": {
+    "company": "Uber",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Uber operates a global multi-sided marketplace connecting millions of riders and eaters with drivers and merchants through real-time logistics and mobility services.",
+    "engineering_focus": "Uber manages extreme-scale challenges involving low-latency dispatch algorithms, high-throughput geo-spatial data processing, and resilient microservices architecture deployed across massive distributed systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how you handle the massive concurrency demands of your dispatch systems and want to bring my experience in building sandboxed, containerized environments to your backend infrastructure team."
+  },
+  "yes bank": {
+    "company": "Yes Bank",
+    "domain": "Fintech & Payments",
+    "core_product": "Yes Bank provides comprehensive digital banking solutions, including retail banking, corporate services, and a robust API-led payments infrastructure.",
+    "engineering_focus": "They focus on building highly secure, low-latency financial transaction systems, scalable microservices architectures, and resilient distributed systems to handle large-scale banking data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Yes Bank handles high-concurrency payment streams, and I am keen to apply my experience with Dockerized sandboxing and backend optimization to help improve the reliability of your transaction processing systems."
+  },
+  "blue star": {
+    "company": "Blue Star",
+    "domain": "Consumer Electronics & HVAC Systems",
+    "core_product": "Blue Star manufactures and provides comprehensive heating, ventilation, air conditioning, and commercial refrigeration solutions for residential and commercial sectors.",
+    "engineering_focus": "Development of scalable IoT-integrated backend platforms, real-time telemetry data processing from hardware sensors, and robust supply chain management systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Blue Star manages large-scale distributed data from its IoT-connected appliances, as my work on containerized sandboxed environments aligns with building the reliable, high-uptime backends required for such hardware-software ecosystems."
   }
 }
