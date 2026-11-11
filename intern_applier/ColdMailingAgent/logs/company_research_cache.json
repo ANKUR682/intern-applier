@@ -3814,5 +3814,69 @@
     "engineering_focus": "Development of scalable IoT-integrated backend platforms, real-time telemetry data processing from hardware sensors, and robust supply chain management systems.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am interested in how Blue Star manages large-scale distributed data from its IoT-connected appliances, as my work on containerized sandboxed environments aligns with building the reliable, high-uptime backends required for such hardware-software ecosystems."
+  },
+  "srf ltd": {
+    "company": "SRF Ltd",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "SRF Ltd is a chemical conglomerate that manufactures technical textiles, packaging films, and specialty chemicals for global industrial and consumer markets.",
+    "engineering_focus": "Development of industrial-grade enterprise resource planning (ERP), supply chain management systems, and high-integrity data pipelines to optimize large-scale chemical manufacturing and logistics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent the last year building sandboxed, containerized environments for resource-intensive tasks, and I am keen to apply that experience in managing the backend reliability and data integrity challenges inherent in large-scale industrial supply chain systems."
+  },
+  "kotak mahindra bank ltd": {
+    "company": "Kotak Mahindra Bank Ltd",
+    "domain": "Fintech & Banking",
+    "core_product": "Kotak Mahindra Bank provides a comprehensive suite of digital banking, credit, investment, and wealth management services to individual and institutional clients.",
+    "engineering_focus": "Building highly available, secure, and transactional microservices architectures capable of processing massive volumes of financial data with strict regulatory compliance and low-latency performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to your team's work on resilient backend systems, as I am eager to apply my experience in containerized environments and distributed architectures to the complex scaling challenges inherent in modern banking infrastructure."
+  },
+  "digitalocean": {
+    "company": "DigitalOcean",
+    "domain": "DevTools & Cloud Infrastructure",
+    "core_product": "DigitalOcean provides simplified cloud computing services including virtual private servers, managed databases, and object storage tailored for developers and growing businesses.",
+    "engineering_focus": "They focus on building highly reliable distributed systems, orchestrating large-scale containerized workloads via Docker and Kubernetes, and maintaining high-performance APIs for cloud resource management.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been obsessed with the internals of sandboxed execution environments and container orchestration, and I’m eager to learn how your team handles the security and low-latency demands of scaling thousands of concurrent cloud instances."
+  },
+  "crompton": {
+    "company": "Crompton",
+    "domain": "Consumer Durables & Smart IoT Infrastructure",
+    "core_product": "Crompton Greaves Consumer Electricals specializes in manufacturing and digital transformation of household appliances including fans, lighting, pumps, and smart home IoT solutions.",
+    "engineering_focus": "Building scalable backend services for IoT device connectivity, data-driven supply chain optimization, and robust APIs to support high-traffic consumer retail platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Given my experience building sandboxed execution environments and high-performance backend systems, I am particularly interested in how your team handles the scaling challenges of integrating real-time data from IoT-enabled consumer products."
+  },
+  "caterpillar inc": {
+    "company": "Caterpillar Inc",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Caterpillar Inc. is a global leader in construction and mining equipment that is aggressively transitioning to digital solutions through 'Cat Digital' by optimizing fleet management and predictive maintenance via IoT and telemetry.",
+    "engineering_focus": "Development of high-scale industrial IoT platforms, low-latency telemetry data ingestion, distributed systems for real-time asset monitoring, and robust cloud-based backend services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m drawn to Cat Digital because the challenge of building reliable, sandboxed systems for remote machine data is a natural extension of my work in designing high-concurrency backend services and containerized environments."
+  },
+  "muthoot group": {
+    "company": "Muthoot Group",
+    "domain": "Fintech & Financial Services",
+    "core_product": "Muthoot Group is a diversified conglomerate primarily focused on gold-backed lending, microfinance, insurance, and money transfer services.",
+    "engineering_focus": "Developing secure, high-availability transaction processing systems, building robust backend APIs for financial data management, and integrating scalable microservices to support large-scale digital lending operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you handle the backend complexity of real-time financial transactions and the challenge of building secure, scalable systems that can reliably manage high volumes of sensitive user data."
+  },
+  "blackrock": {
+    "company": "BlackRock",
+    "domain": "Fintech & Asset Management",
+    "core_product": "BlackRock provides investment management, risk management, and advisory services through their central technology platform, Aladdin.",
+    "engineering_focus": "The engineering focus centers on building ultra-reliable, high-throughput distributed systems capable of processing massive volumes of financial data with low-latency and strict consistency requirements.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team handles the complexity of distributed data pipelines and state management within the Aladdin ecosystem, as I have spent my recent projects focusing on building scalable, sandboxed execution environments."
+  },
+  "bankbazaar.com": {
+    "company": "BankBazaar.com",
+    "domain": "Fintech & Payments",
+    "core_product": "BankBazaar is an online financial marketplace that provides instant customized quotes for loans, credit cards, and insurance products by integrating with bank APIs.",
+    "engineering_focus": "Developing high-concurrency microservices, managing complex financial data integrity, and building low-latency API orchestrations for real-time credit decisioning.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my recent semesters building robust backend engines using Docker and Redis to handle concurrent execution, and I am keen to apply that experience in architecting the secure, high-throughput systems that power BankBazaar’s financial matchmaking platform."
   }
 }
