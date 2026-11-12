@@ -3878,5 +3878,101 @@
     "engineering_focus": "Developing high-concurrency microservices, managing complex financial data integrity, and building low-latency API orchestrations for real-time credit decisioning.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I have spent my recent semesters building robust backend engines using Docker and Redis to handle concurrent execution, and I am keen to apply that experience in architecting the secure, high-throughput systems that power BankBazaar’s financial matchmaking platform."
+  },
+  "dalmia bharat ltd": {
+    "company": "Dalmia Bharat Ltd",
+    "domain": "Industrial Manufacturing & Infrastructure",
+    "core_product": "Dalmia Bharat is a leading manufacturer of cement and sustainable construction materials, focusing on large-scale industrial infrastructure and operational efficiency.",
+    "engineering_focus": "Building robust enterprise resource planning (ERP) systems, high-availability supply chain logistics platforms, and scalable data pipelines for industrial automation and process optimization.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you are applying backend infrastructure and distributed systems to streamline large-scale industrial operations and complex supply chain data."
+  },
+  "pushowl": {
+    "company": "PushOwl",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "PushOwl provides web push notification marketing solutions that help e-commerce brands increase conversion rates and customer retention.",
+    "engineering_focus": "The engineering team focuses on handling massive request throughput, managing real-time event-driven messaging, and maintaining highly scalable distributed systems capable of processing millions of notifications daily.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own code execution engine with Docker and Redis gave me a deep appreciation for the architectural complexity required to manage high-concurrency event loops and distributed task processing, which is exactly why I'm drawn to the scale you manage at PushOwl."
+  },
+  "third unicorn": {
+    "company": "Third Unicorn",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Third Unicorn operates 'Brands.live', a social commerce marketplace platform designed to facilitate high-frequency transactions and creator-led community shopping.",
+    "engineering_focus": "They focus on building high-concurrency event-driven architectures, managing real-time inventory synchronization, and optimizing low-latency search and discovery for massive user traffic.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent a significant amount of time building a containerized code execution engine that handles sandboxed environments at scale, and I am genuinely interested in how your team handles similar concurrency challenges within a high-traffic social commerce ecosystem."
+  },
+  "goldman sachs": {
+    "company": "Goldman Sachs",
+    "domain": "Fintech & Financial Services",
+    "core_product": "Goldman Sachs provides global investment banking, securities, and investment management services, underpinned by massive-scale financial data platforms and transaction processing systems.",
+    "engineering_focus": "The firm focuses on building ultra-low-latency execution engines, resilient distributed transaction systems, and large-scale data pipelines that require extreme reliability and high-throughput backend performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my online code execution platform sparked my interest in how you handle isolated, sandboxed environments at scale, and I am eager to apply that same rigor for efficiency and security to Goldman Sachs’s complex financial infrastructure."
+  },
+  "dealshare": {
+    "company": "DealShare",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "DealShare is a social e-commerce platform focused on providing affordable, mass-market groceries and household essentials to value-seeking consumers in smaller Indian cities.",
+    "engineering_focus": "Developing highly scalable microservices, managing complex inventory supply chains, and building distributed systems capable of handling massive surges in transaction volume during promotional events.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how DealShare handles high-concurrency order processing and inventory management, and I’m eager to contribute to the backend infrastructure challenges required to scale these systems for millions of users."
+  },
+  "tvs credit": {
+    "company": "TVS Credit",
+    "domain": "Fintech & Payments",
+    "core_product": "TVS Credit provides technology-driven financial services, including consumer loans, business loans, and digital lending solutions for two-wheelers and MSMEs.",
+    "engineering_focus": "Building highly available, secure, and scalable microservices architectures that handle large-scale loan processing, real-time credit scoring, and distributed transaction pipelines.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how TVS Credit manages the complex concurrency and data integrity challenges inherent in building high-throughput financial transaction systems."
+  },
+  "itc limited": {
+    "company": "ITC Limited",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "ITC Limited operates a vast conglomerate spanning FMCG, agriculture, and hospitality, requiring massive digital infrastructure for supply chain management, demand forecasting, and consumer data analytics.",
+    "engineering_focus": "The engineering focus centers on building scalable distributed systems for real-time inventory tracking, complex supply chain logistics, and robust data-driven backend architectures to support multi-divisional operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following ITC's digital transformation journey and am particularly interested in how your engineering teams leverage distributed systems to maintain high-availability backend services across such a diverse and large-scale operational footprint."
+  },
+  "infibeam avenues": {
+    "company": "Infibeam Avenues",
+    "domain": "Fintech & Payments",
+    "core_product": "Infibeam Avenues provides digital payment gateway solutions and enterprise e-commerce platforms, enabling businesses to process secure online transactions and manage retail operations.",
+    "engineering_focus": "The core engineering focus involves building high-throughput, fault-tolerant payment processing systems, low-latency transaction routing, and secure distributed architecture capable of handling massive volumes of financial data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Infibeam's scale in the payments space and am genuinely interested in how you manage the backend reliability and transaction consistency required to handle high-volume financial traffic."
+  },
+  "samsung r&d institute": {
+    "company": "Samsung R&D Institute",
+    "domain": "Consumer Electronics & Integrated Software Ecosystems",
+    "core_product": "Samsung R&D Institute focuses on developing foundational software, AI-driven features, and system-level optimizations for Samsung’s global mobile, wearable, and smart home ecosystems.",
+    "engineering_focus": "Development of high-concurrency backend services, distributed systems for cloud-device synchronization, and resource-efficient sandboxed environments for mobile software platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Samsung R&D because of your focus on building robust sandboxed environments and backend systems that need to maintain high performance across millions of consumer devices globally."
+  },
+  "ceat limited": {
+    "company": "CEAT Limited",
+    "domain": "Automotive Manufacturing & Retail Tech",
+    "core_product": "CEAT Limited is a leading tyre manufacturer that integrates digital supply chain management, dealer network portals, and consumer-facing retail platforms.",
+    "engineering_focus": "Building scalable backend microservices for supply chain tracking, high-concurrency inventory management systems, and robust data APIs for their retail dealer network.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you handle the backend complexity of real-time supply chain logistics and would love to apply my experience with Docker-based sandboxed environments and distributed systems to help optimize your retail platforms."
+  },
+  "nec corporation": {
+    "company": "NEC Corporation",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "NEC Corporation provides large-scale digital transformation solutions, including biometrics, public safety infrastructure, and managed IT services for global enterprise and government clients.",
+    "engineering_focus": "Development of high-availability distributed systems, secure data processing architectures, and large-scale backend infrastructure that prioritizes reliability and performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to NEC’s work in high-stakes infrastructure, as it mirrors my own interest in building robust, containerized execution environments that prioritize security and system-level performance."
+  },
+  "aditya birla capital": {
+    "company": "Aditya Birla Capital",
+    "domain": "Fintech & Financial Services",
+    "core_product": "Aditya Birla Capital is a comprehensive financial services holding company providing diverse solutions including lending, insurance, asset management, and investment advisory services.",
+    "engineering_focus": "Developing highly secure, scalable microservices architectures to handle complex financial transactions, data-intensive credit risk pipelines, and robust real-time API integrations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your engineering team manages the complex trade-offs between system consistency and high-speed transaction processing while maintaining the security standards required for large-scale financial platforms."
   }
 }
