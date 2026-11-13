@@ -3974,5 +3974,109 @@
     "engineering_focus": "Developing highly secure, scalable microservices architectures to handle complex financial transactions, data-intensive credit risk pipelines, and robust real-time API integrations.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am particularly interested in how your engineering team manages the complex trade-offs between system consistency and high-speed transaction processing while maintaining the security standards required for large-scale financial platforms."
+  },
+  "tvs motor company": {
+    "company": "TVS Motor Company",
+    "domain": "Automotive & Connected Mobility Systems",
+    "core_product": "TVS Motor Company designs and manufactures high-performance two-wheelers and three-wheelers with a significant focus on electric vehicle technology and connected smart mobility solutions.",
+    "engineering_focus": "The engineering team focuses on building scalable IoT backends, real-time vehicle telemetry processing, and robust cloud services to support the data-intensive infrastructure of connected electric vehicles.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am eager to apply my experience with Docker-based sandboxing and high-concurrency backend systems to help scale the data pipelines that power your connected vehicle ecosystem."
+  },
+  "murugappa group": {
+    "company": "Murugappa Group",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "The Murugappa Group is a massive conglomerate operating across diverse sectors including financial services, engineering, sugar, and agriculture, currently undergoing significant digital transformation.",
+    "engineering_focus": "Building robust enterprise-grade backend systems, digitizing supply chain operations, and integrating scalable API architectures across their diverse business units.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to how Murugappa Group is modernizing traditional industries through technology, and I’m eager to apply my experience with containerization and building backend execution engines to your digital infrastructure projects."
+  },
+  "indian bank": {
+    "company": "Indian Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Indian Bank is a public sector financial institution providing comprehensive retail, corporate, and digital banking services to millions of customers across India.",
+    "engineering_focus": "Building secure, high-availability transaction processing systems, scalable microservices architectures, and robust backend APIs to support massive retail banking data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Indian Bank is modernizing its digital infrastructure and I am eager to apply my experience with Dockerized sandboxing and backend performance optimization to help strengthen your transaction processing systems."
+  },
+  "sutranova ventures": {
+    "company": "SutraNova Ventures",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "SutraNova Ventures develops AI-driven operational intelligence platforms that streamline enterprise decision-making and workflow automation.",
+    "engineering_focus": "They focus on building high-concurrency event-driven architectures, complex data ingestion pipelines, and secure, scalable backend services to manage enterprise-grade workloads.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve spent a lot of time engineering low-latency sandboxed execution environments, and I’m really interested in how you handle similar infrastructure challenges when scaling your backend services."
+  },
+  "yubi": {
+    "company": "Yubi",
+    "domain": "Fintech & Enterprise Systems",
+    "core_product": "Yubi is an enterprise platform that provides a unified infrastructure for debt markets, facilitating credit discovery, execution, and monitoring between lenders and borrowers.",
+    "engineering_focus": "The engineering team focuses on building secure, high-concurrency microservices and distributed transaction systems to handle complex financial workflows and large-scale data integrity.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Yubi because the challenge of building reliable, high-integrity backend systems for debt markets mirrors the technical rigor I applied when architecting my multi-language sandboxed code execution engine."
+  },
+  "tenneco": {
+    "company": "Tenneco",
+    "domain": "Automotive Manufacturing & Industrial Technology",
+    "core_product": "Tenneco designs, manufactures, and distributes advanced automotive powertrain, performance, and clean air systems for global vehicle manufacturers.",
+    "engineering_focus": "Development of scalable IoT-driven telematics, industrial data processing systems, and high-availability backend infrastructure to support manufacturing process optimization and global supply chain management.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team leverages distributed systems and containerized backend architectures to manage the high-volume data streams essential for modern automotive production cycles."
+  },
+  "arcana": {
+    "company": "Arcana",
+    "domain": "Web3 & Decentralized Infrastructure",
+    "core_product": "Arcana builds a decentralized network for privacy-preserving data storage, developer-friendly Web3 authentication (Auth SDK), and secure access control.",
+    "engineering_focus": "The engineering team focuses on building distributed cryptographic protocols, high-concurrency authentication middleware, and secure data orchestration layers using Rust, Go, and TypeScript.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to Arcana because building secure, containerized execution environments for my code execution platform gave me a direct look at the reliability challenges involved in managing distributed systems and infrastructure-level security."
+  },
+  "cadence design systems": {
+    "company": "Cadence Design Systems",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Cadence Design Systems develops sophisticated computational software and hardware solutions used to design integrated circuits, systems-on-chip, and printed circuit boards.",
+    "engineering_focus": "The engineering focus involves building high-performance, compute-intensive distributed systems and scalable backend infrastructure capable of handling complex simulation and design automation tasks.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandboxed code execution engine gave me a practical appreciation for the complexities of running high-performance, isolated processes, and I am eager to apply those same systems-level optimization skills to the computational infrastructure you maintain at Cadence."
+  },
+  "healthify": {
+    "company": "Healthify",
+    "domain": "Health-Tech & Digital Wellness",
+    "core_product": "Healthify is a digital health platform that leverages AI-driven nutrition tracking, fitness coaching, and personalized metabolic health solutions.",
+    "engineering_focus": "Building high-concurrency event-driven systems to process real-time user biometric data, scalable microservices for personalized recommendation engines, and robust API infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Healthify's shift toward personalized AI coaching and am particularly interested in how you manage the backend complexity of scaling real-time biometric data processing alongside your recommendation models."
+  },
+  "ntpc ltd": {
+    "company": "NTPC Ltd",
+    "domain": "Energy & Power Infrastructure",
+    "core_product": "NTPC Ltd is India's largest integrated energy company, primarily focused on electricity generation through thermal, hydro, solar, and wind power plants.",
+    "engineering_focus": "Building robust industrial IoT systems, real-time grid monitoring, data-intensive energy management pipelines, and large-scale enterprise resource planning (ERP) platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am fascinated by how you manage the massive data throughput involved in national grid operations, and I would love to contribute to building reliable, high-concurrency backend systems that keep critical infrastructure running smoothly."
+  },
+  "accredian": {
+    "company": "Accredian",
+    "domain": "AI & EdTech",
+    "core_product": "Accredian is a professional upskilling platform that provides data science, product management, and leadership programs to help working professionals transition into high-growth tech careers.",
+    "engineering_focus": "Building scalable learning management systems and high-throughput assessment engines that integrate complex AI-driven feedback loops and personalized user workflows.",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I have been following how Accredian leverages AI to personalize learning paths, and I am eager to contribute to the backend architecture that powers these high-impact user experiences."
+  },
+  "indusind bank": {
+    "company": "IndusInd Bank",
+    "domain": "Fintech & Payments",
+    "core_product": "IndusInd Bank provides comprehensive banking and financial services, including digital payments, retail and corporate banking, and high-frequency transaction processing systems.",
+    "engineering_focus": "Building highly available and secure microservices architecture capable of handling high-throughput transactional traffic, robust API integrations, and low-latency database operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how you manage the complexities of distributed systems and state consistency at scale, which parallels the design challenges I navigated while building a sandboxed, containerized code execution engine."
+  },
+  "ema": {
+    "company": "EMA",
+    "domain": "AI & Enterprise Software",
+    "core_product": "EMA builds autonomous AI agents that act as employees to automate complex knowledge work and enterprise workflows.",
+    "engineering_focus": "The engineering team focuses on building robust, low-latency AI agents, reliable distributed systems for long-running task orchestration, and scalable backend infrastructure to handle complex enterprise data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to EMA's work on agentic workflows because building reliable backends that orchestrate complex AI logic requires exactly the kind of containerization and robust execution handling I explored while building my multi-language code execution engine."
   }
 }
