@@ -4078,5 +4078,69 @@
     "engineering_focus": "The engineering team focuses on building robust, low-latency AI agents, reliable distributed systems for long-running task orchestration, and scalable backend infrastructure to handle complex enterprise data.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am particularly drawn to EMA's work on agentic workflows because building reliable backends that orchestrate complex AI logic requires exactly the kind of containerization and robust execution handling I explored while building my multi-language code execution engine."
+  },
+  "risa": {
+    "company": "Risa",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Risa provides a digital solutions platform that digitizes and streamlines end-to-end retail and business operations for mid-to-large enterprises.",
+    "engineering_focus": "Building scalable, high-concurrency backend services, robust API integrations, and reliable data architectures to manage complex retail workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Risa manages complex transaction workflows and would love to bring my experience in building sandboxed, high-concurrency execution environments to help strengthen your backend infrastructure."
+  },
+  "dell technologies": {
+    "company": "Dell Technologies",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Dell Technologies provides global enterprise infrastructure, storage solutions, and high-performance computing hardware integrated with cloud-native software platforms.",
+    "engineering_focus": "Development of scalable microservices, high-availability distributed systems, and low-latency storage management APIs that power enterprise-grade infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Dell’s infrastructure-first engineering approach and would love to contribute to the complex backend challenges involved in managing distributed systems at such an immense enterprise scale."
+  },
+  "farmart": {
+    "company": "FarMart",
+    "domain": "Agri-Tech & B2B Supply Chain",
+    "core_product": "FarMart is a B2B digital platform that digitizes the agricultural value chain by connecting retailers with food brands and farmers through supply chain optimization and fintech services.",
+    "engineering_focus": "Building highly scalable distributed systems to handle large-scale rural supply chain data, inventory management, and low-latency transaction processing across fragmented logistics networks.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to how FarMart manages complex, high-throughput supply chain operations, and I'd love to contribute my experience in building containerized execution environments and optimized backend services to help scale your platform."
+  },
+  "ashok leyland ltd": {
+    "company": "Ashok Leyland Ltd",
+    "domain": "Automotive & Industrial Manufacturing",
+    "core_product": "Ashok Leyland is a major commercial vehicle manufacturer that develops heavy-duty trucks, buses, and advanced mobility solutions for global markets.",
+    "engineering_focus": "Building scalable IoT-enabled fleet management systems, real-time vehicle telematics, and robust backend infrastructure to handle heavy data processing and distributed diagnostics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m particularly interested in how Ashok Leyland manages its backend infrastructure for fleet telematics and real-time data processing, as my work on sandboxed execution engines and distributed systems aligns closely with the need for reliable, high-uptime industrial software."
+  },
+  "axis bank": {
+    "company": "Axis Bank",
+    "domain": "Fintech & Payments",
+    "core_product": "Axis Bank provides comprehensive financial services, including retail and corporate banking, digital payments, and secure financial transaction processing infrastructure.",
+    "engineering_focus": "Building highly available, secure, and transactional microservices architectures that handle massive concurrent financial traffic and ensure strict data consistency.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Axis Bank is scaling its transaction engine, and I am keen to apply my experience in building sandboxed, high-concurrency backend services to help maintain the reliability and performance of your core financial systems."
+  },
+  "87. yes bank": {
+    "company": "87. Yes Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Yes Bank is a full-service commercial bank providing digital banking solutions, payment gateways, and retail financial services.",
+    "engineering_focus": "Development of high-security, low-latency transaction processing systems, scalable microservices architectures, and robust API integrations for banking infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Yes Bank handles high-concurrency transaction integrity and system isolation, as my work on sandboxed code execution platforms involved similar challenges with secure resource management and backend reliability."
+  },
+  "amd": {
+    "company": "AMD",
+    "domain": "Semiconductors & High-Performance Computing",
+    "core_product": "AMD designs high-performance CPUs, GPUs, and adaptive computing solutions that power modern data centers, AI infrastructure, and gaming systems.",
+    "engineering_focus": "The company focuses on low-level systems programming, high-concurrency performance optimization, and robust tooling for distributed computing and hardware-software integration.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandboxed execution engine gave me a firsthand appreciation for how efficiently managing containers and system resources is critical to scaling software performance."
+  },
+  "wipro": {
+    "company": "Wipro",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Wipro provides large-scale digital transformation, IT consulting, and business process services for global enterprise clients across diverse industries.",
+    "engineering_focus": "Development of scalable enterprise microservices, cloud-native backend systems, and distributed architecture to optimize complex operational workflows for Fortune 500 clients.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how Wipro manages the backend complexity and infrastructure reliability required to support digital transformation for global enterprises at such a massive scale."
   }
 }
