@@ -4142,5 +4142,69 @@
     "engineering_focus": "Development of scalable enterprise microservices, cloud-native backend systems, and distributed architecture to optimize complex operational workflows for Fortune 500 clients.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am particularly interested in how Wipro manages the backend complexity and infrastructure reliability required to support digital transformation for global enterprises at such a massive scale."
+  },
+  "wise": {
+    "company": "Wise",
+    "domain": "Fintech & Payments",
+    "core_product": "Wise builds a global cross-border payments infrastructure that allows users to send, spend, and manage money across multiple currencies with transparent, low-cost mid-market exchange rates.",
+    "engineering_focus": "The core engineering challenge involves building high-throughput, fault-tolerant distributed systems and low-latency microservices capable of processing real-time currency exchange and cross-border settlement at scale.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built a sandboxed execution engine using Docker and Redis to manage concurrent tasks, I am deeply impressed by how Wise maintains such high consistency and reliability in its distributed ledger systems while handling complex currency settlement logic."
+  },
+  "capillary technologies": {
+    "company": "Capillary Technologies",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Capillary Technologies provides an AI-powered SaaS loyalty and customer engagement platform that helps brands manage omnichannel consumer experiences at scale.",
+    "engineering_focus": "The engineering team focuses on building high-scale distributed microservices, processing massive volumes of transactional data, and integrating complex loyalty engines with low-latency backend architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m drawn to how Capillary manages high-concurrency loyalty transactions, and I’m eager to apply my experience in building sandboxed, containerized systems to help maintain the reliability of your backend infrastructure."
+  },
+  "arth design": {
+    "company": "Arth Design",
+    "domain": "Fintech & Payments",
+    "core_product": "Arth Design provides a robust financial infrastructure platform that enables businesses to manage complex payment flows, reconciliation, and automated ledger accounting.",
+    "engineering_focus": "Building highly available, ACID-compliant transaction systems that require meticulous database design, secure API architecture, and reliable distributed task processing.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve spent a lot of time engineering sandboxed execution environments for my own projects, so I’m particularly drawn to how Arth handles the high-stakes reliability and state consistency required for financial transaction processing."
+  },
+  "176. pidilite industries": {
+    "company": "176. Pidilite Industries",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Pidilite Industries is a leading manufacturer of adhesives, sealants, and construction chemicals that is increasingly digitizing its supply chain, B2B distribution, and customer engagement platforms.",
+    "engineering_focus": "Focuses on scalable backend architectures for supply chain management, high-concurrency distribution APIs, and data-driven systems to manage extensive product inventory and retail networks.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage the backend complexity of your extensive B2B distribution network and would love to bring my experience in building scalable, Docker-based execution environments to help optimize your digital infrastructure."
+  },
+  "myntra": {
+    "company": "Myntra",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Myntra is a leading fashion-focused e-commerce platform that manages a massive inventory, personalized shopping experiences, and high-volume logistics for millions of daily users.",
+    "engineering_focus": "They focus on building highly scalable microservices, low-latency search and recommendation systems, and distributed inventory management architectures capable of handling massive spikes in traffic during sale events.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent time building a sandboxed code execution engine using Docker and Redis to handle concurrent tasks, and I am fascinated by how Myntra manages similar isolation and efficiency challenges to maintain performance during extreme scale traffic."
+  },
+  "jsw energy ltd": {
+    "company": "JSW Energy Ltd",
+    "domain": "Energy & Infrastructure Tech",
+    "core_product": "JSW Energy is an integrated power company focused on energy generation, storage solutions, and building a scalable smart grid infrastructure for a sustainable future.",
+    "engineering_focus": "Building robust industrial IoT systems, real-time telemetry data processing, and scalable backend platforms to manage energy distribution and grid efficiency.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how JSW Energy is digitizing grid operations and would love to apply my experience with Docker-based sandboxed environments and backend architecture to help optimize your energy management systems."
+  },
+  "sony group": {
+    "company": "Sony Group",
+    "domain": "Consumer Electronics & Digital Entertainment Systems",
+    "core_product": "Sony Group develops high-performance consumer hardware, professional imaging systems, and massive-scale digital entertainment platforms like PlayStation Network.",
+    "engineering_focus": "Building low-latency, highly concurrent backend systems that manage massive user traffic, real-time data synchronization, and secure media delivery services across a global distributed infrastructure.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve spent the last year building sandboxed environments and handling process isolation, so I’m really keen to learn how your team manages the backend complexity of supporting millions of concurrent users on the PlayStation Network."
+  },
+  "canara bank": {
+    "company": "Canara Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Canara Bank is a public sector bank providing comprehensive retail, corporate, and digital banking services including payment gateways and core banking solutions to millions of customers.",
+    "engineering_focus": "Building highly secure, transactional microservices, distributed banking APIs, and robust data integrity systems that manage massive concurrent financial operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how you manage the complexities of distributed backend architecture and secure data processing at a scale that impacts millions of daily financial transactions."
   }
 }
