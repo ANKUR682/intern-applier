@@ -4206,5 +4206,93 @@
     "engineering_focus": "Building highly secure, transactional microservices, distributed banking APIs, and robust data integrity systems that manage massive concurrent financial operations.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am deeply interested in how you manage the complexities of distributed backend architecture and secure data processing at a scale that impacts millions of daily financial transactions."
+  },
+  "rategain": {
+    "company": "RateGain",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "RateGain provides AI-driven SaaS solutions for the travel and hospitality industry, focusing on revenue management, pricing intelligence, and guest experience.",
+    "engineering_focus": "They manage massive-scale data processing pipelines and real-time pricing intelligence APIs that require high-concurrency architecture, complex distributed systems, and low-latency data aggregation.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandboxed code execution engine taught me the complexities of resource management and container orchestration, and I’m eager to apply those backend scaling principles to the high-volume data streams handled by RateGain's platform."
+  },
+  "godrej industries": {
+    "company": "Godrej Industries",
+    "domain": "Conglomerate & Enterprise Digital Transformation",
+    "core_product": "Godrej Industries operates a diverse portfolio spanning chemicals, consumer goods, real estate, and agriculture, currently undergoing significant digital transformation across its supply chain and operational infrastructure.",
+    "engineering_focus": "Building scalable microservices, optimizing data-intensive supply chain backend systems, and implementing robust API architectures to support high-volume enterprise operations and logistics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built an isolated, containerized code execution engine, I am eager to apply my experience with backend architecture and Dockerized environments to help streamline the complex, large-scale distributed systems that power Godrej’s operational infrastructure."
+  },
+  "squadstack": {
+    "company": "SquadStack",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "SquadStack is an AI-powered sales acceleration platform that connects businesses with a distributed workforce to manage high-volume lead qualification and sales operations.",
+    "engineering_focus": "The core engineering challenges involve building highly scalable distributed systems to handle complex lead routing, real-time data pipelines, and orchestration across a massive distributed sales workforce.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to SquadStack because building an automated sales engine at scale requires the same type of robust backend architecture and asynchronous task handling that I implemented for my sandboxed code execution platform."
+  },
+  "136. alkem laboratories": {
+    "company": "136. Alkem Laboratories",
+    "domain": "Pharmaceuticals & Healthtech",
+    "core_product": "Alkem Laboratories is a multinational pharmaceutical company focused on the development, manufacturing, and distribution of generic drugs, active pharmaceutical ingredients (APIs), and nutraceuticals.",
+    "engineering_focus": "The company focuses on building scalable enterprise resource planning (ERP), supply chain management systems, and data-driven inventory management platforms requiring robust, secure backend architectures and reliable database systems.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Alkem manages its complex supply chain logistics and data pipelines, and I would love to contribute to building the backend systems that keep those operations running efficiently."
+  },
+  "infosys": {
+    "company": "Infosys",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Infosys provides digital services and consulting, building large-scale enterprise software solutions and cloud-native platforms for global clients across diverse industries.",
+    "engineering_focus": "Building highly available, secure, and scalable enterprise-grade microservices using distributed systems, cloud infrastructure, and robust backend architectures to support massive transaction volumes.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built a sandboxed code execution engine, I am particularly interested in how your team tackles the complexities of maintaining reliability and security across the distributed enterprise systems Infosys deploys at scale."
+  },
+  "hero electric": {
+    "company": "Hero Electric",
+    "domain": "Electric Mobility & Green Energy",
+    "core_product": "Hero Electric manufactures and markets a diverse range of electric scooters and motorcycles focused on urban mobility and sustainable transportation.",
+    "engineering_focus": "Development of scalable IoT-enabled telematics, real-time fleet management backend systems, and high-concurrency cloud services to handle electric vehicle data analytics.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team handles the high-concurrency data streams coming from EV telematics, as I have spent time building sandboxed, high-performance backend systems using Docker and Redis that require similar levels of reliability."
+  },
+  "ltimindtree": {
+    "company": "LTIMindtree",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "LTIMindtree provides digital consulting and technology services, implementing large-scale enterprise software solutions and cloud transformations for global clients.",
+    "engineering_focus": "Engineering focus involves building scalable microservices, managing complex distributed systems, and integrating enterprise-grade cloud architectures with robust data pipelines.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m interested in how LTIMindtree handles the technical complexity of large-scale enterprise integrations and would love to bring my experience in building sandboxed, containerized execution environments to your engineering team."
+  },
+  "92. city union bank": {
+    "company": "92. City Union Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "City Union Bank is a private sector banking institution that provides digital financial services, including retail banking, credit facilities, and secure online transaction processing.",
+    "engineering_focus": "Building highly secure, transaction-consistent, and scalable banking APIs that handle real-time financial data with strict adherence to regulatory standards and low-latency throughput.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage the backend architecture for secure, concurrent transaction processing, and I would love to contribute to maintaining that level of reliability through my experience with containerized environments and scalable API design."
+  },
+  "sugar": {
+    "company": "SUGAR",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "SUGAR Cosmetics is a direct-to-consumer beauty brand that operates a high-traffic e-commerce platform integrated with complex inventory management and supply chain logistics.",
+    "engineering_focus": "Managing high-concurrency order processing, real-time inventory synchronization across multi-channel marketplaces, and optimizing database performance for high-volume retail traffic.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly impressed by how your platform maintains seamless performance during peak retail traffic, and I would love to contribute to building the robust backend systems and database optimizations that keep those large-scale operations running smoothly."
+  },
+  "mahindra & mahindra financial services ltd": {
+    "company": "Mahindra & Mahindra Financial Services Ltd",
+    "domain": "Fintech & Financial Services",
+    "core_product": "Mahindra & Mahindra Financial Services provides customized financial solutions including vehicle loans, SME financing, and insurance services to millions of customers across rural and semi-urban India.",
+    "engineering_focus": "The engineering team focuses on building secure, scalable microservices and resilient data pipelines to manage high-volume loan processing and real-time financial transaction integrity.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly drawn to your team's work because building secure, containerized environments for my code execution engine gave me a deep appreciation for the robust architecture needed to manage high-stakes financial data reliably."
+  },
+  "greaves": {
+    "company": "Greaves",
+    "domain": "Automotive & Electric Mobility",
+    "core_product": "Greaves is an engineering company focused on last-mile mobility solutions, manufacturing electric two-wheelers, three-wheelers, and advanced powertrain systems.",
+    "engineering_focus": "Developing robust IoT-enabled telematics, scalable backend infrastructure for real-time vehicle monitoring, and data pipelines to optimize fleet management and battery performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own sandboxed code execution engine gave me a deep appreciation for managing containerized environments, and I am eager to apply those backend scaling principles to the telematics and vehicle-to-cloud infrastructure at Greaves."
   }
 }
