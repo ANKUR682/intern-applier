@@ -4294,5 +4294,61 @@
     "engineering_focus": "Developing robust IoT-enabled telematics, scalable backend infrastructure for real-time vehicle monitoring, and data pipelines to optimize fleet management and battery performance.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "Building my own sandboxed code execution engine gave me a deep appreciation for managing containerized environments, and I am eager to apply those backend scaling principles to the telematics and vehicle-to-cloud infrastructure at Greaves."
+  },
+  "slb": {
+    "company": "SLB",
+    "domain": "Energy Technology & Industrial SaaS",
+    "core_product": "SLB provides global technology, integrated project management, and information solutions to the energy industry, focusing on subsurface characterization, drilling, and production optimization.",
+    "engineering_focus": "Building large-scale, high-availability distributed systems for processing massive geophysical datasets, complex scientific simulations, and industrial-grade cloud platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent my recent semesters architecting sandboxed execution engines and backend microservices, and I am genuinely fascinated by how SLB handles the immense computational demands of real-time subsurface data processing at such a massive scale."
+  },
+  "deutsche india": {
+    "company": "DEUTSCHE INDIA",
+    "domain": "Fintech & Banking",
+    "core_product": "Deutsche India serves as a global technology hub for Deutsche Bank, building mission-critical financial systems, investment banking platforms, and secure digital banking infrastructure.",
+    "engineering_focus": "The engineering focus centers on building highly reliable, low-latency distributed systems, secure high-volume transaction processing engines, and resilient microservices architecture on top of enterprise-grade cloud and data platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how Deutsche Bank manages such high-scale, secure transaction environments, and my experience building a sandboxed code execution engine has given me a strong appreciation for the architectural rigor required to maintain reliability in distributed backend systems."
+  },
+  "keka": {
+    "company": "Keka",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Keka provides a comprehensive HR Tech platform that automates payroll, recruitment, talent management, and performance analytics for enterprises.",
+    "engineering_focus": "Developing robust, multi-tenant backend architectures, complex payroll calculation engines, and scalable microservices that handle sensitive data and high-concurrency enterprise workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’ve spent a lot of time building sandboxed execution environments and optimizing backend APIs, and I’m genuinely interested in how Keka manages the complexity of data-heavy payroll systems and enterprise-grade infrastructure at scale."
+  },
+  "pushbowl": {
+    "company": "PushBowl",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "PushBowl provides a customer engagement and growth platform that enables businesses to automate personalized push notifications and communication workflows.",
+    "engineering_focus": "The core engineering focus involves building high-throughput, low-latency messaging systems capable of handling massive event-driven data streams, complex scheduling logic, and robust API integrations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following your transition from Exotel and am particularly drawn to the challenge of building the kind of reliable, high-concurrency messaging infrastructure that PushBowl requires to handle millions of user interactions."
+  },
+  "tata steel ltd": {
+    "company": "Tata Steel Ltd",
+    "domain": "Industrial Manufacturing & Enterprise Systems",
+    "core_product": "Tata Steel is a global steel manufacturing giant that leverages integrated digital supply chains and smart manufacturing technologies to optimize production and distribution.",
+    "engineering_focus": "Building robust enterprise-grade backend systems to handle large-scale data ingestion, industrial IoT telemetry, and efficient supply chain management via scalable distributed architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Tata Steel because scaling a digital ecosystem for a global manufacturing leader presents complex backend optimization challenges that go far beyond the typical web application."
+  },
+  "acko": {
+    "company": "Acko",
+    "domain": "Fintech & Insurtech",
+    "core_product": "Acko is a digital-native insurance provider that leverages data-driven models to offer simplified, real-time insurance products for health, auto, and life.",
+    "engineering_focus": "The engineering team focuses on building high-concurrency event-driven architectures, reliable microservices for policy processing, and seamless API integrations for real-time claims and underwriting.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Acko’s focus on building highly reliable backend systems that handle sensitive financial transactions at scale, and I would love to contribute to the performance and security of your distributed service architecture."
+  },
+  "saj food products (p) ltd": {
+    "company": "SAJ Food Products (P) Ltd",
+    "domain": "FMCG & Supply Chain Logistics",
+    "core_product": "SAJ Food Products (P) Ltd is a prominent FMCG company, best known for its 'Bisk Farm' brand, engaged in manufacturing and distributing a wide range of biscuits, cookies, and bakery products.",
+    "engineering_focus": "Building scalable supply chain management systems, high-concurrency inventory tracking APIs, and robust data pipelines to manage complex distribution networks across multiple regions.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "As an SDE student who enjoys architecting scalable backend systems and containerized services, I am particularly interested in how your team handles the high-velocity data and inventory synchronization required to maintain a seamless supply chain for a brand with such wide reach."
   }
 }
