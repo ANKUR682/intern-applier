@@ -4350,5 +4350,85 @@
     "engineering_focus": "Building scalable supply chain management systems, high-concurrency inventory tracking APIs, and robust data pipelines to manage complex distribution networks across multiple regions.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "As an SDE student who enjoys architecting scalable backend systems and containerized services, I am particularly interested in how your team handles the high-velocity data and inventory synchronization required to maintain a seamless supply chain for a brand with such wide reach."
+  },
+  "drishti ias": {
+    "company": "Drishti IAS",
+    "domain": "AI & EdTech",
+    "core_product": "Drishti IAS is a premier educational platform providing comprehensive online learning resources, test series, and content for civil services examinations in India.",
+    "engineering_focus": "The engineering focus centers on building scalable content delivery systems, high-concurrency assessment platforms, and integrated video streaming services to support a massive user base preparing for competitive exams.",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "Given your focus on delivering personalized exam preparation tools at scale, I am excited about the prospect of applying my experience with PostgreSQL and AI-driven interfaces to help optimize the feedback loops in your mock assessment modules."
+  },
+  "130. aurobindo pharma": {
+    "company": "130. Aurobindo Pharma",
+    "domain": "Pharmaceuticals & Healthcare Technology",
+    "core_product": "Aurobindo Pharma is a global pharmaceutical leader focused on developing, manufacturing, and distributing a wide range of generic medicines, active pharmaceutical ingredients, and complex formulations.",
+    "engineering_focus": "The engineering team focuses on developing robust ERP systems, supply chain automation, and data-driven manufacturing platforms that require high-reliability backend services and secure, scalable database management.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you build scalable backend systems to manage complex supply chain data and would love to bring my experience with containerization and distributed systems to help optimize your digital infrastructure."
+  },
+  "tata elxsi": {
+    "company": "Tata Elxsi",
+    "domain": "Product Engineering & Embedded Systems",
+    "core_product": "Tata Elxsi provides design and technology services for product engineering and solutions across automotive, broadcast, communications, and healthcare industries.",
+    "engineering_focus": "Development of scalable backend architectures, cloud-native embedded middleware, and high-performance distributed systems for connected devices and autonomous platforms.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Tata Elxsi because of your work in building complex backend infrastructure for the automotive and broadcast sectors, and I am eager to apply my experience in containerization and sandboxed execution environments to your system-level software challenges."
+  },
+  "druva": {
+    "company": "Druva",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Druva provides a cloud-native SaaS platform for data protection, cyber resilience, and disaster recovery for enterprise data across endpoints, servers, and cloud workloads.",
+    "engineering_focus": "The engineering team focuses on building highly scalable distributed systems for massive-scale data deduplication, global data management, and secure multi-tenant storage architectures.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own sandboxed code execution engine gave me a first-hand look at the complexities of resource isolation and backend efficiency, which makes me particularly keen to learn how your team handles massive-scale data deduplication and system reliability at Druva."
+  },
+  "exponent energy": {
+    "company": "Exponent Energy",
+    "domain": "Energy Tech & EV Infrastructure",
+    "core_product": "Exponent Energy builds proprietary battery technology and a rapid charging network that enables electric vehicles to charge from 0 to 100% in 15 minutes.",
+    "engineering_focus": "Developing high-concurrency backend systems to manage real-time battery telemetry, remote charger monitoring, and distributed energy management workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how you handle real-time data ingestion for your charging network and am eager to apply my experience in building sandboxed, containerized backends to help scale your fleet monitoring infrastructure."
+  },
+  "zaggle": {
+    "company": "Zaggle",
+    "domain": "Fintech & Payments",
+    "core_product": "Zaggle is a B2B SaaS platform providing spend management, employee benefits, and corporate expense automation solutions.",
+    "engineering_focus": "Developing secure, high-concurrency transaction processing systems, real-time financial data pipelines, and scalable microservices architecture on a cloud-native tech stack.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how Zaggle handles the high-concurrency demands of corporate expense workflows and maintains system integrity while processing large volumes of financial data."
+  },
+  "88. federal bank": {
+    "company": "88. Federal Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Federal Bank provides a comprehensive suite of digital banking services, including retail and corporate financial products, powered by modern API-driven banking infrastructure.",
+    "engineering_focus": "The engineering team focuses on building highly secure, reliable, and low-latency transaction processing systems, utilizing robust microservices architecture and scalable cloud-native backend services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how Federal Bank manages stateful distributed systems and high-concurrency transactions, as I’ve recently navigated similar architectural challenges building a containerized, sandboxed code execution engine."
+  },
+  "dot & key skincare": {
+    "company": "Dot & Key Skincare",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Dot & Key Skincare is a direct-to-consumer (D2C) brand that utilizes a data-driven approach to retail personalized skincare and wellness products through their e-commerce platform.",
+    "engineering_focus": "They focus on high-concurrency e-commerce order management, scalable inventory tracking, and seamless integration of personalized recommendation engines with robust payment gateways.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "As someone who enjoys building containerized backend systems and optimizing database performance, I am fascinated by the challenge of maintaining low-latency site responsiveness and smooth checkout flows during high-traffic promotional periods at Dot & Key."
+  },
+  "hindustan petroleum corporation ltd (hpcl)": {
+    "company": "Hindustan Petroleum Corporation Ltd (HPCL)",
+    "domain": "Energy & Infrastructure Systems",
+    "core_product": "HPCL is a Maharatna public sector undertaking involved in refining crude oil and marketing petroleum products through a vast, nationwide supply chain network.",
+    "engineering_focus": "Building secure, reliable distributed systems for real-time supply chain management, high-concurrency transaction processing, and large-scale industrial data monitoring.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how HPCL handles the backend architecture behind its massive operational supply chain, as my experience building sandboxed execution engines has given me a deep appreciation for creating stable, fault-tolerant infrastructure at scale."
+  },
+  "aye": {
+    "company": "AYE",
+    "domain": "Fintech & Lending",
+    "core_product": "AYE provides business loans to micro and small enterprises by using a data-driven approach to assess the creditworthiness of unbanked businesses.",
+    "engineering_focus": "Building highly secure, scalable transaction processing systems and robust backend architectures to handle complex credit underwriting models and financial data pipelines.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent a significant amount of time building sandboxed execution environments and high-concurrency backend services, and I am keen to apply this experience toward the complex data-handling and reliability challenges involved in scaling AYE’s lending infrastructure."
   }
 }
