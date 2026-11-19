@@ -4430,5 +4430,69 @@
     "engineering_focus": "Building highly secure, scalable transaction processing systems and robust backend architectures to handle complex credit underwriting models and financial data pipelines.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I have spent a significant amount of time building sandboxed execution environments and high-concurrency backend services, and I am keen to apply this experience toward the complex data-handling and reliability challenges involved in scaling AYE’s lending infrastructure."
+  },
+  "dabur india ltd": {
+    "company": "Dabur India Ltd",
+    "domain": "FMCG & Consumer Tech",
+    "core_product": "Dabur is a leading fast-moving consumer goods (FMCG) company manufacturing a wide range of natural and ayurvedic health, personal care, and food products.",
+    "engineering_focus": "Development of robust supply chain management systems, high-volume inventory tracking, and data-driven distribution platforms to manage operations across a vast retail network.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Dabur utilizes distributed systems and backend infrastructure to optimize supply chain data flow and maintain operational efficiency across its complex retail ecosystem."
+  },
+  "dehaat": {
+    "company": "DeHaat",
+    "domain": "Agri-Tech & Supply Chain",
+    "core_product": "DeHaat is an end-to-end agri-tech platform that integrates the agricultural supply chain by providing farmers with access to inputs, advisory services, and market linkages.",
+    "engineering_focus": "Building highly scalable distributed systems and robust data pipelines to manage complex logistics, real-time inventory tracking, and large-scale transactional farming data across decentralized networks.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how DeHaat manages its complex supply chain data, and I would love to apply my experience with Dockerized sandboxes and backend optimization to help build the scalable infrastructure required to support your millions of rural users."
+  },
+  "cashify .in": {
+    "company": "CASHIFY .IN",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "Cashify is a re-commerce platform that enables users to sell, buy, and repair used smartphones and electronic gadgets through an integrated online and offline marketplace.",
+    "engineering_focus": "Developing highly scalable inventory management systems, real-time dynamic pricing algorithms, and seamless logistics orchestration across a distributed microservices architecture.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following how Cashify handles real-time valuation and inventory syncing, and I am keen to apply my experience in building sandboxed, high-concurrency backend services to help maintain that level of system reliability."
+  },
+  "pwc": {
+    "company": "PwC",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "PwC provides comprehensive professional services including digital transformation, data analytics, and large-scale enterprise technology consulting for global organizations.",
+    "engineering_focus": "Development of scalable microservices architectures, enterprise-grade cloud integrations, and secure data processing pipelines designed to handle complex business logic and high-volume client information.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how PwC scales secure, containerized environments for enterprise clients, as my work on a multi-language sandboxed code execution engine gave me direct experience in managing backend isolation and resource optimization."
+  },
+  "capital one": {
+    "company": "Capital One",
+    "domain": "Fintech & Payments",
+    "core_product": "Capital One provides credit cards, banking, and financial services, operating as a technology-first company with a massive cloud-native infrastructure.",
+    "engineering_focus": "They focus on high-scale distributed systems, real-time transaction processing, and robust data security, leveraging a heavy AWS cloud-native architecture.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building my own sandboxed code execution engine gave me a real appreciation for the complexities of container isolation and backend efficiency, which aligns perfectly with how you manage high-throughput, secure financial services at scale."
+  },
+  "exide industries limited": {
+    "company": "Exide Industries Limited",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Exide Industries is a leading manufacturer of lead-acid batteries and energy storage solutions, currently digitizing its supply chain and industrial operational systems.",
+    "engineering_focus": "Building scalable backend microservices, real-time telemetry data processing, and enterprise resource planning integrations to optimize manufacturing and logistics workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you are applying containerized backend architectures and distributed data systems to modernize large-scale industrial operations and supply chain visibility."
+  },
+  "emami ltd": {
+    "company": "Emami Ltd",
+    "domain": "FMCG & Supply Chain Operations",
+    "core_product": "Emami Ltd is a leading FMCG company that manufactures and markets a diverse portfolio of personal care, healthcare, and beauty products with extensive retail distribution networks.",
+    "engineering_focus": "Building resilient supply chain management systems, high-concurrency inventory tracking platforms, and data-driven demand forecasting engines that require robust backend architecture and efficient database integration.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have been following Emami's push toward digitizing their distribution network and would love to bring my experience in building sandboxed, high-availability backend systems to help optimize your supply chain infrastructure."
+  },
+  "zenoti": {
+    "company": "Zenoti",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Zenoti provides an all-in-one cloud-based software platform for the salon, spa, and med-spa industry, managing scheduling, billing, CRM, and inventory operations.",
+    "engineering_focus": "Building highly scalable distributed systems capable of handling massive appointment concurrency, real-time multi-tenant data synchronization, and robust enterprise-grade backend services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Zenoti's architecture because managing complex, high-concurrency scheduling data across thousands of global locations presents exactly the kind of backend scaling and performance optimization challenges I love solving."
   }
 }
