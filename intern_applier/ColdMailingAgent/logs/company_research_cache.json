@@ -4494,5 +4494,69 @@
     "engineering_focus": "Building highly scalable distributed systems capable of handling massive appointment concurrency, real-time multi-tenant data synchronization, and robust enterprise-grade backend services.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am drawn to Zenoti's architecture because managing complex, high-concurrency scheduling data across thousands of global locations presents exactly the kind of backend scaling and performance optimization challenges I love solving."
+  },
+  "ycp auctus": {
+    "company": "YCP Auctus",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "YCP Auctus is a management consulting and digital transformation firm that builds data-driven solutions to help companies optimize operations, expand markets, and integrate digital technology.",
+    "engineering_focus": "The engineering team focuses on building scalable enterprise-grade platforms, data-intensive internal tools, and robust backend architectures that support complex client-facing workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I have spent the last year building sandboxed, containerized systems to handle complex backend logic, and I am keen to apply that experience in architecting the high-scale, reliable systems that power your digital transformation initiatives."
+  },
+  "e-bay": {
+    "company": "E-Bay",
+    "domain": "E-commerce & High-Scale Marketplaces",
+    "core_product": "eBay operates a global multi-sided marketplace facilitating consumer-to-consumer and business-to-consumer sales through a massive, distributed e-commerce platform.",
+    "engineering_focus": "The engineering team focuses on managing high-concurrency traffic, real-time bidding systems, distributed microservices architectures, and data-intensive search and inventory indexing at massive scale.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am deeply interested in how eBay handles the massive concurrency challenges of your bidding engines and distributed inventory systems, especially using containerized environments to ensure consistent performance at scale."
+  },
+  "inmobi": {
+    "company": "Inmobi",
+    "domain": "AdTech & Digital Marketing Platforms",
+    "core_product": "InMobi provides a global mobile advertising and discovery platform that enables brands to reach audiences through data-driven programmatic ad exchanges.",
+    "engineering_focus": "The company tackles massive-scale real-time bidding, low-latency distributed systems, and petabyte-scale data processing to manage billions of ad requests daily.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Building a sandboxed execution engine gave me a first-hand look at managing resource-intensive tasks, and I am eager to apply that experience to the high-concurrency architecture challenges inherent in InMobi's ad-tech infrastructure."
+  },
+  "175. upl limited": {
+    "company": "175. UPL Limited",
+    "domain": "Agri-Tech & Sustainable Solutions",
+    "core_product": "UPL Limited is a global provider of sustainable agriculture products and solutions, focusing on crop protection, biosolutions, and digital farming platforms.",
+    "engineering_focus": "Building scalable backend systems and data pipelines to integrate complex supply chain logistics with precision agriculture platforms for global operational efficiency.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to UPL’s mission of digitalizing global agriculture, and I am eager to apply my experience in building sandboxed, containerized environments and high-performance backends to help scale your digital farming infrastructure."
+  },
+  "united breweries": {
+    "company": "United Breweries",
+    "domain": "Consumer Goods & Supply Chain Operations",
+    "core_product": "United Breweries is a leading beverage company that manages large-scale manufacturing, distribution, and supply chain logistics for iconic beer brands across India.",
+    "engineering_focus": "Building robust enterprise systems for supply chain optimization, inventory management, and high-concurrency data processing to support massive distribution networks.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am particularly interested in how your team handles the backend complexity and data synchronization required to keep a massive, nationwide distribution network running smoothly."
+  },
+  "vivriti": {
+    "company": "Vivriti",
+    "domain": "Fintech & Debt Marketplace",
+    "core_product": "Vivriti operates a technology-enabled marketplace connecting institutional investors with enterprise borrowers, backed by a proprietary credit underwriting and asset-servicing engine.",
+    "engineering_focus": "They focus on building high-scale, transactional financial backends, distributed microservices for credit risk assessment, and secure data pipelines for real-time lending operations.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Vivriti because your focus on building reliable, distributed systems for complex financial workflows mirrors my interest in developing the low-latency backend architectures required for your credit underwriting platforms."
+  },
+  "accenture": {
+    "company": "Accenture",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Accenture provides global professional services and digital transformation solutions, integrating cloud, AI, and enterprise software to modernize large-scale business operations.",
+    "engineering_focus": "Building highly resilient, cloud-native enterprise architectures that handle complex system integrations, large-scale data processing, and secure, high-availability microservices for global clients.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "Having built an isolated, sandboxed execution environment with Docker and Redis, I am eager to apply that experience in container orchestration and backend scalability to the large-scale enterprise systems Accenture manages."
+  },
+  "voltas ltd": {
+    "company": "Voltas Ltd",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "Voltas Ltd is a leading engineering solutions provider specializing in HVAC, cooling products, and complex MEP project management for industrial and commercial infrastructure.",
+    "engineering_focus": "Building scalable IoT-driven monitoring systems, robust supply chain management backends, and data-intensive service platforms to optimize energy efficiency and equipment performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how Voltas leverages complex backend systems to manage large-scale HVAC infrastructure, and I would love to contribute my experience in building sandboxed, containerized environments to your remote monitoring and data pipelines."
   }
 }
