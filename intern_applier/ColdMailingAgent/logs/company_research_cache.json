@@ -4558,5 +4558,53 @@
     "engineering_focus": "Building scalable IoT-driven monitoring systems, robust supply chain management backends, and data-intensive service platforms to optimize energy efficiency and equipment performance.",
     "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
     "personal_hook": "I am interested in how Voltas leverages complex backend systems to manage large-scale HVAC infrastructure, and I would love to contribute my experience in building sandboxed, containerized environments to your remote monitoring and data pipelines."
+  },
+  "173. india cements": {
+    "company": "173. India Cements",
+    "domain": "SaaS & Enterprise Systems",
+    "core_product": "India Cements is a major manufacturing enterprise that manages large-scale industrial supply chain operations, resource planning, and distribution logistics.",
+    "engineering_focus": "Development of scalable enterprise resource planning (ERP) systems, database optimization for supply chain tracking, and robust backend APIs to handle high-volume transactional data.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you handle data consistency and backend reliability in your industrial systems, especially given my experience building sandboxed, high-concurrency architectures with Docker and Redis."
+  },
+  "cencora": {
+    "company": "Cencora",
+    "domain": "Healthtech & Pharmaceutical Supply Chain",
+    "core_product": "Cencora provides global pharmaceutical sourcing, distribution, and commercialization services powered by advanced data analytics and logistics platforms.",
+    "engineering_focus": "The engineering focus centers on building highly secure, scalable, and reliable backend systems to manage complex pharmaceutical supply chain data, inventory tracking, and large-scale enterprise integration.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Cencora's engineering because the challenge of managing global-scale data consistency and low-latency backend infrastructure for critical healthcare delivery mirrors the system design complexities I explored while building my sandboxed code execution engine."
+  },
+  "cult.fit": {
+    "company": "Cult.fit",
+    "domain": "Health-Tech & Fitness Platforms",
+    "core_product": "Cult.fit is a comprehensive health and fitness platform that integrates offline fitness centers, online workout content, and nutrition tracking through a unified digital ecosystem.",
+    "engineering_focus": "They manage high-concurrency booking systems, real-time video streaming infrastructure, and large-scale microservices to handle millions of user interactions across fitness and medical services.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am drawn to Cult.fit because your platform's ability to manage complex, real-time scheduling and high-concurrency traffic at scale mirrors the distributed systems and containerization challenges I tackled while building my own sandboxed code execution engine."
+  },
+  "uti asset management": {
+    "company": "UTI Asset Management",
+    "domain": "Fintech & Financial Services",
+    "core_product": "UTI Asset Management is a leading investment firm that manages diverse mutual fund portfolios and financial assets for retail and institutional investors.",
+    "engineering_focus": "Building secure, high-concurrency transaction processing systems, reliable financial data pipelines, and scalable APIs to manage complex regulatory and investment workflows.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I’m interested in how you handle the backend complexity of real-time transaction processing and secure data management, as I’ve spent my recent semesters building robust, containerized execution engines and scalable APIs."
+  },
+  "90. bandhan bank": {
+    "company": "90. Bandhan Bank",
+    "domain": "Fintech & Banking",
+    "core_product": "Bandhan Bank provides comprehensive retail and commercial banking services, including digital payments, core banking operations, and financial inclusion solutions.",
+    "engineering_focus": "Building highly available, secure, and transactional backend systems capable of processing large volumes of financial data while maintaining strict consistency and low-latency API performance.",
+    "best_matched_project": "Online Code Execution Platform (Docker & Backend)",
+    "personal_hook": "I am interested in how you manage reliable, low-latency transaction processing at scale, especially since I've spent time building sandboxed execution engines that prioritize system stability and secure resource management."
+  },
+  "capgemini": {
+    "company": "Capgemini",
+    "domain": "Technology & Software",
+    "core_product": "Core platforms and digital products at Capgemini",
+    "engineering_focus": "Scalable web applications, backend services, and high-performance APIs",
+    "best_matched_project": "AI Mock Interview Platform (Next.js & AI)",
+    "personal_hook": "I really admire how Capgemini is solving complex architectural challenges in this space."
   }
 }
